@@ -1,0 +1,425 @@
+16rgb5l	, phần nội dung ghi chú thành ghi chú của sách.
+6cxdg1	, rồi dán vào ô Kho Obsidian bên dưới. Hoặc bấm nút Chọn và mở dần tới thư mục đó.
+rm34t8	. Dấu ↻ là đọc lại; bìa mờ nét đứt là sách bỏ dở.
+6w9gmk	. Một sách có thể nằm ở nhiều thử thách.
+va5sit	. Ở chế độ một chiều, sách đã đồng bộ trước đó và sách vừa đổi thể loại sẽ được chuyển vào đúng thư mục ở lần đồng bộ tới; tên tệp giữ nguyên nên liên kết [[...]] trong Obsidian vẫn chạy.
+1lp3jkp	"{0}" cùng lượt đọc, ghi chú và nhật ký đọc sẽ bị xoá khỏi ứng dụng. Nếu đã đồng bộ sang Obsidian, lần đồng bộ sau tệp sẽ được chuyển vào thư mục .trash của kho.
+1dt9mqw	) được giữ nguyên dạng chữ; ảnh vẫn nằm trong kho.
+1v9i3kg	{0} cuốn có lỗi đã được nhập và gắn nhãn "Cần chỉnh sửa".
+g7lwx7	{0} lượt đọc, {1} lần đọc lại.
+1hcptim	{0} phim ảnh đã chấm (đã xem + bỏ dở)
+13uyoci	{0} phim ảnh đã xem/bỏ dở chưa có năm xem xong
+7l2267	{0} phim ảnh đang xem chưa có năm bắt đầu (chỉ tính vào năm hiện tại)
+1ejtw7f	{0} ngày có ghi nhật ký
+p6yf1l	{0}: không có nhật ký
+1f1t8uy	Ảnh bảng cảm hứng
+1okbbvc	Ảnh nhúng trong ghi chú (ví dụ
+a3lv07	Ảnh trong kho
+14ldhr3	Ảnh và tệp đính kèm
+ia581p	Hoạt hình
+1cgj7cl	Ứng dụng đọc danh sách kho mà Obsidian đã từng mở. Chọn kho muốn đồng bộ sách vào.
+vuo5fc	Ứng dụng là nơi duy nhất nhập và sửa sách. Tệp trong Obsidian chỉ để xem; nếu lỡ sửa, lần đồng bộ sau ứng dụng ghi đè và giữ bản đã sửa thành tệp .conflict.
+1xe5359	Ứng dụng sao chép cơ sở dữ liệu, ảnh và tệp đính kèm sang đây rồi dùng thư mục mới. Thư mục cũ giữ nguyên để bạn tự xoá khi đã yên tâm.
+7rjrxt	Ứng dụng sẽ dùng cơ sở dữ liệu ở thư mục này thay cho cơ sở dữ liệu hiện tại. Cơ sở dữ liệu hiện tại không bị xoá.
+1j6lcxj	Bảng màu Rêu, phông Fraunces và Be Vietnam Pro, cỡ chữ 15px, bỏ ảnh nền.
+sqbgeo	Bấm Lưu mẫu trước nếu muốn giữ lại.
+f41mb3	Bấm nút phát cạnh một danh sách nhạc để nghe ngay tại đây.
+nfaamp	Bấm vào thanh địa chỉ của File Explorer, sao chép đường dẫn, ví dụ
+19fsjjj	Bật đồng bộ
+175fiy0	Bật đồng bộ Obsidian
+1mwxg5v	bỏ {0} tệp thừa vào .trash
+t3pg4h	Bỏ qua tệp không do ứng dụng tạo
+fl35er	Bỏ qua tệp lỗi
+b82vrs	Sách
+13j8rs4	Bảng đấu sách
+1ofocz5	Sách
+1tiy2pr	Bộ trên 60 tập luôn được tính vào Truyện tranh trong thống kê
+6s00pz	Các bước nhập
+2b5i4b	Các nhật ký đọc
+juxk3a	Cần tên chủ đề màu
+1uebgsg	Cập nhật tệp
+1aivx0e	Thử thách
+7pgip3	Chạy đồng bộ
+16ipgkt	chép {0} tệp
+7xxb46	Chép ảnh và tệp đính kèm vào _attachments
+11f2qkc	Chép ghi chú sách có sẵn trong Obsidian vào kệ. Chỉ đọc tệp, không sửa tệp trong kho.
+18akcso	Chỉ hiện ở sách có nhãn smut
+eqil7f	Chỉ hiện cặp đôi thuộc tác phẩm gốc đã chọn: {0}.
+s092dk	Chỉ tính truyện fan đã đọc xong trong năm và không thuộc nhóm truyện fan ngắn. Mỗi truyện có thể có nhiều tác phẩm gốc/cặp đôi nên được đếm cho từng cái.
+1lx5807	Chỉ tính phim ảnh đã xem và bỏ dở; phim ảnh nhiều thể loại tính cho từng thể loại.
+yjsoq0	Chỉ tính phim ảnh đã xem và bỏ dở.
+hwlxtw	Chỉ tính sách có nhãn smut:
+1pc3km6	Chiều đồng bộ
+1mlyop8	Chọn ảnh để chèn vào ghi chú
+135k4v3	Chọn ảnh bảng cảm hứng
+vzczte	Chọn tác phẩm gốc trước để lọc danh sách cặp đôi
+8cbmo1	Chọn tệp
+hrjz8u	Chọn tệp .md
+1jcdo1n	Chọn tệp .md hoặc cả thư mục ghi chú sách trong kho. Ứng dụng đọc thuộc tính theo mẫu của từng thể loại; tệp gốc không bị sửa.
+ith8r0	Chọn tệp để nhập
+175qlw9	Chọn tệp đính kèm
+yadkuo	Chọn tệp khác
+1aluct2	Chọn tệp trang trí
+1x4bkov	Chọn ghi chú
+1k5dqt6	Chọn ghi chú khác
+1l67f28	Chọn mùa nếu muốn chấm điểm riêng cho từng mùa; xem lại một mùa thì thêm một lượt mới cùng mùa
+1t737bu	Chọn thư mục ghi chú
+126hp4e	Chọn hạng đầu
+qtpv8u	Chọn từng tệp .md
+qkaktq	Chọn kho Obsidian
+8vtw1h	Chọn kho Obsidian và bật đồng bộ trong phần Cài đặt.
+192umjk	Chọn kho và cách đồng bộ sách sang Obsidian.
+o9keve	Chuyển tệp của sách đã xoá vào .trash
+1c2ku57	Chuyển tệp vào đúng thư mục thể loại
+1j7z3xe	Chuyển thư mục ảnh của sách đã xoá vào .trash
+14xm3ag	Chuyển thư viện từ Goodreads, Notion hoặc tệp CSV/JSON vào kệ.
+10gcxx9	Chưa có thử thách nào. Tạo theo đề gợi ý, ô lô tô hoặc A–Z.
+1lsp59q	Chưa có cơ sở dữ liệu
+15aikl8	Chưa có đồ trang trí. Tải lên ảnh PNG nền trong suốt hoặc SVG (chậu cây, đèn, tượng nhỏ...), mỗi tệp tối đa 3MB.
+b2yyog	Chưa có tệp hay liên kết nào.
+kl5akf	Chưa có nhật ký đọc nào
+44b454	Chưa có nhật ký nào cho sách này.
+1631zrs	Chưa có phim ảnh nào khớp bộ lọc. Bấm "Thêm phim ảnh" để thêm mục đầu tiên.
+1n8zwld	Chưa có phim ảnh nào trong năm này.
+34avgc	chưa có phim ảnh nào.
+t4604c	Chưa có danh sách nhạc nào.
+1l3y3tz	Chưa có sách nào trong danh sách muốn đọc.
+1rcd6yg	Chưa có sách muốn đọc nào có ngày phát hành sắp tới.
+1xg4o5d	Chưa có bộ nào. Điền trường Bộ khi sửa sách hoặc ô Bộ khi sửa phim ảnh.
+14oglzz	chưa có nhãn,
+1rrlisu	Chưa đồng bộ lần nào
+1tis4qa	Chưa tính {0} truyện fan ngắn (≤ 80.000 chữ), tin tức, bài nghiên cứu
+1fzfr0r	Có nội dung ghi chú
+y3seen	Có trạng thái ứng dụng chưa biết. Chọn trạng thái tương ứng; bảng xem trước cập nhật ngay và ứng dụng nhớ lựa chọn cho các lần nhập sau.
+zg32w2	Truyện tranh
+7ygpn3	Cột trong tệp
+1hqmoeq	Dán liên kết Spotify hoặc YouTube (bắt đầu bằng https://)
+r9wg6w	Danh sách chỉ gồm cặp đôi của tác phẩm gốc đã chọn (kho tác phẩm gốc & cặp đôi và các truyện fan đã nhập)
+1czi7zz	Danh sách phim ảnh
+11emgqi	Danh sách trống. Ô Ngôn ngữ trong biểu mẫu sách sẽ chỉ có lựa chọn “Chưa chọn”.
+1ur2pjs	Cơ sở dữ liệu
+vc8yqd	Diana Wynne Jones · Tiểu thuyết
+7czxx2	dòng đầu, khi nhập sẽ xử lý đủ
+vd63gv	dòng. Ứng dụng đã đoán sẵn cột nào ghi vào đâu, kiểm tra lại rồi bấm Xem trước. Cột để "Bỏ qua" sẽ không được nhập.
+d2zkdq	Chính kịch, Tội phạm, Ly kỳ...
+1fms2y7	Dùng cho sách chưa có ghi chú. Khi bạn viết ghi chú trong ứng dụng, ghi chú đó sẽ thay cho phần này.
+14nn8iz	Dùng khi tệp không ghi thể loại. Kệ Goodreads có tên non-fiction, manga, fanfic sẽ được nhận ra tự động.
+12u4jl8	Dùng kho này
+xn23sg	đã chọn trong ứng dụng
+10i6cff	Đã có cơ sở dữ liệu (phiên bản cấu trúc {0})
+1kfj5uw	Đã ghi nhật ký
+no3iwg	Đã ghi nhật ký; tiến độ {0} {1}{2}
+1tlz869	Đã nhập
+1emq8e	Đã nhập {0} cuốn
+vgunvh	Đã khôi phục mẫu {0} mặc định
+1shviuo	Đã lưu mẫu {0}. Lần đồng bộ tới sẽ ghi lại các tệp thuộc thể loại này.
+k834n5	Đã đồng bộ {0} tệp sang Obsidian
+1kumrkq	Đã xoá nhật ký
+lc6a0p	Đã xoá nhật ký, trả lại {0} {1} khỏi tiến độ
+4i9k4k	Đang dùng mẫu mặc định
+atemkl	Đang lấy nhật ký
+j0kzor	Đang mở phim ảnh
+1ffj0ut	Đang mở ghi chú
+1957ao0	Đang so sánh ứng dụng với kho
+wetjik	Đang tải thử thách
+zhjgxn	Đây là kho Obsidian
+1dvl6gm	Đi lên các thư mục cha cho tới thư mục mang đúng tên kho (tên hiện ở góc dưới bên trái Obsidian).
+1iz2l2b	Địa chỉ liên kết
+2ls1dx	Điểm trung bình theo nhóm chỉ hiện khi có ít nhất {0} phim ảnh đã chấm.
+1ik0hg4	đoán theo mẫu
+37utjg	Độ nóng
+zdlrag	Độ nóng {0} / 5
+yc24vj	Độ nóng 🌶️
+tb82dh	Sách điện tử
+1j4yfke	Tác phẩm gốc
+1aesex3	tác phẩm gốc ·
+1nxef50	Truyện fan
+hn6t8u	Truyện fan ngắn
+1nmjpec	Truyện fan ngắn / tin tức / bài nghiên cứu (riêng)
+vdd7or	Truyện fan ngắn, tin tức và bài nghiên cứu là nhóm riêng, không cộng vào tổng ở trên
+dtgo35	Truyện fan từ 80.000 chữ trở xuống được thống kê ở nhóm riêng "Truyện fan ngắn" (cùng nhóm với tin tức và bài nghiên cứu của Phi tiểu thuyết)
+1i3n2jp	Fanfiction: tác phẩm gốc & cặp đôi
+17afyl1	Kỳ ảo
+77lk06	Kỳ ảo, Lãng mạn
+1v666t3	Tiểu thuyết / Phi tiểu thuyết
+zipx5c	Tệp CSV hoặc JSON tự làm, mỗi dòng (hoặc mỗi đối tượng) là một cuốn sách.
+18svcdi	Tệp khác
+5twimx	tệp không phải ghi chú
+umsq53	Tệp này không phải ảnh
+negwsx	Tệp và liên kết đính kèm
+ssndeg	Đọc lần đầu
+lcbuu	Đọc lần đầu:
+4g5pf8	Phông chữ
+1a49l8o	Phông nội dung
+1cf9jmo	Phông tiêu đề
+1d4jw0h	Phông tiêu đề dùng cho tên sách, gáy sách và tiêu đề trang; phông nội dung dùng cho phần còn lại.
+u9mn0y	Ghi đè tệp đã sửa trong Obsidian (bản cũ được giữ thành .conflict)
+gtuo4r	Ghi nhật ký
+1575bzw	Ghi nhật ký đọc
+sg19l4	Ghi nhật ký hôm nay
+1o9zoep	Ghi nhận tệp đã đổi tên hoặc di chuyển
+ww7qw9	Ghi ra Obsidian ở thuộc tính Genres
+c2axv6	Ghi trên thẻ thư viện; cảm nhận dài viết ở mục Ghi chú & cảm nhận
+1qfskv6	Ghi trên thẻ; cảm nhận dài viết ở mục Ghi chú & cảm nhận
+1utzak0	Giữ lại: cài đặt giao diện, ngôn ngữ, mẫu, cấu hình Obsidian, mật khẩu này. Tệp trong kho Obsidian không bị đụng tới. Trước khi xoá, ứng dụng chép cơ sở dữ liệu và chuyển ảnh/tệp vào thư mục
+169h1lw	Giữ mẫu hiện tại
+eqzw5q	Gom sách (trường Bộ trong biểu mẫu sửa sách) và phim ảnh (ô Bộ) có cùng tên bộ, không phân biệt hoa thường. Kéo hoặc bấm mũi tên để đổi thứ tự, thứ tự được lưu ngay. Ở mục Sách có thêm danh sách tác giả.
+g8t7ff	Gồm đọc lần đầu và đọc lại
+17vvmc1	HBO, Studio Ghibli...
+1r8v2sz	Hiện ở góc trên bên trái và trên thẻ trình duyệt.
+1t6rjk7	Trích đoạn
+1iuurox	Hoặc dán liên kết ảnh bìa
+2ws7yx	Hôm nay chưa ghi nhật ký, ghi để giữ chuỗi
+mzmx2g	Hôm nay đã ghi nhật ký
+487htl	https://... (ví dụ liên kết ảnh bìa trên Goodreads)
+1nl3377	https://... liên kết ảnh
+1jbnyu1	https://open.spotify.com/playlist/... hoặc liên kết YouTube
+o7fto4	Nhập dữ liệu
+uralif	Nhập sách
+1k86u90	Kéo tệp .csv hoặc .json vào đây
+mc7djm	Khi sửa truyện fan, chọn tác phẩm gốc xong thì ô Cặp đôi chỉ gợi ý cặp đôi của tác phẩm đó, lấy từ kho này và từ các truyện fan đã nhập. Ví dụ Harry Potter: Draco x Harry, Sirius x Remus.
+d9k875	Kho đang trống. Thêm tác phẩm gốc, hoặc bấm "Thêm từ dữ liệu sách" để lấy từ các truyện fan đã nhập.
+9vjjci	Kho tác phẩm gốc & cặp đôi
+c0ff19	Khôi phục mẫu mặc định?
+b7x4l2	Không có tệp .md nào trong lựa chọn này.
+1gahvt8	Không có gì cần thay đổi. Kho đã khớp với ứng dụng.
+11du92y	Không có bộ nào khớp bộ lọc.
+swma0i	Không hoàn tác được trong ứng dụng.
+sd7w9e	Không tải được danh sách phim ảnh.
+19lyb2s	Không thấy kho của bạn? Cách tìm đường dẫn kho
+16sszpa	Không theo mùa (cả bộ)
+uycvzt	Không tìm thấy phim ảnh này
+104n1gu	Không tìm thấy kho nào. Có thể Obsidian chưa được cài trên máy này hoặc chưa mở kho nào. Làm theo hướng dẫn bên dưới để tự chọn thư mục.
+6z9g6k	Lần đồng bộ gần nhất: {0}
+bq1r4f	Lần đồng bộ trước: {0}.
+c9yln1	Lịch đọc năm {0}, {1} ngày có ghi nhật ký
+1h2c6w5	Tiểu thuyết nhẹ
+6e4rb9	Tiểu thuyết nhẹ
+13equ89	Liên kết
+1en1raz	Liên kết ảnh bảng cảm hứng
+tyyjzw	Liên kết ảnh phải bắt đầu bằng http:// hoặc https://
+1030eov	Liên kết phải bắt đầu bằng http:// hoặc https://
+1yce771	Liên kết danh sách nhạc
+1kxwkgq	Liên kết đoạn giới thiệu
+dpa2kc	Lọc nhãn thể loại theo thể loại chính
+1f4cnub	Lọc theo Sách hoặc Phim ảnh
+1m3skw3	Lọc theo loại
+eh3jys	Lọc theo loại phim ảnh
+vg20zy	Lọc theo điểm
+1o90yj2	luôn đứng đầu tệp. Ứng dụng dùng nó để nhận ra tệp kể cả khi bạn đổi tên, nên không sửa hay xoá được.
+5nxs5m	Lưới áp phích
+1b3hl58	lượt bỏ dở không có ngày nào nên không thuộc năm nào. Bổ sung ngày ở mục Thẻ thư viện của sách.
+1jdxe0c	lượt có độ nóng. Bảng theo thể loại không tính chính nhãn smut.
+1vnsk2m	Lưu mẫu
+1rik0pn	Truyện tranh Nhật
+16z63eg	Markdown như trong Obsidian. Nội dung này là phần thân tệp .md của phim ảnh khi đồng bộ.
+15ci6u1	Markdown như trong Obsidian. Nội dung này là phần thân tệp .md khi đồng bộ.
+av1lv0	mặc định, thư mục data trong dự án
+1arjbm0	Mật khẩu và nút xoá toàn bộ dữ liệu của ứng dụng.
+1m09bj7	Phim ảnh
+yvhjrp	Phim ảnh có thể đã bị xoá.
+1lw0wow	phim ảnh, cùng lượt đọc, ghi chú, nhật ký đọc, mục tiêu, thử thách, yêu thích theo tháng, bảng đấu, thứ tự bộ, ảnh bìa và tệp đính kèm.
+1n1mc47	phim ảnh.
+1tfxzlc	Phim ảnh
+1le4c3r	Mọi mức điểm
+1mwbira	Bảng cảm hứng
+1x8qqdw	Phim lẻ
+1mhsiw2	Mỗi bảng màu có cả bản sáng và tối; nút mặt trăng trên thanh trên cùng để đổi sáng/tối. Tạo chủ đề màu mới để tự chọn màu; bấm biểu tượng bút trên chủ đề để sửa hoặc xoá.
+1w4gz3x	Mỗi lượt đọc (kể cả đọc lại) nằm ở ngày đọc xong của lượt đó. Lượt chỉ biết năm hoặc không có ngày không đặt lên lịch được.
+10p0h4f	Mỗi sách có thể có nhiều nhãn thể loại nên được đếm một lần cho từng thể loại: tổng các phần có thể lớn hơn số sách. Sách không có nhãn vào nhóm "Chưa có".
+kcso1g	Mỗi sách là một tệp .md trong thư mục này. Nên để riêng, không trộn với ghi chú khác.
+1uuum06	Một chiều: ứng dụng sang Obsidian
+1uktl4b	Một sách có thể gắn vào nhiều thử thách, nhưng chỉ một ô trong cùng thử thách.
+118lkzn	Mở Obsidian, chuột phải vào một ghi chú bất kỳ ở cột bên trái, chọn “Reveal in File Explorer” (macOS: “Reveal in Finder”). Cửa sổ thư mục chứa ghi chú đó sẽ mở ra.
+ym5czp	Mục tiêu & trang vui
+isx9o5	Mục tiêu và trang vui
+1207pj0	Tin tức (tin/bài báo)
+18vddl4	Nếu thư mục đúng là kho, ứng dụng sẽ báo “Đây là kho Obsidian”.
+16ilupb	Ngày viết cảm nhận
+y30by3	Nguồn: các lượt đọc đã xong (có ngày hoặc năm đọc xong) trong năm; đọc lại tính là một lượt riêng; sách xuyên năm gán theo ngày đọc xong; truyện fan ngắn (≤ 80.000 chữ) và Phi tiểu thuyết dạng tin tức/bài nghiên cứu không tính, giống chỉ tiêu phía trên.
+1fhc0zn	Nhận cả thay đổi viết trong Obsidian. Sửa ở cả hai nơi thì bên sửa sau thắng, bản thua được giữ thành tệp .conflict.
+1jh5cag	Nhập số tập của từng mùa, cách nhau bằng dấu phẩy; chưa biết thì ghi ?
+1pull8m	Như góc sách thu nhỏ: các món bật Hiện được đặt ngẫu nhiên giữa các gáy sách trên từng tầng kệ. Bấm nút xúc xắc trên kệ sách để xếp lại.
+5mau71	Ghi chú
+vg5yet	Ghi chú & cảm nhận
+zxmy51	Ghi chú & cảm nhận
+1wdl3c3	ghi chú chưa ghép trạng thái sẽ không được nhập.
+nrqvx3	Ghi chú có thuộc tính Category thì dùng Category. Không có thì ứng dụng đoán theo thuộc tính đặc trưng (Fandom, Ships → Fanfiction; Volumes → Truyện tranh). Còn lại dùng thể loại này; bạn đổi được từng ghi chú ở bước sau.
+16dptrm	Ghi chú đang trống. Khi đồng bộ, Obsidian nhận khung mẫu của
+npzjbx	ghi chú đọc được
+z2bncx	ghi chú lỗi (
+iks71	ghi chú lỗi.
+15p7uis	Ghi chú Obsidian (.md)
+1wklsk9	Nội dung phim ảnh
+1idabrr	Nội dung ghi chú
+z9h198	Nơi lưu cơ sở dữ liệu, ảnh và tệp đính kèm, ví dụ một thư mục trong Google Drive.
+1hf7z	Cặp đôi
+165kwo8	Cặp đôi
+x9cvas	Cặp đôi
+1rlwv19	PDF, sách điện tử, bản dịch, liên kết bài viết... Tệp tải lên được chép sang Obsidian khi đồng bộ.
+ahgma	Phân bố độ nóng
+1z0zh7f	Phân bố điểm
+16yxfw9	Phân bố thể loại (nhãn)
+asqu8b	Danh sách nhạc
+xke1bw	Áp phích
+1mowzqn	Thuộc tính mới
+1jkq1cy	Thuộc tính ở đầu tệp
+1wjpkew	Thuộc tính và phần thân mẫu của tệp .md cho từng thể loại; kho tác phẩm gốc & cặp đôi.
+cbvdg5	Điểm cao
+99w2pl	Điểm
+u8wmzv	Đọc lại
+17ln4es	Đọc lại, lượt
+14sfueu	Đọc lại, lượt {0}
+1tw6xkz	Đọc lại:
+1ghocdi	Bài nghiên cứu
+6i81l2	Bài nghiên cứu
+1yn2jl6	Sách chưa có lượt đọc đang mở. Nhật ký vẫn được tính cho chuỗi ngày đọc; thêm lượt đọc để ngày bắt đầu hiện trên thẻ thư viện và trong Obsidian.
+1j8izv6	Sách đọc xong trong năm mà đã chuyển từ danh sách muốn đọc (chỉ ghi nhận từ khi có tính năng này).
+1anp5t5	Sách này nhập bị lỗi, hãy kiểm tra và sửa lại thông tin:
+5t5ldk	Mùa
+1bn83vs	Mùa hiện tại
+2ncfrk	Bộ
+1uswvha	Bộ:
+15ymxq	Cặp đôi
+1695mbv	Phim ngắn
+36pfwo	Số lần đọc lại
+5f4oc3	Số phim ảnh theo loại. {0}
+1aecztq	Số mùa
+1yxzhjw	Số tập mỗi mùa
+1h4thgg	Số tập/mùa
+13wtr79	Số tập
+x3kzg3	Chuỗi ngày đọc liên tục
+1xn0yks	Sửa nhật ký ngày {0}
+ka2u0g	Sửa phim ảnh
+rephf3	Sửa chủ đề màu "{0}"
+ojtg53	Sửa chủ đề màu {0}
+1imjzbq	Đồng bộ đang tắt.
+d6mo8f	Đồng bộ ngay
+1qt5v2z	Đồng bộ Obsidian
+1371ohq	Đồng bộ sang Obsidian
+1h2m7qs	Đồng bộ xong
+1vvsrh4	Mục chính
+wy2g8w	Nhãn
+72stnb	Tải tệp lên
+qubm13	Tạo bảng đấu
+2362ki	Tạo thử thách
+yxoqyo	Tạo tệp mới
+1jqb5oa	Tạo lại tệp đã bị xoá trong kho
+1d9p48h	Tạo chủ đề màu mới
+15s7w08	Tạo và dùng chủ đề màu
+1rlc89f	Muốn đọc
+yreqlk	Muốn đọc → đã đọc
+1sfb1cc	Muốn xem
+s6qa0b	Mẫu
+tvz82q	Mẫu {0} có thay đổi chưa lưu. Chuyển sang {1} sẽ bỏ các thay đổi đó.
+1cogp2e	Mẫu {0} trở về như ban đầu (dựng từ ghi chú mẫu). Các thuộc tính bạn đã thêm sẽ biến khỏi tệp ở lần đồng bộ tới; dữ liệu trong ứng dụng vẫn còn.
+5ro17u	Mẫu của thể loại
+dks08g	mẫu của từng thể loại
+k9qhdw	Tên ứng dụng
+z6qi4j	Tên ứng dụng không được trống
+p6jpdd	Tên ứng dụng, màu chủ đề, phông chữ, cỡ chữ và ảnh nền.
+7zgy0r	Tên bảng đấu
+nsm1dy	Tên tác phẩm gốc
+1y8mx0x	Tên tác phẩm gốc mới
+12ydmr3	Tên tệp thành tên sách. Thuộc tính được đọc theo
+1ok6sz5	Tên liên kết
+35teer	Tên danh sách nhạc
+6ykxqi	Tên chủ đề màu
+35h8of	Theo loại
+ruvf84	Theo định dạng
+uee2oy	theo điểm
+1gxa03w	Theo số trang; sách tính bằng chương/tập nằm ở “Chưa có số trang”.
+oxqaut	Theo thứ tự mùa 1, 2, ...; ví dụ 10, 12, ? (chưa biết ghi ?)
+4ee5jw	Thể loại
+zjb2vl	Thể loại lấy từ nhãn thể loại của sách; sách có nhiều nhãn xuất hiện ở từng nhóm. “Bắt đầu đọc” chuyển sang Đang đọc và tạo lượt đọc mới từ hôm nay.
+1oxavhe	Thêm bằng liên kết
+ik0c7j	Thêm tác phẩm gốc
+gux3jw	Thêm liên kết
+1mqb5s0	Thêm phim ảnh
+1jekkrm	Thêm danh sách nhạc
+1ddbe71	Thêm thuộc tính
+3dk2xc	Thêm sách (chọn trạng thái Muốn đọc)
+1ot2tq3	Thêm, sửa hoặc xoá lượt đọc ở mục Thẻ thư viện trên trang của sách.
+99tpx2	thiếu tệp
+nvwyjy	Thử bỏ bớt trạng thái, năm hoặc nhãn đang chọn.
+1knlu30	Thư mục chưa có, ứng dụng sẽ tạo mới
+17bghew	Thư mục gốc của kho, nơi có thư mục .obsidian.
+7edzcc	Thư mục phim ảnh trong kho
+1cfvx2b	Thư mục này không có .obsidian, có thể chưa phải kho.
+1j4okxb	Thư mục đồng bộ trong kho
+12m5npu	Thứ tự ở đây là thứ tự trong tệp. Xoá một thuộc tính chỉ bỏ nó khỏi tệp, dữ liệu trong ứng dụng vẫn giữ nguyên.
+ao3z5e	Tỉ lệ bỏ dở năm
+1lk6yq6	Tỉ lệ năm = số lượt bỏ dở có ngày trong năm / (bỏ dở + đã xong trong năm). Tỉ lệ toàn thời gian tính cả lượt bỏ dở chưa có ngày.
+in28l4	Tiếng Việt dùng toàn bộ từ thuần Việt. Nội dung bạn nhập (tên sách, nhãn, ghi chú) và tệp Obsidian không bị dịch.
+1t7gzf4	Tìm tác phẩm gốc hoặc cặp đôi
+cg54kl	Tìm bộ hoặc tên phần
+qf3mcb	Tính từ gốc kho. Phim ảnh luôn đồng bộ một chiều từ ứng dụng, chia thư mục TV Series, Movies, Animation, YouTube, Short Dramas khi bật chia theo thể loại. Để trống thì không đồng bộ phim ảnh.
+acxqc5	Tác giả đọc nhiều nhất
+le65v9	Chủ đề
+1f9ep5e	Tối đa 3 sách, chỉ chọn được sách có ngày đọc xong trong tháng này. Không đủ 3 sách vẫn đưa được vào bảng đấu.
+yz8r1o	Tổng số mùa
+8d8bvt	Trên Goodreads: My Books → Import and export → Export Library, tải tệp CSV về.
+n96ndj	Trong Notion: mở cơ sở dữ liệu sách → ⋯ → Export → Markdown & CSV, giải nén và chọn tệp .csv.
+10l6vy0	Mô típ
+6ognvu	Trường riêng của mẫu
+1gkoojc	Phim bộ
+etfxrs	Kho đã khớp với ứng dụng, không có gì thay đổi
+1fub35o	Kho là thư mục trên máy mà Obsidian đang mở. Mọi ghi chú của bạn nằm trong thư mục đó, kèm một thư mục ẩn tên
+1bq8le0	Kho Obsidian
+4hzj9m	Kho Obsidian trên máy này
+y3kled	Vẫn nhập
+p0pqa	Vẫn nhập mục lỗi
+78ha2z	vẫn nhập, để riêng
+dr5jgc	Về danh sách phim ảnh
+m9ftvi	Ví dụ 9-1-1. Dùng chung tên để gom các mùa
+vdjtgj	Viết cảm nhận, đoạn trích yêu thích... Hỗ trợ markdown và [[liên kết]] kiểu Obsidian. Dán ảnh bằng Ctrl+V.
+16pvh84	Truyện tranh
+wg9oz3	Tập
+19j0x58	Vùng bảng cảm hứng, dán ảnh bằng Ctrl+V
+1j8s2pg	Cảnh báo
+10qe12r	Truyện mạng
+1kmlwxl	Truyện tranh mạng
+1jjxlu	Danh sách mong muốn
+ygczlu	Xem đoạn giới thiệu
+1aftimu	Xem trước tệp .md
+9eqbfa	Xem trước những gì sẽ xảy ra. Chưa có tệp nào bị đổi cho tới khi bấm Chạy đồng bộ.
+l96h2f	Xem trước ghi chú
+8ostgn	Xoá biến READING_TRACKER_STORAGE trong tệp .env để đổi được từ ứng dụng.
+rd3xlf	Xoá bảng đấu này?
+kdjfmm	Xoá thử thách “{0}”? Sách không bị xoá.
+12b1vl4	Xoá tác phẩm gốc {0}
+1fubxoh	Xoá nhật ký ngày {0}
+kjlcny	Xoá thuộc tính {0}
+18sy34m	Xoá chủ đề màu
+w90dsa	Xoá chủ đề màu này? Nếu đang dùng, ứng dụng quay về bảng Rêu.
+1n84m6b	Truyện tranh Trung
+1qk8d3p	Truyện tranh Hàn
+vzwzo7	Nhân vật chính chết
+x2cs2l	Chủ đề (phi tiểu thuyết)
+5z0s2v	Độ nóng (sách có nhãn smut)
+k6pp5g	Lịch sử lượt đọc (đọc lại)
+15t700	Bảng cảm hứng (ảnh)
+10gyfus	Ớt 🌶️
+t8kmf6	Danh sách nhạc (liên kết)
+1x3llqv	Số lượt đọc đã xong trong năm theo ngày đọc xong (gồm đọc lại, không gồm truyện fan ngắn).
+12hdy4z	Nhãn / thể loại
+1e09f95	Cảnh báo (cảnh báo nội dung)
+d08jnz	tập
+jkoh5x	Tác phẩm gốc ({0} truyện)
+19gjdi5	{0} phim ảnh
+9w1agi	Mùa {0}
+19qcwpy	Mùa {0}/{1}
+mriixi	×
+239ul	Biểu tượng ứng dụng
+p6hcx4	Màn hình chính chưa có lối tắt "Ke sach". Bấm "Tạo lối tắt ngoài màn hình chính" để tạo.
+4sh4d8	Dùng file PNG (nên là ảnh vuông, nền trong suốt). Biểu tượng hiện ở góc trên bên trái, trên thẻ trình duyệt và trên lối tắt ngoài màn hình chính của Windows.
+lpelgx	Đã đổi biểu tượng của lối tắt "Ke sach" ngoài màn hình chính.
+bgetxs	Đã tạo lối tắt "Ke sach" ngoài màn hình chính.
+1riviib	Không cập nhật được lối tắt ngoài màn hình chính. Chạy lại file tao-shortcut-desktop.bat để tạo lại lối tắt.
+1tem93j	Máy này không chạy Windows nên không đổi được lối tắt ngoài màn hình chính.
+1uewui	Tạo lối tắt ngoài màn hình chính
+k3bv52	Không có cảnh báo
+1pib3mf	Để trống nghĩa là sách không có cảnh báo
+i0ugfm	Chọn bộ đã có hoặc gõ tên mới rồi nhấn Enter. Sách cùng bộ được gom ở trang Bộ.
+17fu9b0	Hoặc dán liên kết ảnh
+bxrwdv	https://... (ví dụ liên kết áp phích trên IMDb, MyDramaList)

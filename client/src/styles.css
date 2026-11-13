@@ -1,0 +1,280 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/fraunces/full.css';
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource-variable/lora/index.css';
+@import '@fontsource-variable/playfair-display/index.css';
+@import '@fontsource-variable/noto-serif/index.css';
+@import '@fontsource-variable/nunito/index.css';
+@import '@fontsource-variable/lexend/index.css';
+@import '@fontsource-variable/inter/index.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Bảng màu: giấy xanh nhạt, chữ xanh rêu, kệ gỗ óc chó, điểm nhấn mật ong. */
+:root {
+  --paper: #eef3e8;
+  --surface: #f8faf4;
+  --surface-2: #e2eadb;
+  --ink: #23412f;
+  --ink-muted: #5b7262;
+  --line: #cbd8c3;
+  --sage: #a9c5a0;
+  --moss: #2f5a3f;
+  --on-moss: #f3f7ef;
+  --honey: #e3b862;
+  --danger: #a8443a;
+  --walnut: #7a5434;
+  --walnut-dark: #553821;
+  --walnut-light: #9a6e48;
+  --shadow: 35 65 47;
+  --app-font-display: 'Fraunces Variable', Georgia, serif;
+  --app-font-sans: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+
+.dark {
+  --paper: #16201a;
+  --surface: #1e2a22;
+  --surface-2: #26352c;
+  --ink: #e3ecdd;
+  --ink-muted: #a1b4a4;
+  --line: #34463a;
+  --sage: #7fa083;
+  --moss: #a9c5a0;
+  --on-moss: #16201a;
+  --honey: #e8c172;
+  --danger: #e58a7e;
+  --walnut: #5e3f27;
+  --walnut-dark: #3d2716;
+  --walnut-light: #7a5434;
+  --shadow: 0 0 0;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-sage: var(--sage);
+  --color-moss: var(--moss);
+  --color-on-moss: var(--on-moss);
+  --color-honey: var(--honey);
+  --color-danger: var(--danger);
+  --color-walnut: var(--walnut);
+  --font-display: var(--app-font-display);
+  --font-sans: var(--app-font-sans);
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--app-font-sans);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--app-font-display);
+  font-variation-settings: 'SOFT' 100, 'WONK' 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--honey);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--honey) 45%, transparent);
+}
+
+/* ---------- Kệ sách ---------- */
+
+.shelf-row {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+  scroll-behavior: smooth;
+}
+
+.shelf-plank {
+  height: 18px;
+  border-radius: 3px 3px 6px 6px;
+  background:
+    repeating-linear-gradient(92deg, transparent 0 46px, rgb(0 0 0 / 0.05) 46px 48px, transparent 48px 113px),
+    linear-gradient(180deg, var(--walnut-light) 0 4px, var(--walnut) 4px 13px, var(--walnut-dark) 13px);
+  box-shadow: 0 10px 18px -10px rgb(var(--shadow) / 0.45);
+}
+
+.book {
+  transition: width 260ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 200ms ease;
+}
+
+.book:hover,
+.book:focus-visible {
+  transform: translateY(-6px);
+}
+
+.spine-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.spine-band {
+  height: 2px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.cat-tail {
+  transform-origin: 6px 2px;
+}
+
+.cat:hover .cat-tail {
+  animation: tail-sway 1.6s ease-in-out infinite;
+}
+
+@keyframes tail-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(14deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book,
+  .shelf-row {
+    transition: none;
+    scroll-behavior: auto;
+  }
+  .book:hover,
+  .book:focus-visible {
+    transform: none;
+  }
+  .cat:hover .cat-tail {
+    animation: none;
+  }
+}
+
+/* ---------- Xem trước markdown (note) ---------- */
+
+.md-preview {
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.md-preview > :first-child { margin-top: 0; }
+.md-preview h1, .md-preview h2, .md-preview h3, .md-preview h4 {
+  font-family: var(--app-font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 1.6em 0 0.5em;
+}
+.md-preview h1 { font-size: 1.9rem; }
+.md-preview h2 { font-size: 1.45rem; }
+.md-preview h3 { font-size: 1.2rem; }
+.md-preview p, .md-preview ul, .md-preview ol, .md-preview blockquote, .md-preview pre, .md-preview table { margin: 0.7em 0; }
+.md-preview ul { list-style: disc; padding-left: 1.4em; }
+.md-preview ol { list-style: decimal; padding-left: 1.4em; }
+.md-preview li > input[type='checkbox'] { margin-right: 0.4em; }
+.md-preview a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; }
+.md-preview blockquote { border-left: 3px solid var(--sage); padding: 0.2em 0 0.2em 1em; color: var(--ink-muted); }
+.md-preview code { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 0.88em; background: var(--surface-2); padding: 0.1em 0.35em; border-radius: 4px; }
+.md-preview pre { background: var(--surface-2); padding: 0.9em 1em; border-radius: 10px; overflow-x: auto; }
+.md-preview pre code { background: none; padding: 0; }
+.md-preview img { max-width: 100%; border-radius: 10px; margin: 0.4em 0; }
+.md-preview hr { border: 0; border-top: 1px solid var(--line); margin: 1.6em 0; }
+.md-preview table { border-collapse: collapse; width: 100%; font-size: 0.92em; }
+.md-preview th, .md-preview td { border: 1px solid var(--line); padding: 0.4em 0.7em; text-align: left; }
+.md-preview mark { background: color-mix(in srgb, var(--honey) 45%, transparent); color: inherit; padding: 0 0.15em; border-radius: 3px; }
+.md-preview strong { font-weight: 600; }
+.md-wiki-link { color: var(--moss); border-bottom: 1px dashed var(--sage); }
+.md-wiki-embed {
+  display: inline-block;
+  font-size: 0.82em;
+  color: var(--ink-muted);
+  background: var(--surface-2);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 0.15em 0.55em;
+}
+
+/* ---------- Thẻ thư viện giấy ---------- */
+
+.library-card {
+  --card-ink: #3d3224;
+  --card-paper: #f3e7c9;
+  --card-rule: rgb(146 112 70 / 0.32);
+  position: relative;
+  border-radius: 6px;
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgb(255 255 255 / 0.45), transparent 60%),
+    radial-gradient(90% 80% at 100% 100%, rgb(150 110 60 / 0.16), transparent 65%),
+    var(--card-paper);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.6) inset,
+    0 24px 40px -24px rgb(var(--shadow) / 0.55),
+    0 2px 6px rgb(var(--shadow) / 0.12);
+}
+.library-card::before {
+  /* Lỗ bấm ở mép trên như thẻ thư viện thật. */
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: inset 0 2px 3px rgb(0 0 0 / 0.25);
+}
+.dark .library-card {
+  --card-ink: #3a2f22;
+  --card-paper: #e6d6b0;
+}
+.library-card-head {
+  border-bottom: 2px solid rgb(168 68 58 / 0.55);
+}
+.library-card-table th {
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.7rem 0.6rem 0.4rem;
+  border-bottom: 1px solid rgb(168 68 58 / 0.45);
+  border-right: 1px solid var(--card-rule);
+}
+.library-card-table td {
+  padding: 0 0.6rem;
+  height: 4.25rem;
+  border-bottom: 1px solid var(--card-rule);
+  border-right: 1px solid var(--card-rule);
+  vertical-align: middle;
+}
+.library-card-table th:last-child,
+.library-card-table td:last-child { border-right: 0; }
+.handwritten {
+  font-family: var(--app-font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+}
+
+.stamp {
+  color: var(--stamp-ink);
+  border: 3px double var(--stamp-ink);
+  background: radial-gradient(circle, transparent 58%, color-mix(in srgb, var(--stamp-ink) 8%, transparent) 60%);
+  opacity: 0.86;
+  mix-blend-mode: multiply;
+  /* Mực không đều: che bớt vài chỗ cho giống dấu cao su. */
+  -webkit-mask-image: radial-gradient(circle at 30% 25%, #000 55%, rgb(0 0 0 / 0.75) 70%, #000 85%);
+  mask-image: radial-gradient(circle at 30% 25%, #000 55%, rgb(0 0 0 / 0.75) 70%, #000 85%);
+}
+.stamp-open {
+  border-style: dashed;
+  opacity: 0.7;
+}

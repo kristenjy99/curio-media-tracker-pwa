@@ -1,0 +1,1201 @@
+16rgb5l	，笔记正文成为书的笔记。
+6cxdg1	，然后粘贴到下方的 Obsidian 仓库栏。或点击“选择”逐级打开该文件夹。
+ocgpcv	：书必须包含所有已选的
+kbxr5w	？之后的阅读会重新编号。
+rm34t8	。↻ 表示重读；封面变淡且虚线框表示弃读。
+2zk40y	。在“目标”页面设置。
+6w9gmk	。一本书可以属于多个挑战。
+34vnjt	。统计中的观看年份取自这些记录。
+va5sit	。单向模式下，之前同步过的书和刚更改类别的书会在下次同步时移到正确的文件夹；文件名不变，所以 Obsidian 中的 [[...]] 链接仍然有效。
+nb461w	。选择顺序决定对阵（1 对 2，3 对 4，……）。
+11qajfi	· 尚未排序，按年份再按名称排列
+4bbkbp	· 第 {0} 次
+1x94bpp	· 平均 {0} ★
+1lp3jkp	“{0}”及其阅读记录、笔记和阅读日志将从应用中删除。如果已同步到 Obsidian，下次同步时文件会被移到仓库的 .trash 文件夹。
+e53r0z	“{0}”已在库中
+83csyz	“{0}”超过 50MB
+17y6q78	（旧版：
+1v3yoli	（不在列表中）
+1a59jrx	（默认）
+1sdrikk	（共 {0}）
+1dt9mqw	）保留为文字；图片仍在仓库中。
+nm44hc	）。仍可保存，但建议加大两种颜色的明暗差。
+1292014	{0} {1}：{2} 次阅读
+1v9i3kg	{0} 本有错误的书已导入并标记为“需要修改”。
+idrrn6	{0} 本有错误的书已导入并标记为“需要修改”。
+1dzfbj8	{0} 至 {1}
+hrz6ni	{0} 小时
+m03le5	{0} 小时 {1} 分钟
+1fc6yaz	{0} 次阅读
+g7lwx7	{0} 次阅读，{1} 次重读。
+mkvb4w	{0} 次观看。
+1hcptim	已评分 {0} 部（已看完 + 弃看）
+13uyoci	{0} 部已看完/弃看但没有看完年份
+7l2267	{0} 部在看但没有开始年份（只计入当年）
+1ejtw7f	{0} 天有日志
+1wesnek	{0} 个辣椒
+1tgsbfp	{0} 分钟
+15hxy74	{0} 本书
+130rb43	{1} 有 {0} 本书
+14l0e8w	{0} 集
+h9d5ob	{0} 页/章
+6bm64a	{0}，返回首页
+p6yf1l	{0}：没有日志
+1649vpc	{0}/{1} 集
+l6nctj	/同人名.md
+1pfu5im	/月，
+1aznl3u	/周完成其余部分（
+1prt2oj	0 分钟
+1e7aq2l	16 本书
+udivdy	4 本书
+18orsat	5 星
+1xaacaa	8 本书
+buyvp2	图片 {0}
+1urwdai	封面图片
+azvuye	2:3 竖图显示效果最好
+rpy16q	窄长竖图；在书架上代替彩色书脊
+1pfnqez	书脊图片
+1f1t8uy	灵感板图片
+5eymsu	背景图片
+1vtl6x9	已上传的背景图片将被删除。
+lpda5m	当前背景图片
+1okbbvc	笔记中嵌入的图片（例如
+14zg04	铺满书架后方的全屏图片。文字难以阅读时请降低浓度。
+a3lv07	仓库中的图片
+14ldhr3	图片和附件
+1a1d3q1	每个角色的图片、名字和说明。
+ia581p	动画
+1cgj7cl	应用读取 Obsidian 打开过的仓库列表。选择要同步书籍的仓库。
+vuo5fc	应用是唯一录入和编辑书籍的地方。Obsidian 中的文件仅供查看；若误改，下次同步会覆盖并把修改版保存为 .conflict 文件。
+1xe5359	应用会把数据库、图片和附件复制到这里，然后使用新文件夹。旧文件夹保留，确认无误后可自行删除。
+7rjrxt	应用将使用此文件夹中的数据库代替当前数据库。当前数据库不会被删除。
+geijri	你选择的
+1vww4ep	缺少数据的记录仍计入书籍数量，但归入“无”组或不计入页数；没有年份的阅读不属于任何年份。
+1l62urs	半决赛
+12xnnd7	浅色版
+p5ih7v	浅色
+7walpg	备份：
+1livreu	深色版
+1kx35ye	深色
+4m5vu1	表格
+yfzx21	配色
+1j6lcxj	苔藓配色，Fraunces 与 Be Vietnam Pro 字体，15px 字号，无背景图片。
+1adqvrp	开始
+sjs1d9	以字母开头
+1qih89u	开始阅读
+ue287s	阅读开始于
+sxogdj	开始观看
+sqbgeo	如需保留，请先点击“保存模板”。
+f41mb3	点击歌单旁的播放按钮即可在此收听。
+11nitty	点击下方区域后按 Ctrl+V 粘贴图片，或直接拖入图片。
+1xqzcxf	点击每场对决中获胜的书
+nfaamp	点击文件资源管理器的地址栏并复制路径，例如
+19fsjjj	开启同步
+175fiy0	开启 Obsidian 同步
+b4emtf	{0} 的封面
+1u4hovl	海洋
+1mwxg5v	将 {0} 个多余文件移入 .trash
+c771dx	移除图片
+r0bioo	移除背景
+1m2bnm3	清除评分
+102yig7	取消全选
+1mm1csf	弃读
+3x7rae	弃读 /
+1qerozb	跳过
+t3pg4h	跳过非本应用创建的文件
+fl35er	跳过出错的文件
+hx7cx0	跳过已有的书
+1kfkarh	放弃更改
+svcv75	放弃未保存的更改？
+nfmjnr	放弃更改并切换
+5idld8	取消喜欢
+b82vrs	纸书
+13j8rs4	书籍对决
+1ofocz5	书籍
+1tiy2pr	超过 60 卷的系列在统计中始终计入漫画
+q39e2w	整部
+16ztoil	两者
+b1fkf1	全年
+6s00pz	导入步骤
+2b5i4b	阅读日志
+j19x47	添加或编辑书籍时“语言”栏中的选项。
+urdl2u	阅读记录
+y7x8r9	导入方式
+1yk7v2p	设置
+1m0pohb	简短感想
+15rsutj	内容警告，显示在详情页的类型下方
+1cr1mz5	Category
+xr8jke	{0} 的 CP
+1t4ehln	至少需要 {0} 个已评分的{1}（当前 {2}）
+1mgo894	至少需要一个日期；记不清日期请选“只记得年份”
+1gf3q54	至少需要开始年份或看完年份
+25lzbx	至少需要开始月份或看完月份；记不清月份请选“只记得年份”
+15sd9mz	大约需要
+19snt54	需要修改
+jfz1bq	需要修改：
+14sgk6s	需要角色名
+1v8py3i	需要书名
+juxk3a	需要主题名称
+1uebgsg	更新文件
+1aivx0e	挑战
+7pgip3	开始同步
+106iumt	落后于计划
+bhsu83	插入图片
+1iy4mbg	插入写作模板
+16ipgkt	复制 {0} 个文件
+7xxb46	将图片和附件复制到 _attachments
+11f2qkc	把 Obsidian 中已有的书籍笔记导入书架。只读取文件，不修改仓库中的文件。
+1v4w633	正在编辑的模式
+1ye4pjh	显示方式
+1dp39ka	差值
+ql3x7	差值 = 已完成 − 目标；百分比以目标为基准。
+1ftd14k	差值 = 今年 − 去年；百分比以去年为基准。
+v7oy17	只知道年份：
+1vjn2gs	只需书名和类别，其他字段可以之后再补。
+18akcso	仅在带有 smut 标签的书中显示
+eqil7f	只显示所选原作的 CP：{0}。
+yye2l6	只显示包含
+1t0nr4	只记得年份
+rh0r4f	指标
+s092dk	只统计当年读完且不属于短篇同人组的同人。一篇同人可能有多个原作/CP，因此会分别计数。
+1lx5807	只统计已看完和弃看的作品；多类型作品会分别计入各类型。
+yjsoq0	只统计已看完和弃看的作品。
+hwlxtw	只统计带 smut 标签的书：
+116yhj7	按类别把书分到子文件夹
+1ilbvw7	按类别分文件夹
+1pc3km6	同步方向
+gv3ff9	选择
+11qmd7f	选择 {0}
+dlmmyr	为浅色版选 7 种颜色、为深色版选 7 种颜色；边框、浅色文字和按钮文字由这些颜色自动计算。
+zw75nm	选择图片
+1mlyop8	选择要插入笔记的图片
+135k4v3	选择灵感板图片
+7zodkf	选择背景图片
+8q5kjn	选择角色图片
+1o6mfj7	选择配色
+1ffvei	选择整个文件夹
+vzczte	先选择原作以筛选 CP 列表
+8cbmo1	选择文件
+hrjz8u	选择 .md 文件
+1jcdo1n	选择 .md 文件或仓库中的整个书籍笔记文件夹。应用按各类别的模板读取属性；原文件不会被修改。
+ith8r0	选择要导入的文件
+175qlw9	选择附件
+yadkuo	选择其他文件
+1aluct2	选择装饰文件
+7wjzvt	选择或输入 A x B
+gwkltr	选择或输入新值
+xz43wh	选择或输入后按 Enter
+zr1v3b	选择年份
+fhw59s	选择统计年份
+1wudhyi	多选
+1x4bkov	选择笔记
+1k5dqt6	选择其他笔记
+1dosa90	选择书籍
+1ch312e	选择书籍 {0}
+1fguue4	为格子选择书籍
+1l67f28	想为每季单独评分就选择季；重看某季时添加一条同季的新记录
+rloyj9	选择月份
+1vwdc1u	选择存储文件夹
+4a2z0r	选择此文件夹
+1t737bu	选择笔记文件夹
+126hp4e	选择前几名
+1mxj5fn	选择状态
+qtpv8u	逐个选择 .md 文件
+qkaktq	选择 Obsidian 仓库
+8vtw1h	请在设置中选择 Obsidian 仓库并开启同步。
+192umjk	选择仓库以及书籍同步到 Obsidian 的方式。
+1g0gct0	等待结果
+gm9xwz	主题
+y917o3	主题
+1bq1f6s	说明
+1jx7xlf	图片说明
+1v5ldf4	决赛
+886852	把数据移到这里
+o9keve	将已删除书籍的文件移入 .trash
+1c2ku57	将文件移到正确的类别文件夹
+196hq8	切换到浅色
+yorfyn	切换到深色
+ebh8sk	右移
+18opg5o	左移
+1j7z3xe	将已删除书籍的图片文件夹移入 .trash
+14xm3ag	从 Goodreads、Notion 或 CSV/JSON 文件把书库导入书架。
+uw584z	字
+1manpqr	文字
+1c0ggt9	字母 {0}
+hnde0	字母依据
+1pqcb3q	粗体
+1mprfco	作者名首字母
+1dcte4h	书名首字母
+17ingfe	显示文字
+x12wna	斜体
+xwvszn	页面背景上的文字难以阅读
+1dbsgk4	主按钮上的文字难以阅读
+1emzoqb	卡片/面板上的文字难以阅读
+iic85n	未开始
+15ex49a	未评分
+1ezuali	未评分，
+157a0yr	未选择
+12qvtd2	未选择书籍
+4m0iev	未选择。
+1rt5kvt	无
+qodf8w	还没有图片。可粘贴、拖放或点击“添加图片”。
+10gcxx9	还没有挑战。可按提示、宾果或 A–Z 创建。
+1lsp59q	尚无数据库
+fl2v5g	这一年还没有数据。
+1rkupzt	还没有数据。
+15aikl8	还没有装饰。上传透明背景的 PNG 或 SVG（盆栽、台灯、小摆件……），每个文件最大 3MB。
+b2yyog	还没有文件或链接。
+kl5akf	还没有阅读日志
+44b454	这本书还没有日志。
+1q2mh6k	还没有读完的记录。
+9sspgy	还没有阅读记录。
+edqm25	还没有观看记录。
+1631zrs	没有符合筛选的影视作品。点击“添加影视”添加第一部。
+1n8zwld	这一年还没有影视作品。
+34avgc	还没有影视作品。
+15ntiia	没有语言，
+11ts6tx	还没有角色。
+1mohw2z	还没有内容。
+t4604c	还没有歌单。
+5xcc3b	本月还没有读完的书
+y2l2b2	还没有填写作者的书。
+1l3y3tz	待读列表中还没有书。
+1rcd6yg	没有即将出版的待读书。
+1xg4o5d	还没有系列。编辑书籍时填写“系列”字段，或编辑影视时填写“系列”栏。
+y2qf6h	无页数
+124hlmo	无作者
+14oglzz	无标签，
+4ysinb	无类型
+9b6969	无总数
+1f69a6g	无总集数
+1mp3fu7	还没有候选。请选择每月最爱，或把今年读过的书标为喜欢。
+13jhkks	无法放到日历上
+mgj2aa	尚未设定年度目标
+1vdgiw9	未匹配：“
+mhlafj	未记录
+1su4g8m	未保存
+bygtbu	未分类
+1alt9ju	日期不明
+1rrlisu	从未同步
+1tis4qa	不含 {0} 篇短篇同人（≤ 80,000 字）、新闻、研究论文
+1sftzr4	未计入：{0}。
+1eoqjf2	章
+1r3zvn2	章节
+zr2fp0	日
+tvogda	具体日期
+1fzfr0r	有笔记内容
+c51vl4	有观看记录时自动取自记录
+d5izkl	随时可以修改。
+y3seen	有应用不认识的状态。请选择对应状态；预览会立即更新，应用会记住选择供以后导入使用。
+zg32w2	漫画
+585za0	坐在书架上的猫
+1n6t0fq	由环境变量 READING_TRACKER_STORAGE 固定
+zm0mqh	计入进度
+npck5h	计入进度（当前在
+19bzt84	列 {0} 写入
+7ygpn3	文件中的列
+1i5j9cn	封面尺寸
+1q1mss	封面尺寸
+hdwrvx	字号
+c9pep2	{0} 的尺寸
+a0sf9o	最后。标记第 # 次阅读
+1qbbs8m	本
+xir8ao	本已在书架上
+2nuz8c	本已存在，
+x71z0a	本有效
+19d0hhx	书架向右滚动
+1hyzh2x	书架向左滚动
+94rcrj	特大
+e7lodz	最长：
+1hqmoeq	粘贴 Spotify 或 YouTube 链接（以 https:// 开头）
+1ybzqh7	列表
+r9wg6w	只包含所选原作的 CP（原作与 CP 库以及已录入的同人）
+gs20b5	题目列表（每行一个）
+1czi7zz	影视列表
+11emgqi	列表为空。书籍表单中的“语言”栏只剩“未选择”。
+1ur2pjs	数据库
+d2p80l	印章
+vc8yqd	Diana Wynne Jones · 小说
+1tet7mu	演员
+zidl6o	清除已删除书籍的记录
+vvhnuo	行
+7czxx2	行，导入时会全部处理
+8r8w2g	行有错误（
+nli63u	行有错误。
+1dz1r2i	行。
+vd63gv	行。应用已推测各列对应的字段，请检查后点击“预览”。设为“跳过”的列不会导入。
+d2zkdq	剧情、犯罪、惊悚……
+1fms2y7	用于还没有笔记的书。你在应用中写笔记后，会替换这部分。
+14nn8iz	文件没有写类别时使用。Goodreads 中名为 non-fiction、manga、fanfic 的书架会被自动识别。
+b4cakk	使用配色的颜色
+12u4jl8	使用这个仓库
+1n1rbzn	数据
+1hocwpm	缺少的数据：
+1evcqkh	停止 {0}
+11s5ou1	根据一本有两次阅读的示例书生成。
+x4xcdf	已开始第 {0} 次阅读
+6y073w	已取消喜欢
+1fc0mkj	已修改
+15nco2u	已选完所有可选值
+xn23sg	在应用中选择
+aws2yj	已选。
+1n0b0fl	数据已移到 {0}。旧文件夹保持不变。
+10i6cff	已有数据库（结构 v{0}）
+tkt9z0	已在书架上：
+9h6ypb	已计入进度
+1eywe8p	已将第 {0} 次阅读标为读完
+1p2a0w1	已标为修改完成
+1rbfxxu	已完成
+1lnfh5d	已达成目标
+l0u9gr	已设置密码
+1t7vbpm	已读
+1r0yuf	已读
+437zh3	{0} 年读完
+1gu7iht	读完了吗？
+yvjpjc	已修改密码
+1kfj5uw	已记录日志
+no3iwg	已记录日志；进度 {0} {1}{2}
+1tlz869	已导入
+1emq8e	已导入 {0} 本
+vgunvh	已恢复默认的{0}模板
+12zxa4f	已保存
+1gj8ye1	已保存“{0}”
+147h9gu	已保存 Obsidian 设置
+866nw0	已保存语言列表
+1obpe2m	已保存第 {0} 次阅读
+pd1kah	已保存第 {0} 次观看
+1shviuo	已保存{0}模板。下次同步会重写该类别的文件。
+1m3owgj	已打开 {0} 的数据
+1uod5jj	已导入
+3w87pi	已从 Obsidian 导入 {0} 本
+1rq2hsy	已拥有
+1s1c44b	已修改完成
+k834n5	已同步 {0} 个文件到 Obsidian
+1l6jpof	已添加“{0}”
+xp7xy	已把“{0}”加入书架
+1pe3hq0	已添加第 {0} 次阅读
+10di95j	已添加第 {0} 次观看
+gwf03w	已加入喜欢
+1ywjabk	已到
+a0qtvw	石板灰
+o7q4hr	已看
+b2n6o2	已看完
+12eaoc4	本年已看 / 在看
+1m0i6h7	已看完和弃看按看完年份计；在看的作品从开始年份计到当年。
+hqn5zw	已看完
+l93pr0	{0} 年看完
+11ozwns	已删除
+1xux69y	已删除“{0}”
+1kumrkq	已删除日志
+lc6a0p	已删除日志，从进度中扣回 {0} {1}
+17ri00h	已删除第 {0} 次阅读
+nd3iuu	已删除第 {0} 次观看
+150tl1n	使用中
+4i9k4k	正在使用默认模板
+qeaqtj	在读
+ra4qva	在读
+1emvctx	正在读取文件夹
+14dqh1l	正在显示
+eljicl	正在检查文件夹
+atemkl	正在获取日志
+b21752	正在获取书籍
+198jmjq	正在保存
+j0kzor	正在打开影视
+1ffj0ut	正在打开笔记
+b5lbwa	正在打开书籍
+6nzsv1	当前在 Obsidian 中打开
+q7es9g	当前在
+1wh5wrt	当前在 {0} {1}；请输入更大的数字
+1957ao0	正在比较应用和仓库
+1y2plyp	正在加载
+wetjik	正在加载挑战
+8nk4qp	正在加载日历
+l2nupk	正在加载目标
+143h4we	正在加载统计
+1ni9m87	正在计算统计
+1r6m0rm	在看
+1e9a9o3	在看
+1cq5zhk	在看是单独一组，显示在图表中以便比较
+og3cyb	先在看，再已看完，最后弃看
+8c0dyj	已喜欢
+167tuir	评分
+1uugubm	总评分
+1qolk9n	本次评分
+1n6zadv	把装饰随机放到其他位置
+ti0mgj	设置密码
+157kyjs	请先在上方设置密码，才能清空数据。
+18kv4rf	设置清空数据的密码
+4fyrcg	粗体（Ctrl+B）
+zhjgxn	这是 Obsidian 仓库
+1qhveh4	新题目
+1kyegvq	不知道就留空
+1dfxm1u	还在读就留空
+1wn242v	还在看就留空
+1dvl6gm	逐级向上，直到名称与仓库名完全相同的文件夹（名称显示在 Obsidian 左下角）。
+1iz2l2b	链接地址
+877zps	星级 ★
+wnzrzs	平均分
+2ls1dx	至少有 {0} 部作品评分时才显示分组平均分。
+1a862p6	格式
+177a64c	标记段落
+1ik0hg4	按模板推测
+1qrl9w1	最近阅读
+gf6mle	最近一次阅读
+u9qmt	读到 {0}
+xdxqv1	读完日期
+1mj01c3	{0} 读完
+b84tuz	关闭
+mdvegu	关闭通知
+jocls8	书的篇幅
+2jwrms	背景图片浓度
+12c89zl	图片浓度：
+37utjg	辣度
+zdlrag	辣度 {0} / 5
+yc24vj	辣度 🌶️
+q7puta	书架装饰
+ewr7rm	更换图片
+1ecybq7	更换背景
+13nxnvh	调整整个界面的大小，包括书架。
+1yql91c	修改密码
+1hq8yuw	修改清空数据的密码
+1x5410v	修改数字
+11508z6	更换存储文件夹
+jcbosn	单位
+xt94j9	符合计划
+1ont0sa	上移 {0}
+llalfb	下移 {0}
+vljsx4	路径可能已变。
+vqikbd	文件夹路径
+2p3vk9	自 {0} 中断
+tb82dh	电子书
+1j4yfke	原作
+1aesex3	原作 ·
+1nxef50	同人
+hn6t8u	短篇同人
+1nmjpec	短篇同人 / 新闻 / 论文（单独）
+vdd7or	短篇同人、新闻和研究论文是单独分组，不计入上面的总数
+dtgo35	80,000 字及以下的同人归入单独的“短篇同人”组（与非虚构的新闻和研究论文同组）
+1w197li	同人
+1i3n2jp	同人：原作与 CP
+17afyl1	奇幻
+77lk06	奇幻、言情
+a78bk3	小说
+1v666t3	小说 / 非虚构
+zipx5c	自制的 CSV 或 JSON 文件，每行（或每个对象）是一本书。
+18svcdi	其他文件
+5twimx	不是笔记的文件
+umsq53	这个文件不是图片
+negwsx	附件和链接
+ssndeg	初读
+lcbuu	初读：
+4g5pf8	字体
+1a49l8o	正文字体
+1cf9jmo	标题字体
+1d4jw0h	标题字体用于书名、书脊和页面标题；正文字体用于其他部分。
+1n6u5e3	对应列
+cuf7e6	笔记
+jqzgfx	会覆盖浅色版和深色版
+u9mn0y	覆盖在 Obsidian 中修改过的文件（旧版保存为 .conflict）
+pn7ly0	可写入
+gtuo4r	记录
+1575bzw	记录阅读
+sg19l4	记录今天
+1o9zoep	记录已改名或移动的文件
+ww7qw9	写入 Obsidian 的 Genres 属性
+ec2pzs	把书写入 Obsidian
+c2axv6	写在借书卡上；长评请写在“笔记与书评”标签页
+1qfskv6	写在卡片上；长评请写在“笔记与评论”标签页
+5fps32	写入
+1vwdpmt	外观
+1tau1i8	小时
+zdefns	保留
+1utzak0	保留：外观设置、语言、模板、Obsidian 配置和此密码。Obsidian 仓库中的文件不受影响。删除前，应用会复制数据库并把图片/文件移到文件夹
+1l80gi4	保持现状
+169h1lw	保留当前模板
+pz9ax8	输入 CP 后按 Enter
+1g6q5v2	输入后按 Enter
+1onogha	输入后按 Enter 或逗号添加
+x6iq2p	输入后按 Enter，可填多个国家
+eqzw5q	把系列名相同的书（书籍表单中的“系列”字段）和影视（“系列”栏）归在一起，不区分大小写。拖动或点击箭头调整顺序，顺序立即保存。“书籍”下还有作者列表。
+1uykojq	书架木色
+g8t7ff	包括初读和重读
+1yrmjs9	双向
+1w3pcbn	两次输入不一致
+xcxw2n	韩国、美国……
+z0wli3	制作公司
+z8mkx3	阅读习惯
+1txmmff	显示
+1t8akak	显示已填写的值
+1q3ht0a	在书架上显示装饰
+1ere35u	鼠标悬停在书架上的书时显示
+1r8v2sz	显示在左上角和浏览器标签上。
+1kui7my	显示弃读的书
+1t6rjk7	划线
+1iuurox	或粘贴封面图片链接
+2ws7yx	今天还没记录，记录一下保持连续
+mzmx2g	今天已记录
+fx6l3x	玫瑰茶
+1l2dsno	稍大
+487htl	https://...（例如 Goodreads 上的封面链接）
+1nl3377	https://... 图片链接
+1jbnyu1	https://open.spotify.com/playlist/... 或 YouTube 链接
+1mtetfn	取消
+12pitpn	取消
+o7fto4	导入
+uralif	导入书籍
+nre2ro	少
+8cf954	至少 4 个字符
+10takrv	拖动以调整顺序
+1k86u90	把 .csv 或 .json 文件拖到这里
+13tgmto	书架空着
+332a1l	截至今天的计划：
+z0or6q	书架
+q82d4n	YouTube 频道
+1eqcpde	其他
+mc7djm	编辑同人时，选好原作后“CP”栏只推荐该原作的 CP，来自这个库和已录入的同人。例如 Harry Potter：Draco x Harry、Sirius x Remus。
+d9k875	库是空的。添加原作，或点击“从书籍数据添加”从已录入的同人中提取。
+9vjjci	原作与 CP 库
+tsd0yu	恢复默认外观
+77iamz	恢复默认外观？
+4sg2h8	恢复默认
+c0ff19	恢复默认模板？
+123e5rx	否
+r8vmkr	书籍数据中没有新的 CP
+1ioqzky	没有符合筛选的书
+b7x4l2	所选内容中没有 .md 文件。
+1gahvt8	无需更改。仓库已与应用一致。
+9afpe4	没有匹配的值，保留已输入的文字
+ruu7rx	没有写入权限
+11du92y	没有符合筛选的系列。
+7c7ag	没有符合筛选的作者。
+427bwl	无标题
+107ryv0	没有子文件夹。
+iigpf2	页面不存在
+uhiqdz	未达成
+swma0i	无法在应用中撤销。
+1oc1rmv	无法保存顺序：{0}
+xhw7jg	无法比较
+1pdypos	无法加载
+9k9g1n	无法加载图片
+u7wqbu	无法加载封面
+sd7w9e	无法加载影视列表。
+19lyb2s	找不到你的仓库？如何查找仓库路径
+16sszpa	不按季（整部）
+uycvzt	找不到这部作品
+mue4k2	找不到这本书
+104n1gu	没有找到仓库。这台电脑可能没有安装 Obsidian，或还没有打开过仓库。请按下面的步骤自行选择文件夹。
+1ufajto	网格大小
+1kro4md	日期格式
+10c3qja	时间记录方式
+14xowx4	显示方式
+dxedur	视图
+1dl3s7n	清空数据
+dw19y6	次
+6z9g6k	最近同步：{0}
+bq1r4f	上次同步：{0}。
+jp8r6f	哈尔的移动城堡
+1pdyteu	数据来源
+1yalkii	从内置配色取色
+j9ots9	上一级
+11hg32c	阅读日历
+j9lr9i	{0} 阅读日历
+c9yln1	{0} 年阅读日历，{1} 天有日志
+1h2c6w5	轻小说
+6e4rb9	轻小说
+13equ89	链接
+1en1raz	灵感板图片链接
+tyyjzw	图片链接必须以 http:// 或 https:// 开头
+1030eov	链接必须以 http:// 或 https:// 开头
+1yce771	歌单链接
+1kxwkgq	预告片链接
+wygx0a	类型
+1b77wtx	出版物类型
+1wo6ot	评分类型
+195nd7u	按主类别筛选评分
+dpa2kc	按主类别筛选类型
+1t5zcle	按主类别筛选作者
+1f4cnub	按书籍或影视筛选
+1m3skw3	按类别筛选
+eh3jys	按影视类型筛选
+1y6yd8i	按年份类型筛选
+vg20zy	按评分筛选
+1o0k35f	按类别筛选
+1awcnp2	按书籍类别筛选
+ldxo6b	按状态筛选
+1mnv3yx	错误 {0}
+h0jsf7	执行时出错
+uft122	大
+1o90yj2	始终位于文件开头。应用借此在你改名后仍能识别文件，因此不能修改或删除。
+5nxs5m	海报网格
+eqx5ti	次
+1b3hl58	次弃读没有日期，因此不属于任何年份。请在书的“借书卡”标签页补充日期。
+1jdxe0c	次有辣度。类型表不计 smut 标签本身。
+tkxruy	次已读完但没有页数，未计入页数。
+fm1sl	次已读完但没有日期/年份。
+a8wipq	次已读完以及
+173jw59	阅读记录
+1m8jgyu	第 {0} 次阅读
+1b3wt5i	只知道年份的阅读算作当年读完
+1lmaqis	第一次阅读（可选）
+1ylecg3	这本书的第一次阅读
+182vdyo	重读：没有读完日期时，书会转为“在读”，进度归零。
+1ppizq3	第二次及以后的阅读，当年读完。
+1co0xyb	次阅读，
+eziyqb	次结束。全部时间：
+1rxr48o	次（当年）
+liyn5g	观看记录
+fxacb5	第 {0} 次观看
+18l9kik	保存
+1gc372e	保存设置
+czs2ho	保存列表
+7kgrih	无法保存
+33qah2	保存
+1vnsk2m	保存模板
+wybxxz	保存更改
+1fmwr17	存储
+arb5r	{0} 的颜色代码
+hijyu7	自定义字段代码
+s26997	主色（主按钮、选中项）
+cnl96b	主题颜色
+1x6gx2t	点缀色（评分星、强调）
+1j4ck84	自定义强调色
+pqayob	自定义强调色（主按钮、选中项）
+80piid	辅助色（选中边框、浅色背景）
+av1lv0	默认，项目中的 data 文件夹
+148g75m	密码
+1mrbuwm	当前密码
+9p9ym5	新密码
+1arjbm0	密码与删除应用全部数据的按钮。
+1m09bj7	影视
+yvhjrp	该作品可能已被删除。
+1lw0wow	部影视，以及阅读记录、笔记、阅读日志、目标、挑战、每月最爱、对决、系列顺序、封面和附件。
+1n1mc47	部影视。
+1tfxzlc	影视
+8k651p	所有类型
+1oe1b1w	所有年份
+1le4c3r	所有评分
+cb6eye	所有类别
+1tjdpri	所有状态
+1mwbira	灵感板
+1x8qqdw	电影
+1mhsiw2	每套配色都有浅色和深色版本；用顶栏的月亮按钮切换。新建主题可自选颜色；点击主题上的笔图标即可编辑或删除。
+1w4gz3x	每次阅读（含重读）显示在其读完日期。只知道年份或没有日期的阅读无法放到日历上。
+1wgs0ie	每本书只能选一次。
+10p0h4f	一本书可能有多个类型/标签，因此按每个类型各计一次：各部分之和可能大于书的数量。没有标签的书归入“无”。
+kcso1g	每本书是此文件夹中的一个 .md 文件。建议单独存放，不要与其他笔记混在一起。
+1uuum06	单向：应用到 Obsidian
+1uktl4b	一本书可以加入多个挑战，但在同一个挑战中只能占一个格子。
+1db5zk5	打开
+1cvzhpn	打开 {0}
+m84ats	打开 Obsidian 设置
+1hu006n	逐级打开文件夹，或在下方粘贴完整路径。
+15a6xi4	打开这里已有的数据
+118lkzn	打开 Obsidian，在左侧栏任一笔记上右键，选择“Reveal in File Explorer”（macOS：“Reveal in Finder”）。包含该笔记的文件夹会打开。
+18soq2b	最近更新
+k7ok8m	设置项
+1w8xdwt	条有错误。它们会以可读取的数据加入书架，并标记为“需要修改”，便于以后修正（书架上的“需要修改”筛选）。
+t94iw2	目标
+32txfz	目标（{0}）
+1wh71sl	{1} 年的{0}目标
+ym5czp	目标与趣味页
+1ept58k	年度目标
+isx9o5	目标与趣味页
+pfwviu	条匹配。
+14rwwtd	年份
+73lhy7	{0} 年
+62u5c6	{0} 年：{1} 次有日期的阅读
+131zhuz	开始年份
+no3cxx	开始观看年份
+1ics192	阅读年份
+1iq2c0s	出版年份
+1azs8tz	年份在 1900 到 2100 之间
+mimeu5	年份在 1900 到 3000 之间
+1wsxoi3	看完年份
+1207pj0	新闻（新闻/文章）
+wfptv8	平台
+1f3lo0i	观看平台
+6s78kc	页面背景
+18vddl4	如果文件夹确实是仓库，应用会显示“这是 Obsidian 仓库”。
+fgu4gd	天
+1f14dgt	日期
+bhcjmv	开始日期
+1mbj056	有阅读的日子
+690cys	读完日期
+1hdwn3v	读完日期必须晚于开始日期
+htmusv	借书日期
+1cg05yc	出版日期：{0}
+16ilupb	书评日期
+gtp96e	还书日期
+1lvzu12	斜体（Ctrl+I）
+udoar8	语言
+t0r4em	界面语言
+izrk8j	新语言
+qxux3	该语言已在列表中。
+17ry68g	数据来源
+15i2h6j	数据来源：
+execmi	来源：
+y30by3	来源：当年读完的阅读记录（finish_date 或 finish_year）；重读单独计一次；跨年的书按 finish_date 计；短篇同人（≤ 80,000 字）和非虚构的新闻/研究论文不计，与上方 KPI 相同。
+1697ank	阅读时听的音乐。需要联网才能播放。
+1fhc0zn	也接受在 Obsidian 中的修改。两边都改时以后改的为准，另一方保存为 .conflict 文件。
+qks6vl	按 Enter 添加“{0}”
+h5k3fk	角色
+1kmwlxy	导入
+1b1jk60	再次输入新密码
+nfptkh	输入{0}数或分钟数
+1jh5cag	按季输入集数，用逗号分隔；不知道就写 ?
+tk5rlb	导入 Obsidian 中的修改
+scuved	阅读日志
+1a2k0sg	多
+avy3sq	多位作者用逗号分隔
+e6ikv0	小
+2avlkf	组
+1pull8m	像书立微缩景观一样：开启“显示”的装饰会随机放在每层书架的书脊之间。点击书架上的骰子按钮重新摆放。
+1f5sj4c	非虚构
+5mau71	笔记
+vg5yet	笔记与书评
+zxmy51	笔记与书评
+1wdl3c3	条状态未匹配的笔记不会导入。
+nrqvx3	笔记有 Category 属性就使用它。没有的话应用会根据特征属性推测（Fandom、Ships → 同人；Volumes → 漫画）。其余使用这个类别；你可以在下一步逐条修改。
+16dptrm	笔记为空。同步时 Obsidian 会收到以下模板的框架：
+npzjbx	条可读取的笔记
+z2bncx	条出错的笔记（
+iks71	条出错的笔记。
+15p7uis	Obsidian 笔记（.md）
+8h7qlw	格子内容（每行一个格子，可留空）
+1wklsk9	影视内容
+1idabrr	笔记内容
+dg0mbt	格子内容
+3bsznw	书籍内容
+z9h198	存放数据库、图片和附件的位置，例如 Google Drive 中的一个文件夹。
+1nmpd8f	主按钮
+1t82960	次按钮
+tcieky	薰衣草
+vd67fn	格
+10lbh4d	第 {0} 格
+ywgequ	磁盘
+1mv8jma	留下来保存
+1hf7z	CP
+165kwo8	CP
+x9cvas	CP
+1rlwv19	PDF、电子书、译本、文章链接…… 上传的文件会在同步时复制到 Obsidian。
+2g6t36	播放 {0}
+ahgma	辣度分布
+1z0zh7f	评分分布
+1qma2ez	星级分布
+16yxfw9	类型分布（类型/标签）
+148er5z	正文模板
+10cwkbf	分钟
+1swjfgb	分钟
+asqu8b	歌单
+xke1bw	海报
+1mowzqn	新属性
+1jkq1cy	文件头属性
+1wjpkew	每个类别的 .md 文件属性与正文模板；原作与 CP 库。
+17niev8	国家
+1h2tt2v	最近上映：
+cbvdg5	高分
+99w2pl	评分
+1tzivp	很大
+reqfef	很小
+u8wmzv	重读
+17ln4es	重读，第
+14sfueu	重读，第 {0} 次
+1tw6xkz	重读：
+1ghocdi	研究论文
+6i81l2	研究论文
+19c8ay0	苔藓
+11kxn1o	第 {0} 季：{1} 集
+fqx1ea	本书
+18ahoxe	书籍
+1yn2jl6	这本书没有进行中的阅读。日志仍计入连续阅读；添加一次阅读，开始日期才会显示在借书卡和 Obsidian 中。
+xbeyvt	有{0}{1}的书
+3kdl38	这本书可能已被删除。
+l6gwk5	年度之书
+1kcyuzf	{0} 年度之书
+1j8izv6	当年读完且来自待读列表的书（从有此功能起才记录）。
+1nuag48	放在此格的书
+19cvwfc	纸质书
+mljv9w	本书没有页数，
+1anp5t5	这本书导入时出错，请检查并修正信息：
+1e51m0r	多位作者的书（逗号分隔）分别计入每位作者。
+425d88	有声书
+1jukotc	本书和
+9j902	{0} 喜欢的书
+1qx1rj0	本书，年份
+199t0yl	本书）。
+i6kzq8	即将出版
+1hxdcre	排序
+6jv9y1	将跳过
+5t5ldk	季
+1bn83vs	当前季
+2ncfrk	系列
+1uswvha	系列：
+15ymxq	CP
+1695mbv	短剧
+19h6d5z	根据浅色版生成深色版
+nrfy3w	与目标相比
+14hk2td	与 {0} 年相比
+1b1qu1w	编辑
+1jp71tp	并排
+mpojzc	苏菲走过那扇门，门另一边的世界出现了。
+r9ngx3	{0}数
+vc47pm	已读{0}数
+137os3x	字数
+5fotxa	小时数
+36pfwo	重读次数
+1ott5jk	次数
+3nayt5	按类型统计的读完次数。{0}
+5f4oc3	按类别统计的影视数量。{0}
+1ycmwlx	分钟数
+1xwi7bk	书的数量
+1aecztq	季数
+58o6wu	已看集数
+1yxzhjw	每季集数
+1h4thgg	集数/季
+11vxpf0	卡号
+1e3vgqj	页数
+13wtr79	卷数
+1wacouf	拥有情况
+axuwqh	拥有：{0}
+x3kzg3	连续阅读天数
+h8pjp0	编辑
+qy381b	编辑说明
+1e3revh	在 设置 → 语言 中编辑列表
+e6owuq	修改列对应
+1xn0yks	编辑 {0} 的日志
+5zv8pp	编辑第 {0} 次阅读
+1kc1xhm	编辑第 {0} 次观看
+ka2u0g	编辑影视
+fo8gl5	编辑角色
+1rcugtz	编辑角色 {0}
+1it36ig	两边都改过（以后改的为准）
+rephf3	编辑主题“{0}”
+ojtg53	编辑主题 {0}
+kygdho	编辑信息
+qk4jvj	编辑书籍信息
+1imjzbq	同步已关闭。
+d6mo8f	立即同步
+1qt5v2z	同步 Obsidian
+1371ohq	同步到 Obsidian
+1h2m7qs	同步完成
+11g35k3	一
+1340rpx	三
+12k1kbz	五
+1vvsrh4	主标签页
+15xty02	位作者
+c67gjm	作者
+1spw510	位作者。多位作者的书（逗号分隔）出现在每位作者下。
+wy2g8w	标签
+72stnb	上传文件
+5vf8fd	上传 PNG/SVG
+7j747f	创建
+qubm13	创建对决
+2362ki	创建挑战
+yxoqyo	新建文件
+1jqb5oa	重新创建在仓库中被删除的文件
+1d9p48h	新建主题
+15s7w08	创建并使用主题
+zrz7h9	第 {0} 层书架
+mf25nm	第 {0} / {1} 集
+al4s1w	全部
+n9jrnb	所有书
+1rlc89f	待读
+yreqlk	待读 → 已读
+1sfb1cc	想看
+s6qa0b	模板
+tvz82q	{0}模板有未保存的更改。切换到{1}会丢弃这些更改。
+1cogp2e	{0}模板会恢复原样（由示例笔记生成）。你添加的属性会在下次同步时从文件中消失；应用中的数据仍保留。
+5ro17u	类别模板
+dks08g	各类别的模板
+s5zpb	名称
+1wgha2m	名称（可选）
+fjj525	名称 A–Z
+k9qhdw	应用名称
+z6qi4j	应用名称不能为空
+p6jpdd	应用名称、主题颜色、字体、字号和背景图片。
+7zgy0r	对决名称
+k229xe	装饰名称
+nsm1dy	原作名称
+1y8mx0x	新原作名称
+12ydmr3	文件名成为书名。属性按以下规则读取：
+448wq6	显示名称
+1wdi6we	频道名称
+1ok6sz5	链接名称
+1uovobs	角色名
+35teer	歌单名称
+19wnwei	书名
+6ykxqi	主题名称
+xpttv0	Obsidian 中的名称
+nid49z	月
+14cshwc	1 月
+18ua3es	10 月
+1949p3r	11 月
+19e9asq	12 月
+156raz9	2 月
+14wrpaa	3 月
+13itotf	4 月
+138u34g	5 月
+142sw7d	6 月
+13staie	7 月
+16uox53	8 月
+16kpbg4	9 月
+1kae6ro	下个月
+xrefan	上个月
+yt3qze	月/年
+1kzdmqr	观看卡
+1irusei	观看卡 ·
+19aqkha	借书卡
+j5kqdj	借书卡 ·
+mu8t6o	卡片、面板、输入框
+35h8of	按类别
+ruvf84	按格式
+uee2oy	按评分
+1gxa03w	按页数；以章/卷计的书归入“无页数”。
+1onpf0w	按作者
+1mcxhz	按类型
+1i5h04t	按书的主类别。
+oxqaut	按第 1、2…… 季顺序；例如 10, 12, ?（不知道写 ?）
+1xkppbd	类别
+4ee5jw	类型（genres）
+dyhbq1	主类别
+6rc36u	{0} 的类型
+1q523ve	无法识别时使用的类别
+zjb2vl	类型来自书的类型/标签；有多个标签的书会出现在每个组中。“开始阅读”会把书转为“在读”并从今天开始一次新的阅读。
+5wtpbm	默认类别
+po73rm	默认类别
+imm2x0	添加
+6bzw4z	添加图片
+1oxavhe	通过链接添加
+10h2v3	添加第一本书，或从 Goodreads、Notion 迁移整个书库。
+1ybxgpc	添加新题目
+ik0c7j	添加原作
+gux3jw	添加链接
+1sw38q5	添加第 {0} 次阅读
+1pbrf1z	添加新的阅读
+1pmfna2	添加第 {0} 次观看
+9zfyce	添加新的观看
+1mqb5s0	添加影视
+1nyy21	添加角色
+1jekkrm	添加歌单
+1ddbe71	添加属性
+zdgxo7	添加书籍
+3dk2xc	添加书籍（状态选待读）
+1dnzcka	从 Obsidian 添加新书
+585jfw	向{0}书架添加书
+fise8s	从书籍数据添加
+ae5wi7	加入书架
+5s5m1i	加入此书架
+1ot2tq3	在书籍页面的“借书卡”标签页添加、编辑或删除阅读记录。
+1a8ipw0	进度会按新数字重新计算。
+gpa41s	缺少
+99tpx2	缺少文件
+urgqxc	统计
+9djkwr	阅读统计
+xjee7y	观看统计
+19zfhi2	书籍信息
+ot7c0c	更多信息
+1ivn57a	收起
+nvwyjy	试着去掉一些已选的状态、年份或标签。
+6wpqm4	文件夹用于
+1knlu30	文件夹不存在，应用会新建
+16uef5w	已有文件夹
+56dcj3	正在使用的文件夹
+17bghew	仓库的根文件夹，即包含 .obsidian 文件夹的位置。
+7edzcc	仓库中的影视文件夹
+yo5njz	新文件夹
+1cfvx2b	这个文件夹没有 .obsidian，可能不是仓库。
+1o7n6tt	这台电脑上已没有这个文件夹。
+1ss4tah	用户文件夹
+1j4okxb	仓库中的同步文件夹
+ymnqzg	按类别的文件夹
+1d89qxg	文件夹：{0}
+12m5npu	这里的顺序就是文件中的顺序。删除属性只会把它从文件中移除，应用中的数据保持不变。
+ao3z5e	弃读率（年份）
+1lk6yq6	年度比例 = 当年有 finish_date 的弃读 /（弃读 + 当年读完）。全部时间的比例包括没有日期的弃读。
+1m4c4lb	进度
+de9clt	进度 {0}
+80r160	阅读进度
+1m901bd	观看进度
+in28l4	越南语界面只使用纯越南语词汇。你输入的内容（书名、标签、笔记）和 Obsidian 文件不会被翻译。
+1sg3lar	标题
+jw4vub	标题
+8uddtc	搜索
+178h1my	搜索 {0}
+1t7gzf4	搜索原作或 CP
+1pgwwij	搜索书籍
+cg54kl	搜索系列或分部名称
+1k1hc1f	搜索作者或书名
+a7ma74	按名称搜索
+1949owr	按书名或作者搜索
+1ocmkj4	在库中搜索
+1cywh6j	性格、身份、喜欢的理由……
+1xfz9ur	单独计算，不计入“已看完”
+orrgdn	按已读完的阅读计算；只知道年份的阅读计入该年。
+c0kgpw	由阅读记录计算（只写出）
+qf3mcb	相对于仓库根目录。影视始终从应用单向同步，开启按类别分文件夹时分为 TV Series、Movies、Animation、YouTube、Short Dramas。留空则不同步影视。
+acxqc5	热门作者
+le65v9	主题
+1f9ep5e	最多 3 本，只能选本月读完的书。不足 3 本也可以加入对决。
+1assx02	每层最多
+1ivu1o9	合计
+14b17zr	合计 {0}
+yz8r1o	总季数
+d4liwi	总集数
+1txdo9s	总时长
+atzz09	合计：
+m8jhbx	到 {0}
+a9mnsd	页
+g26pdp	状态
+1fx0433	弃看状态，有看完年份
+183f874	已看完状态
+1t3pmmz	当前状态：
+1i4t2a1	与 {0} 对应的状态
+8d8bvt	在 Goodreads：My Books → Import and export → Export Library，下载 CSV 文件。
+17ptdpw	引用
+pfg50m	{0} 播放器
+n96ndj	在 Notion：打开书籍数据库 → ⋯ → Export → Markdown & CSV，解压后选择 .csv 文件。
+1xwpeos	（在存储文件夹中）；确定不再需要时请自行删除该文件夹。
+10l6vy0	梗/套路
+afnlu	只有当组内至少有 5 本已评分的书时才显示平均分；低于该数量只显示数量。评分取自阅读记录，缺失时用书的评分。
+1jamjn8	每日平均
+1ofmi6e	重复行
+qj0ae3	与以下重复
+dqtiar	漫画
+1bylz35	自定义字段
+6ognvu	模板的自定义字段
+rhk94e	1 星以上
+1qgx4j7	2 星以上
+1sj7u0k	3 星以上
+1n2r0g1	4 星以上
+tav5y8	四分之一决赛
+gwqmhg	从第二次阅读起
+1gkoojc	电视剧
+g0264m	候选为每月最爱和今年读完并标为喜欢的书
+etfxrs	仓库已与应用一致，没有变化
+1fub35o	仓库是电脑上 Obsidian 打开的文件夹。你的所有笔记都在其中，还有一个隐藏文件夹，名为
+1bq8le0	Obsidian 仓库
+4hzj9m	这台电脑上的 Obsidian 仓库
+y3kled	仍然导入
+p0pqa	仍然导入出错的项目
+78ha2z	仍然导入，单独存放
+y8n8jp	仍然导入，单独存放
+dr5jgc	返回影视列表
+htch69	返回书架
+1rhwa73	示例
+m9ftvi	例如 9-1-1。用相同名称把各季归在一起
+1qztgkx	例如：咖啡牛奶
+ufmvft	例如：法语
+1viz0j9	待办
+vdjtgj	写书评、感想、摘抄…… 支持 markdown 和 Obsidian 风格的 [[链接]]。用 Ctrl+V 粘贴图片。
+16pvh84	漫画
+wg9oz3	卷
+arob5h	16 强
+19j0x58	灵感板区域，用 Ctrl+V 粘贴图片
+1pjtcud	中
+a3n4ok	超前
+xe6oh9	超前于计划
+1j8s2pg	警告
+10qe12r	网络小说
+1kmlwxl	条漫
+1jjxlu	心愿单
+19laot9	随机配对
+1vfasq8	最近一次观看
+1sxw77a	放大查看 {0}
+ftd4l8	再显示 {0} 项
+j26oav	查看“其他”中的 {0} 项
+ygczlu	观看预告片
+c3uodp	预览
+tn111v	预览 {0}
+1aftimu	预览 .md 文件
+9eqbfa	预览将要发生的变化。在点击“开始同步”之前不会更改任何文件。
+l96h2f	预览笔记
+9q6m7l	看完
+11sr59t	重新摆放装饰
+1gpio8r	删除
+159osd5	删除“
+11t69et	删除 {0}
+1rqh88g	删除图片
+8ostgn	从 .env 文件中删除 READING_TRACKER_STORAGE 变量后才能在应用中更改。
+1g2x4u0	清除筛选
+rd3xlf	删除这个对决？
+kdjfmm	删除挑战“{0}”？书不会被删除。
+1h8thg	删除这本书？
+o01dbi	删除题目
+12b1vl4	删除原作 {0}
+1fubxoh	删除 {0} 的日志
+1xerdrj	删除第 # 次
+1q4gawj	删除这条记录
+6bi1l0	从列表中删除语言不会改变正在使用该语言的书。
+1cyi766	删除目标
+1mwrafo	删除角色
+kjlcny	删除属性 {0}
+1dg70la	删除书籍
+18sy34m	删除主题
+w90dsa	删除这个主题？如果正在使用，应用会恢复为苔藓配色。
+1iza00n	全部删除
+pajz7	删除全部数据
+fa7ym7	完成
+lofnqs	出版
+qtr9rd	喜欢
+17h401w	{0} {1} 最爱
+1kn2jep	每月最爱
+16z63eg	与 Obsidian 相同的 Markdown。同步时作为影视 .md 文件的正文。
+15ci6u1	与 Obsidian 相同的 Markdown。同步时作为 .md 文件的正文。
+vzwzo7	主要角色死亡
+1rik0pn	日漫
+1n84m6b	国漫
+1qk8d3p	韩漫
+cav9wr	阅读年份
+x2cs2l	主题（非虚构）
+xthc0u	是/否
+123hjs4	当前页/章
+1f1peyo	格式/平台
+5z0s2v	辣度（带 smut 标签的书）
+1iybmkf	进度单位
+895ln	阅读历史
+k6pp5g	阅读历史（重读）
+15t700	灵感板（图片）
+1dn2dum	开始日期（最近一次）
+1aqne5	最近阅读日期
+1qd1fx5	读完日期（最近一次）
+10gyfus	辣椒 🌶️
+t8kmf6	歌单（链接）
+1bk41fm	星级 ⭐
+1sd5bbd	数字
+146m2zf	阅读次数
+1x3llqv	当年按 finish_date 读完的次数（含重读，不含短篇同人）。
+12hdy4z	标签 / 类型
+146j2uw	进度 %
+1kr4imt	当年阅读日志的总分钟数除以 60。
+1bnill6	已读完记录的总页数；没有页数的书（单位不是页）不计入，另在“缺少页数”中单独统计。
+ca5w31	总页数/章数
+1e09f95	警告（内容警告）
+vaophq	集
+zb87d9	页
+d08jnz	卷
+jkoh5x	原作（{0} 篇同人）
+19gjdi5	{0} 部影视
+9w1agi	第 {0} 季
+19qcwpy	第 {0}/{1} 季
+5fmsty	类型标签
+mriixi	×
+239ul	应用图标
+1jtd0ny	当前图标
+1cab10j	仅支持 PNG 文件
+1i8who	选择图标文件
+19kq4hi	选择 PNG 文件
+p6hcx4	桌面上还没有“Ke sach”快捷方式。点击“创建桌面快捷方式”来创建。
+9kuoc9	使用默认图标
+4sh4d8	请使用 PNG 文件（最好是正方形、透明背景）。图标显示在左上角、浏览器标签页以及 Windows 桌面快捷方式上。
+lpelgx	已更新桌面“Ke sach”快捷方式的图标。
+bgetxs	已在桌面创建“Ke sach”快捷方式。
+3dydco	更换图标
+1riviib	无法更新桌面快捷方式。请重新运行 tao-shortcut-desktop.bat 来重建快捷方式。
+rf9xn9	无法处理图片
+1tem93j	此电脑不是 Windows，无法更改桌面快捷方式。
+1uewui	创建桌面快捷方式
+i0ugfm	选择已有系列，或输入新名称后按 Enter。同一系列的书会归到“系列”页面。
+1pib3mf	留空表示这本书没有警告
+k3bv52	无警告
+17fu9b0	或粘贴图片链接
+bxrwdv	https://...（例如 IMDb、MyDramaList 上的海报链接）

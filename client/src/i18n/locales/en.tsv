@@ -1,0 +1,1138 @@
+16rgb5l	, and the note body becomes the book's note.
+6cxdg1	, then paste it into the Obsidian vault field below. Or click Choose and browse to that folder.
+ocgpcv	: books must have all selected
+kbxr5w	? Later reads are renumbered.
+rm34t8	. ↻ marks a re-read; a faded, dashed cover is a DNF book.
+2zk40y	. Set it on the Goals page.
+6w9gmk	. A book can be in several challenges.
+34vnjt	. Watch years in statistics come from these entries.
+va5sit	. In one-way mode, books synced earlier and books whose category changed are moved to the right folder on the next sync; file names stay the same so [[...]] links in Obsidian keep working.
+nb461w	. Selection order decides pairings (1 vs 2, 3 vs 4, ...).
+11qajfi	· not ordered yet, sorted by year then title
+4bbkbp	· time {0}
+1x94bpp	· average {0} ★
+1lp3jkp	"{0}" and its reads, notes and reading logs will be deleted from the app. If it was synced to Obsidian, the next sync moves the file into the vault's .trash folder.
+e53r0z	"{0}" is already in the library
+83csyz	"{0}" is larger than 50MB
+17y6q78	(old version:
+1v3yoli	(not in the list)
+1a59jrx	(default)
+1sdrikk	(total {0})
+1dt9mqw	) are kept as text; the images stay in the vault.
+nm44hc	). You can still save, but consider increasing the light/dark contrast between the two colors.
+1292014	{0} {1}: {2} reads
+1v9i3kg	{0} books with errors were imported and tagged "Needs editing".
+idrrn6	{0} books with errors were imported and tagged "Needs editing".
+1dzfbj8	{0} to {1}
+hrz6ni	{0} h
+m03le5	{0} h {1} min
+1fc6yaz	{0} reads
+g7lwx7	{0} reads, {1} re-reads.
+mkvb4w	{0} watches.
+1hcptim	{0} titles rated (watched + dropped)
+13uyoci	{0} watched/dropped titles without a finish year
+7l2267	{0} titles in progress without a start year (counted in the current year only)
+1ejtw7f	{0} days with logs
+1wesnek	{0} chilis
+1tgsbfp	{0} min
+15hxy74	{0} books
+130rb43	{0} books on {1}
+14l0e8w	{0} episodes
+h9d5ob	{0} pages/chapters
+6bm64a	{0}, back to home
+p6yf1l	{0}: no logs
+1649vpc	{0}/{1} episodes
+l6nctj	/Fic title.md
+1pfu5im	/month,
+1aznl3u	/week for the rest (
+1prt2oj	0 min
+1e7aq2l	16 books
+udivdy	4 books
+18orsat	5 stars
+1xaacaa	8 books
+buyvp2	image {0}
+1urwdai	Cover image
+azvuye	Portrait images at 2:3 look best
+rpy16q	Tall, narrow image; replaces the colored spine on the shelf
+1pfnqez	Spine image
+1f1t8uy	Moodboard images
+5eymsu	Background image
+1vtl6x9	The uploaded background image will be deleted.
+lpda5m	Current background image
+1okbbvc	Images embedded in the note (e.g.
+14zg04	Full-screen image behind the bookshelf. Lower the opacity if text is hard to read.
+a3lv07	Images in the vault
+14ldhr3	Images and attachments
+1a1d3q1	Image, name and caption for each character.
+1cgj7cl	The app reads the list of vaults Obsidian has opened. Choose the vault to sync books into.
+vuo5fc	The app is the only place to add and edit books. Files in Obsidian are for viewing; if you edit one, the next sync overwrites it and keeps your edited version as a .conflict file.
+1xe5359	The app copies the database, images and attachments here and then uses the new folder. The old folder is kept so you can delete it once you are sure.
+7rjrxt	The app will use the database in this folder instead of the current one. The current database is not deleted.
+geijri	you chose
+1vww4ep	Records with missing data still count toward the number of books but fall into "None"/do not add to page counts; reads without a year are not in any year.
+1l62urs	Semifinal
+12xnnd7	light version
+p5ih7v	Light
+7walpg	Backup:
+1livreu	dark version
+1kx35ye	Dark
+4m5vu1	Table
+yfzx21	Color palette
+1j6lcxj	Moss palette, Fraunces and Be Vietnam Pro fonts, 15px text, no background image.
+1adqvrp	Start
+sjs1d9	starting with the letter
+1qih89u	Start reading
+ue287s	Start a read from
+sxogdj	Started watching
+sqbgeo	Click Save template first if you want to keep them.
+f41mb3	Click the play button next to a playlist to listen right here.
+11nitty	Click the area below and press Ctrl+V to paste an image, or drag and drop images in.
+1xqzcxf	Click the winning book of each match
+nfaamp	Click the address bar of File Explorer and copy the path, e.g.
+19fsjjj	Enable sync
+175fiy0	Enable Obsidian sync
+b4emtf	Cover of {0}
+1u4hovl	Ocean
+1mwxg5v	move {0} unused files to .trash
+c771dx	Remove image
+r0bioo	Remove background
+1m2bnm3	Clear rating
+102yig7	Deselect all
+1mm1csf	DNF
+3x7rae	DNF /
+1qerozb	Skip
+t3pg4h	Skip files not created by the app
+fl35er	Skip files with errors
+hx7cx0	Skip books already in the library
+1kfkarh	Discard changes
+svcv75	Discard unsaved changes?
+nfmjnr	Discard changes and switch
+5idld8	Remove from favorites
+13j8rs4	Book bracket
+1tiy2pr	Series with more than 60 volumes always count as Comics in statistics
+q39e2w	whole series
+16ztoil	Both
+b1fkf1	Whole year
+6s00pz	Import steps
+2b5i4b	Reading logs
+j19x47	Options in the Language field when adding or editing books.
+urdl2u	Reads
+y7x8r9	Import method
+1yk7v2p	Settings
+1m0pohb	Short thoughts
+15rsutj	Content warnings, shown right under the genres on the detail page
+xr8jke	Pairings of {0}
+1t4ehln	Needs at least {0} rated {1} (currently {2})
+1mgo894	At least one date is needed; if you don't remember the date, choose "Year only"
+1gf3q54	A start year or a finish year is required
+25lzbx	A start month or a finish month is required; if you don't remember the month, choose "Year only"
+15sd9mz	Needs about
+19snt54	Needs fixing
+jfz1bq	Needs fixing:
+14sgk6s	Character name required
+1v8py3i	Title required
+juxk3a	Theme name required
+1uebgsg	Update file
+7pgip3	Run sync
+106iumt	Behind schedule
+bhsu83	Insert image
+1iy4mbg	Insert a writing template
+16ipgkt	copy {0} files
+7xxb46	Copy images and attachments to _attachments
+11f2qkc	Copy existing book notes from Obsidian onto the shelf. Files are only read, nothing in the vault is changed.
+1v4w633	Editing mode
+1ye4pjh	View mode
+1dp39ka	Difference
+ql3x7	Difference = achieved − goal; percentage relative to the goal.
+1ftd14k	Difference = this year − last year; percentage relative to last year.
+v7oy17	year only:
+1vjn2gs	Only the title and category are required; other fields can be added later.
+18akcso	Only shown for books tagged smut
+eqil7f	Only showing pairings of the selected fandoms: {0}.
+yye2l6	Only show books with
+1t0nr4	Year only
+rh0r4f	Metric
+s092dk	Only fanfics finished in the year and not in the short-fanfic group. A fic can have several fandoms/pairings, so it is counted for each.
+1lx5807	Only watched and dropped titles; titles with several genres count for each genre.
+yjsoq0	Only watched and dropped titles.
+hwlxtw	Only books tagged smut:
+116yhj7	Split books into subfolders by category
+1ilbvw7	Split folders by category
+1pc3km6	Sync direction
+gv3ff9	Choose
+11qmd7f	Select {0}
+dlmmyr	Pick 7 colors for the light version and 7 for the dark version; borders, muted text and button text are derived from them.
+zw75nm	Choose image
+1mlyop8	Choose an image to insert into the note
+135k4v3	Choose moodboard images
+7zodkf	Choose background image
+8q5kjn	Choose character image
+1o6mfj7	Choose a palette
+1ffvei	Choose a whole folder
+vzczte	Choose a fandom first to filter the pairing list
+8cbmo1	Choose file
+hrjz8u	Choose .md files
+1jcdo1n	Choose .md files or a whole folder of book notes in the vault. The app reads properties using each category's template; source files are not modified.
+ith8r0	Choose a file to import
+175qlw9	Choose attachments
+yadkuo	Choose another file
+1aluct2	Choose decoration files
+7wjzvt	Choose or type A x B
+gwkltr	Choose or type a new one
+xz43wh	Choose or type, then press Enter
+zr1v3b	Choose year
+fhw59s	Choose statistics year
+1wudhyi	Multi-select
+1x4bkov	Choose notes
+1k5dqt6	Choose other notes
+1dosa90	Choose book
+1ch312e	Select book {0}
+1fguue4	Choose a book for the cell
+1l67f28	Choose a season to rate each season separately; to rewatch a season, add a new entry with the same season
+rloyj9	Choose month
+1vwdc1u	Choose storage folder
+4a2z0r	Choose this folder
+1t737bu	Choose a notes folder
+126hp4e	Choose top
+1mxj5fn	Choose status
+qtpv8u	Choose individual .md files
+qkaktq	Choose Obsidian vault
+8vtw1h	Choose an Obsidian vault and enable sync in Settings.
+192umjk	Choose the vault and how books sync to Obsidian.
+1g0gct0	Waiting for result
+gm9xwz	topics
+y917o3	Topics
+1bq1f6s	Caption
+1jx7xlf	Image caption
+1v5ldf4	Final
+886852	Move data here
+o9keve	Move files of deleted books to .trash
+1c2ku57	Move files into the right category folder
+196hq8	Switch to light mode
+yorfyn	Switch to dark mode
+ebh8sk	Move right
+18opg5o	Move left
+1j7z3xe	Move image folders of deleted books to .trash
+14xm3ag	Bring your library from Goodreads, Notion or a CSV/JSON file onto the shelf.
+uw584z	words
+1manpqr	Text
+1c0ggt9	Letter {0}
+hnde0	Letters by
+1pqcb3q	bold
+1mprfco	First letter of the author's name
+1dcte4h	First letter of the title
+17ingfe	display text
+x12wna	italic
+xwvszn	Text on the page background is hard to read
+1dbsgk4	Text on the main button is hard to read
+1emzoqb	Text on cards/panels is hard to read
+iic85n	Not started
+15ex49a	Not rated
+1ezuali	not rated,
+157a0yr	Not selected
+12qvtd2	No book selected
+4m0iev	Not selected.
+1rt5kvt	None
+qodf8w	No images yet. Paste, drag and drop or click "Add image".
+10gcxx9	No challenges yet. Create one from prompts, bingo or A–Z.
+1lsp59q	No database yet
+fl2v5g	No data for this year yet.
+1rkupzt	No data yet.
+15aikl8	No decorations yet. Upload PNG images with transparent backgrounds or SVGs (plants, lamps, figurines...), up to 3MB each.
+b2yyog	No files or links yet.
+kl5akf	No reading logs yet
+44b454	No logs for this book yet.
+1q2mh6k	no finished reads yet.
+9sspgy	No reads yet.
+edqm25	No watches yet.
+1631zrs	No titles match the filters. Click "Add media" to add the first one.
+1n8zwld	No titles in this year yet.
+34avgc	no titles yet.
+15ntiia	no language,
+11ts6tx	No characters yet.
+1mohw2z	No content yet.
+t4604c	No playlists yet.
+5xcc3b	No books finished this month yet
+y2l2b2	No books with an author yet.
+1l3y3tz	No books in TBR yet.
+1rcd6yg	No TBR books with an upcoming release date.
+1xg4o5d	No series yet. Fill in the Series field when editing a book or a media title.
+y2qf6h	No page count
+124hlmo	No author
+14oglzz	no tags,
+4ysinb	No category
+9b6969	No total
+1f69a6g	No total episode count
+1mp3fu7	No candidates yet. Pick monthly favorites or mark books read this year as favorites.
+13jhkks	Cannot be placed on the calendar
+mgj2aa	No goal set for the year
+1vdgiw9	Unmatched: “
+mhlafj	Not recorded
+1su4g8m	Not saved
+bygtbu	Uncategorized
+1alt9ju	date unknown
+1rrlisu	Never synced
+1tis4qa	Excluding {0} short fanfics (≤ 80,000 words), news, research papers
+1sftzr4	Not counted: {0}.
+1eoqjf2	chapters
+1r3zvn2	Chapters
+zr2fp0	Sun
+tvogda	Exact dates
+1fzfr0r	Has note content
+c51vl4	Taken from watch entries when there are any
+d5izkl	You can change this at any time.
+y3seen	Some statuses are unknown to the app. Choose the matching status; the preview updates right away and the app remembers your choice for future imports.
+585za0	The cat sitting on the shelf
+1n6t0fq	fixed by the READING_TRACKER_STORAGE environment variable
+zm0mqh	Add to progress
+npck5h	Add to progress (currently at
+19bzt84	Column {0} maps to
+7ygpn3	Column in file
+1i5j9cn	Cover size
+1q1mss	Cover size
+hdwrvx	Text size
+c9pep2	Size of {0}
+a0sf9o	last. Mark read #
+1qbbs8m	books
+xir8ao	books already on the shelf
+2nuz8c	books already present,
+x71z0a	valid books
+19d0hhx	Scroll shelf right
+1hyzh2x	Scroll shelf left
+94rcrj	Extra large
+e7lodz	Longest:
+1hqmoeq	Paste a Spotify or YouTube link (starting with https://)
+1ybzqh7	List
+r9wg6w	Only pairings of the selected fandoms (fandom & pairing library and imported fics)
+gs20b5	Prompt list (one prompt per line)
+1czi7zz	Media list
+11emgqi	The list is empty. The Language field in the book form will only offer “Not selected”.
+d2p80l	Stamp
+1tet7mu	Cast
+zidl6o	Clear records of deleted books
+vvhnuo	Row
+7czxx2	first rows; the import processes all of them
+8r8w2g	rows with errors (
+nli63u	rows with errors.
+1dz1r2i	rows.
+vd63gv	rows. The app has guessed which column goes where; check it, then click Preview. Columns set to "Skip" are not imported.
+1fms2y7	Used for books without a note. When you write a note in the app, it replaces this.
+14nn8iz	Used when a file has no category. Goodreads shelves named non-fiction, manga or fanfic are recognized automatically.
+b4cakk	Use the palette color
+12u4jl8	Use this vault
+1n1rbzn	Data
+1hocwpm	Missing data:
+1evcqkh	Stop {0}
+11s5ou1	Built from a sample book with two reads.
+x4xcdf	Started read #{0}
+6y073w	Removed from favorites
+1fc0mkj	Edited
+15nco2u	All available values are selected
+xn23sg	selected in the app
+aws2yj	selected.
+1n0b0fl	Data moved to {0}. The old folder is untouched.
+10i6cff	Database found (schema v{0})
+tkt9z0	Already on the shelf:
+9h6ypb	added to progress
+1eywe8p	Marked read #{0} as finished
+1p2a0w1	Marked as fixed
+1rbfxxu	Achieved
+1lnfh5d	Goal reached
+l0u9gr	Password set
+1t7vbpm	read
+1r0yuf	Read
+437zh3	Finished in {0}
+1gu7iht	finished reading?
+yvjpjc	Password changed
+1kfj5uw	Logged
+no3iwg	Logged; progress {0} {1}{2}
+1tlz869	Imported
+1emq8e	Imported {0} books
+vgunvh	Restored default {0} template
+12zxa4f	Saved
+1gj8ye1	Saved "{0}"
+147h9gu	Obsidian settings saved
+866nw0	Language list saved
+1obpe2m	Saved read #{0}
+pd1kah	Saved watch #{0}
+1shviuo	Saved {0} template. The next sync rewrites files in this category.
+1m3owgj	Opened data at {0}
+1uod5jj	Imported
+3w87pi	Imported {0} books from Obsidian
+1rq2hsy	Owned
+1s1c44b	Fixed
+k834n5	Synced {0} files to Obsidian
+1l6jpof	Added "{0}"
+xp7xy	Added "{0}" to the shelf
+1pe3hq0	Added read #{0}
+10di95j	Added watch #{0}
+gwf03w	Added to favorites
+1ywjabk	Reached
+a0qtvw	Slate
+o7q4hr	watched
+b2n6o2	Watched
+12eaoc4	Watched / watching this year
+1m0i6h7	Watched and dropped titles count by finish year; titles in progress count from the start year to the current year.
+hqn5zw	Finished watching
+l93pr0	Finished watching in {0}
+11ozwns	Deleted
+1xux69y	Deleted "{0}"
+1kumrkq	Log deleted
+lc6a0p	Log deleted, {0} {1} removed from progress
+17ri00h	Deleted read #{0}
+nd3iuu	Deleted watch #{0}
+150tl1n	In use
+4i9k4k	Using the default template
+qeaqtj	reading
+ra4qva	Reading
+1emvctx	Reading folder
+14dqh1l	Showing
+eljicl	Checking folder
+atemkl	Loading logs
+b21752	Loading books
+198jmjq	Saving
+j0kzor	Opening title
+1ffj0ut	Opening note
+b5lbwa	Opening book
+6nzsv1	currently open in Obsidian
+q7es9g	Currently at
+1wh5wrt	Currently at {0} {1}; enter a larger number
+1957ao0	Comparing the app with the vault
+1y2plyp	Loading
+wetjik	Loading challenges
+8nk4qp	Loading calendar
+l2nupk	Loading goals
+143h4we	Loading statistics
+1ni9m87	Calculating statistics
+1r6m0rm	watching
+1e9a9o3	Watching
+1cq5zhk	Watching is a separate group, shown on the chart for comparison
+og3cyb	Watching first, then watched, then dropped
+8c0dyj	Favorited
+167tuir	Rating
+1uugubm	Overall rating
+1qolk9n	Rating for this entry
+1n6zadv	Place the decorations at other random spots
+ti0mgj	Set password
+157kyjs	Set a password above before you can clear data.
+18kv4rf	Set a password for clearing data
+4fyrcg	Bold (Ctrl+B)
+zhjgxn	This is an Obsidian vault
+1qhveh4	New prompt
+1kyegvq	Leave empty if unknown
+1dfxm1u	Leave empty if still reading
+1wn242v	Leave empty if still watching
+1dvl6gm	Go up through the parent folders until the folder named exactly like the vault (the name shown in the bottom-left corner of Obsidian).
+1iz2l2b	Link address
+877zps	Stars ★
+wnzrzs	Average rating
+2ls1dx	Group averages appear only when at least {0} titles are rated.
+1a862p6	Format
+177a64c	highlighted passage
+1ik0hg4	guessed from template
+1qrl9w1	Recently read
+gf6mle	Last read
+u9qmt	Read up to {0}
+xdxqv1	Finished on
+1mj01c3	Finished on {0}
+b84tuz	Close
+mdvegu	Dismiss notification
+jocls8	Book length
+2jwrms	Background image opacity
+12c89zl	Image opacity:
+37utjg	Spice level
+zdlrag	Spice level {0} / 5
+yc24vj	Spice 🌶️
+q7puta	Shelf decorations
+ewr7rm	Change image
+1ecybq7	Change background
+13nxnvh	Changes the size of the whole interface, including the bookshelf.
+1yql91c	Change password
+1hq8yuw	Change the data-clearing password
+1x5410v	Change number
+11508z6	Change storage folder
+jcbosn	Unit
+xt94j9	On schedule
+1ont0sa	Move {0} up
+llalfb	Move {0} down
+vljsx4	The path may have changed.
+vqikbd	Folder path
+2p3vk9	Broken since {0}
+hn6t8u	Short fanfic
+1nmjpec	Short fanfic / News / Paper (separate)
+vdd7or	Short fanfic, News and Research Papers are separate groups and are not added to the total above
+dtgo35	Fanfics of 80,000 words or fewer are counted in the separate "Short fanfic" group (together with Nonfiction News and Research Papers)
+1i3n2jp	Fanfiction: fandoms & pairings
+1v666t3	Fiction / Nonfiction
+zipx5c	Your own CSV or JSON file, one book per row (or per object).
+18svcdi	Other files
+5twimx	files that are not notes
+umsq53	This file is not an image
+negwsx	Attached files and links
+lcbuu	First-read:
+4g5pf8	Fonts
+1a49l8o	Body font
+1cf9jmo	Heading font
+1d4jw0h	The heading font is used for book titles, spines and page titles; the body font for everything else.
+1n6u5e3	Map columns
+cuf7e6	Note
+jqzgfx	Overwrites both the light and dark versions
+u9mn0y	Overwrite files edited in Obsidian (the old version is kept as .conflict)
+pn7ly0	Writable
+gtuo4r	Log
+1575bzw	Log reading
+sg19l4	Log today
+1o9zoep	Track renamed or moved files
+ww7qw9	Written to Obsidian as the Genres property
+ec2pzs	Write books to Obsidian
+c2axv6	Shown on the library card; write longer reviews in the Note & Review tab
+1qfskv6	Shown on the card; write longer reviews in the Note & Review tab
+5fps32	Write to
+1vwdpmt	Appearance
+1tau1i8	hours
+zdefns	Keep
+1utzak0	Kept: appearance settings, languages, templates, Obsidian configuration and this password. Files in the Obsidian vault are not touched. Before deleting, the app copies the database and moves images/files into the folder
+1l80gi4	Keep as is
+169h1lw	Keep current template
+pz9ax8	Type a pairing and press Enter
+1g6q5v2	Type and press Enter
+1onogha	Type and press Enter or a comma to add
+x6iq2p	Type and press Enter; several countries allowed
+eqzw5q	Groups books (Series field in the book form) and media (Series field) with the same series name, case-insensitive. Drag or use the arrows to reorder; the order is saved immediately. Books also has an author list.
+1uykojq	Shelf wood
+g8t7ff	Includes first-reads and re-reads
+1yrmjs9	Two-way
+1w3pcbn	The two entries do not match
+xcxw2n	South Korea, USA...
+z0wli3	Studio
+z8mkx3	Reading habits
+1txmmff	Show
+1t8akak	Show entered values
+1q3ht0a	Show decorations on the shelf
+1ere35u	Shown when hovering over a book on the shelf
+1r8v2sz	Shown in the top-left corner and on the browser tab.
+1kui7my	Show DNF books
+1iuurox	Or paste a cover image link
+2ws7yx	Not logged today yet; log to keep your streak
+mzmx2g	Logged today
+fx6l3x	Rose tea
+1l2dsno	Slightly large
+487htl	https://... (e.g. a cover image link on Goodreads)
+1nl3377	https://... image link
+1jbnyu1	https://open.spotify.com/playlist/... or a YouTube link
+1mtetfn	Cancel
+12pitpn	Cancel
+uralif	Import books
+nre2ro	Few
+8cf954	At least 4 characters
+10takrv	Drag to reorder
+1k86u90	Drop a .csv or .json file here
+13tgmto	Empty shelf
+332a1l	Plan up to today:
+z0or6q	Bookshelf
+q82d4n	YouTube channel
+1eqcpde	Other
+mc7djm	When editing a fanfic, once you pick a fandom the Ship / pairing field only suggests that fandom's pairings, from this library and from fics you have entered. Example Harry Potter: Draco x Harry, Sirius x Remus.
+d9k875	The library is empty. Add a fandom, or click "Add from book data" to collect them from your fics.
+9vjjci	Fandom & pairing library
+tsd0yu	Restore default appearance
+77iamz	Restore default appearance?
+4sg2h8	Restore defaults
+c0ff19	Restore the default template?
+123e5rx	No
+r8vmkr	No new pairings found in book data
+1ioqzky	No books match the filters
+b7x4l2	No .md files in this selection.
+1gahvt8	Nothing to change. The vault already matches the app.
+9afpe4	No matching values; your text is kept
+ruu7rx	No write permission
+11du92y	No series match the filters.
+7c7ag	No authors match the filters.
+427bwl	Untitled
+107ryv0	No subfolders.
+iigpf2	Page not found
+uhiqdz	Missed
+swma0i	Cannot be undone in the app.
+1oc1rmv	Could not save the order: {0}
+xhw7jg	not comparable
+1pdypos	Could not load
+9k9g1n	Could not load image
+u7wqbu	Could not load cover image
+sd7w9e	Could not load the media list.
+19lyb2s	Can't see your vault? How to find the vault path
+16sszpa	No season (whole series)
+uycvzt	Title not found
+mue4k2	Book not found
+104n1gu	No vault found. Obsidian may not be installed on this computer or has not opened a vault yet. Follow the steps below to choose the folder yourself.
+1ufajto	Grid size
+1kro4md	Date format
+10c3qja	Time format
+14xowx4	Display style
+dxedur	View
+1dl3s7n	Clear data
+dw19y6	times
+6z9g6k	Last sync: {0}
+bq1r4f	Previous sync: {0}.
+jp8r6f	Howl's Moving Castle
+1pdyteu	Take data from
+1yalkii	Take colors from a built-in palette
+j9ots9	Up one level
+11hg32c	Reading calendar
+j9lr9i	Reading calendar {0}
+c9yln1	Reading calendar {0}, {1} days with logs
+13equ89	Link
+1en1raz	Moodboard image link
+tyyjzw	Image links must start with http:// or https://
+1030eov	Links must start with http:// or https://
+1yce771	Playlist link
+1kxwkgq	Trailer link
+wygx0a	Type
+1b77wtx	Publication type
+1wo6ot	Rating type
+195nd7u	Filter ratings by main category
+dpa2kc	Filter genres by main category
+1t5zcle	Filter authors by main category
+1f4cnub	Filter by Books or Medias
+1m3skw3	Filter by category
+eh3jys	Filter by media type
+1y6yd8i	Filter by year type
+vg20zy	Filter by rating
+1o0k35f	Filter by category
+1awcnp2	Filter by book category
+ldxo6b	Filter by status
+1mnv3yx	Error {0}
+h0jsf7	Error while running
+uft122	Large
+1o90yj2	always comes first in the file. The app uses it to recognize the file even after you rename it, so it cannot be edited or removed.
+5nxs5m	Poster grid
+eqx5ti	Read
+1b3hl58	DNF reads have no date, so they belong to no year. Add dates in the book's Library card tab.
+1jdxe0c	reads with a spice level. The genre table excludes the smut tag itself.
+tkxruy	finished reads have no page count, so they are not added to pages.
+fm1sl	finished reads have no date/year.
+a8wipq	finished reads and
+173jw59	Reads
+1m8jgyu	Read #{0}
+1b3wt5i	Reads with only a year count as finished in that year
+1lmaqis	First read (optional)
+1ylecg3	The book's first read
+182vdyo	Re-read: without a finish date, the book moves to Reading and progress resets to 0.
+1ppizq3	Reads from the second time on, finished in the year.
+1co0xyb	reads,
+eziyqb	reads ended. All time:
+1rxr48o	reads in year
+liyn5g	Watches
+fxacb5	Watch #{0}
+18l9kik	Save
+1gc372e	Save settings
+czs2ho	Save list
+7kgrih	Could not save
+33qah2	Save
+1vnsk2m	Save template
+wybxxz	Save changes
+1fmwr17	Storage
+arb5r	Color code {0}
+hijyu7	Custom field key
+s26997	Main color (primary buttons, selected items)
+cnl96b	Theme colors
+1x6gx2t	Highlight color (rating stars, accents)
+1j4ck84	Custom accent color
+pqayob	Custom accent color (primary buttons, selected items)
+80piid	Secondary color (selection borders, soft backgrounds)
+av1lv0	default, the data folder in the project
+148g75m	Password
+1mrbuwm	Current password
+9p9ym5	New password
+1arjbm0	Password and the button to delete all app data.
+yvhjrp	The title may have been deleted.
+1lw0wow	titles, along with reads, notes, reading logs, goals, challenges, monthly favorites, brackets, series order, covers and attachments.
+1n1mc47	titles.
+8k651p	All types
+1oe1b1w	All years
+1le4c3r	All ratings
+cb6eye	All categories
+1tjdpri	All statuses
+1mhsiw2	Each palette has light and dark versions; use the moon button in the top bar to switch. Create a new theme to pick your own colors; click the pen icon on a theme to edit or delete it.
+1w4gz3x	Each read (including re-reads) sits on its finish_date. Reads with only a year or no date cannot be placed on the calendar.
+1wgs0ie	Each book can be chosen only once.
+10p0h4f	A book can have several genres/tags, so it is counted once per genre: the parts can add up to more than the number of books. Books without tags go to "None".
+kcso1g	Each book is one .md file in this folder. Keep it separate from your other notes.
+1uuum06	One-way: app to Obsidian
+1uktl4b	A book can be in several challenges, but only one cell per challenge.
+1db5zk5	Open
+1cvzhpn	Open {0}
+m84ats	Open Obsidian settings
+1hu006n	Open folders one by one, or paste the full path below.
+15a6xi4	Open the existing data here
+118lkzn	Open Obsidian, right-click any note in the left sidebar and choose “Reveal in File Explorer” (macOS: “Reveal in Finder”). The folder containing that note opens.
+18soq2b	Recently updated
+k7ok8m	Settings section
+1w8xdwt	items with errors. They are added to the shelf with whatever data could be read and tagged "Needs editing" so you can fix them later (Needs fixing filter on the bookshelf).
+t94iw2	Goals
+32txfz	Goals ({0})
+1wh71sl	{0} goal for {1}
+ym5czp	Goals & fun spreads
+1ept58k	Yearly goal
+isx9o5	Goals and fun spreads
+pfwviu	match.
+14rwwtd	Year
+73lhy7	year {0}
+62u5c6	{0}: {1} dated reads
+131zhuz	Start year
+no3cxx	Year started watching
+1ics192	Reading year
+1iq2c0s	Release year
+1azs8tz	Year between 1900 and 2100
+mimeu5	Year between 1900 and 3000
+1wsxoi3	Year finished watching
+1207pj0	News (news/articles)
+wfptv8	Platform
+1f3lo0i	Watch platform
+6s78kc	Page background
+18vddl4	If the folder is a vault, the app shows “This is an Obsidian vault”.
+fgu4gd	days
+1f14dgt	Date
+bhcjmv	Start date
+1mbj056	Reading days
+690cys	Finish date
+1hdwn3v	The finish date must be after the start date
+htmusv	Borrowed on
+1cg05yc	Release date: {0}
+16ilupb	Review date
+gtp96e	Return date
+1lvzu12	Italic (Ctrl+I)
+udoar8	Language
+t0r4em	Interface language
+izrk8j	New language
+qxux3	This language is already in the list.
+17ry68g	Data source
+15i2h6j	Data source:
+execmi	Source:
+y30by3	Source: reads finished (finish_date or finish_year) in the year; re-reads count as separate reads; books spanning years go by finish_date; short fanfics (≤ 80,000 words) and Nonfiction News/Research Papers are excluded, like the KPI above.
+1697ank	Music to read to. Needs a connection to play.
+1fhc0zn	Also accept changes made in Obsidian. If both sides are edited, the later edit wins and the other is kept as a .conflict file.
+qks6vl	Press Enter to add "{0}"
+h5k3fk	Characters
+1kmwlxy	Import
+1b1jk60	Repeat new password
+nfptkh	Enter {0} or minutes
+1jh5cag	Enter the number of episodes per season, separated by commas; use ? if unknown
+tk5rlb	Import changes from Obsidian
+scuved	Reading log
+1a2k0sg	Many
+avy3sq	Separate multiple authors with commas
+e6ikv0	Small
+2avlkf	Group
+1pull8m	Like a booknook: enabled items are placed at random between the spines on each shelf. Click the dice button on the bookshelf to rearrange.
+1wdl3c3	notes with unmatched statuses will not be imported.
+nrqvx3	Notes with a Category property use it. Otherwise the app guesses from distinctive properties (Fandom, Ships → Fanfiction; Volumes → Comics). The rest use this category; you can change each note in the next step.
+16dptrm	The note is empty. On sync, Obsidian receives the template's outline from
+npzjbx	readable notes
+z2bncx	notes with errors (
+iks71	notes with errors.
+15p7uis	Obsidian notes (.md)
+8h7qlw	Cell contents (one cell per line, may be empty)
+1wklsk9	Media content
+1idabrr	Note content
+dg0mbt	Cell content
+3bsznw	Book content
+z9h198	Where the database, images and attachments are stored, e.g. a folder in Google Drive.
+1nmpd8f	Primary button
+1t82960	Secondary button
+tcieky	Lavender
+vd67fn	cell
+10lbh4d	Cell {0}
+ywgequ	Drives
+1mv8jma	Stay to save
+1rlwv19	PDF, ebook, translation, article link... Uploaded files are copied to Obsidian on sync.
+2g6t36	Play {0}
+ahgma	Spice level distribution
+1z0zh7f	Rating distribution
+1qma2ez	Star distribution
+16yxfw9	Genre distribution (genres/tags)
+148er5z	Body template
+10cwkbf	min
+1swjfgb	Minutes
+1mowzqn	New property
+1jkq1cy	Frontmatter properties
+1wjpkew	Properties and body template of the .md file for each category; fandom & pairing library.
+17niev8	Countries
+1h2tt2v	Latest release:
+cbvdg5	Top rated
+1tzivp	Very large
+reqfef	Very small
+17ln4es	Re-read, read
+14sfueu	Re-read, read {0}
+19c8ay0	Moss
+11kxn1o	S{0}: {1} episodes
+fqx1ea	books
+18ahoxe	Books
+1yn2jl6	The book has no open read. Logs still count toward your streak; add a read so the start date shows on the library card and in Obsidian.
+xbeyvt	Books with {0} {1}
+3kdl38	The book may have been deleted.
+l6gwk5	Book of the year
+1kcyuzf	Book of the year {0}
+1j8izv6	Books finished in the year that came from TBR (recorded only since this feature exists).
+1nuag48	Book attached to this cell
+19cvwfc	Paper book
+mljv9w	books without a page count,
+1anp5t5	This book had import errors; please check and fix its details:
+1e51m0r	Books with several authors (separated by commas) count for each author.
+425d88	Audiobook
+1jukotc	books and
+9j902	Favorite books {0}
+1qx1rj0	books, year
+199t0yl	books).
+i6kzq8	Upcoming releases
+1hxdcre	Sort
+6jv9y1	will be skipped
+1bn83vs	Current season
+15ymxq	Ship / pairing
+19h6d5z	Generate dark version from light
+nrfy3w	Compared with goal
+14hk2td	Compared with {0}
+1b1qu1w	Write
+1jp71tp	Parallel
+mpojzc	Sophie stepped through the door, and the world beyond appeared.
+r9ngx3	Number of {0}
+vc47pm	{0} read
+137os3x	Word count
+5fotxa	Hours
+36pfwo	Re-read count
+1ott5jk	Reads
+3nayt5	Finished reads by genre. {0}
+5f4oc3	Titles by category. {0}
+1ycmwlx	Minutes
+1xwi7bk	Number of books
+1aecztq	Number of seasons
+58o6wu	Episodes watched
+1yxzhjw	Episodes per season
+1h4thgg	Episodes/season
+11vxpf0	Card no.
+1e3vgqj	Pages
+13wtr79	Number of volumes
+1wacouf	Ownership
+axuwqh	Owned: {0}
+x3kzg3	Reading streak
+h8pjp0	Edit
+qy381b	Edit caption
+1e3revh	Edit the list in Settings → Languages
+e6owuq	Edit column mapping
+1xn0yks	Edit log of {0}
+5zv8pp	Edit read #{0}
+1kc1xhm	Edit watch #{0}
+ka2u0g	Edit media
+fo8gl5	Edit character
+1rcugtz	Edit character {0}
+1it36ig	Edited on both sides (the later edit wins)
+rephf3	Edit theme "{0}"
+ojtg53	Edit theme {0}
+kygdho	Edit details
+qk4jvj	Edit book details
+1imjzbq	Sync is off.
+d6mo8f	Sync now
+1h2m7qs	Sync complete
+11g35k3	Mon
+1340rpx	Wed
+12k1kbz	Fri
+1vvsrh4	Main tabs
+15xty02	authors
+c67gjm	Author
+1spw510	authors. Books with several authors (separated by commas) appear under each author.
+72stnb	Upload files
+5vf8fd	Upload PNG/SVG
+7j747f	Create
+qubm13	Create bracket
+2362ki	Create challenge
+yxoqyo	Create new file
+1jqb5oa	Recreate files deleted from the vault
+1d9p48h	Create new theme
+15s7w08	Create and use theme
+zrz7h9	Shelf {0}
+mf25nm	Episode {0} / {1}
+al4s1w	All
+n9jrnb	All books
+yreqlk	TBR → read
+s6qa0b	Template
+tvz82q	The {0} template has unsaved changes. Switching to {1} discards them.
+1cogp2e	The {0} template returns to its original form (built from the sample note). Properties you added disappear from files on the next sync; the data in the app remains.
+5ro17u	Category template
+dks08g	each category's template
+s5zpb	Name
+1wgha2m	Name (optional)
+fjj525	Title A–Z
+k9qhdw	App name
+z6qi4j	App name cannot be empty
+p6jpdd	App name, theme colors, fonts, text size and background image.
+7zgy0r	Bracket name
+k229xe	Decoration name
+nsm1dy	Fandom name
+1y8mx0x	New fandom name
+12ydmr3	File name becomes the title. Properties are read using
+448wq6	Display name
+1wdi6we	Channel name
+1ok6sz5	Link name
+1uovobs	Character name
+35teer	Playlist name
+19wnwei	Title
+6ykxqi	Theme name
+xpttv0	Name in Obsidian
+nid49z	Month
+14cshwc	January
+18ua3es	October
+1949p3r	November
+19e9asq	December
+156raz9	February
+14wrpaa	March
+13itotf	April
+138u34g	May
+142sw7d	June
+13staie	July
+16uox53	August
+16kpbg4	September
+1kae6ro	Next month
+xrefan	Previous month
+yt3qze	Month/year
+1kzdmqr	Watch card
+1irusei	Watch card ·
+19aqkha	Library card
+j5kqdj	Library card ·
+mu8t6o	Cards, panels, inputs
+35h8of	By category
+ruvf84	By format
+uee2oy	by rating
+1gxa03w	By page count; books measured in chapters/volumes are under “No page count”.
+1onpf0w	By author
+1mcxhz	By genre
+1i5h04t	By the book's main category.
+oxqaut	In season order 1, 2, ...; e.g. 10, 12, ? (use ? if unknown)
+1xkppbd	Category
+4ee5jw	Genres
+dyhbq1	Main category
+6rc36u	Genres of {0}
+1q523ve	Category when it cannot be detected
+zjb2vl	Genres come from the book's genres/tags; books with several tags appear in each group. “Start reading” moves the book to Reading and creates a new read from today.
+5wtpbm	default category
+po73rm	Default category
+imm2x0	Add
+6bzw4z	Add image
+1oxavhe	Add by link
+10h2v3	Add your first book, or bring your whole library over from Goodreads or Notion.
+1ybxgpc	Add new prompt
+ik0c7j	Add fandom
+gux3jw	Add link
+1sw38q5	Add read #{0}
+1pbrf1z	Add new read
+1pmfna2	Add watch #{0}
+9zfyce	Add new watch
+1mqb5s0	Add media
+1nyy21	Add character
+1jekkrm	Add playlist
+1ddbe71	Add property
+zdgxo7	Add book
+3dk2xc	Add book (with TBR status)
+1dnzcka	Add new books from Obsidian
+585jfw	Add a book to the {0} shelf
+fise8s	Add from book data
+ae5wi7	Add to shelf
+5s5m1i	Add to this shelf
+1ot2tq3	Add, edit or delete reads in the Library card tab on the book's page.
+1a8ipw0	then progress is recalculated from the new number.
+gpa41s	missing
+99tpx2	file missing
+urgqxc	Statistics
+9djkwr	Reading statistics
+xjee7y	Watching statistics
+19zfhi2	Book details
+ot7c0c	More details
+1ivn57a	Show less
+nvwyjy	Try removing some of the selected statuses, years or tags.
+6wpqm4	Folder for
+1knlu30	The folder does not exist yet; the app will create it
+16uef5w	Existing folder
+56dcj3	Folder in use
+17bghew	The root folder of the vault, which contains the .obsidian folder.
+7edzcc	Media folder in the vault
+yo5njz	New folder
+1cfvx2b	This folder has no .obsidian, so it may not be a vault.
+1o7n6tt	This folder no longer exists on this computer.
+1ss4tah	User folder
+1j4okxb	Sync folder in the vault
+ymnqzg	Folders by category
+1d89qxg	Folder: {0}
+12m5npu	The order here is the order in the file. Deleting a property only removes it from the file; the data in the app stays.
+ao3z5e	DNF rate in
+1lk6yq6	Year rate = DNFs with a finish_date in the year / (DNF + finished in the year). The all-time rate includes undated DNFs.
+1m4c4lb	Progress
+de9clt	Progress {0}
+80r160	Reading progress
+1m901bd	Watching progress
+in28l4	Vietnamese uses only native Vietnamese words. What you enter (titles, tags, notes) and Obsidian files are not translated.
+1sg3lar	title
+jw4vub	Title
+8uddtc	Search
+178h1my	Search {0}
+1t7gzf4	Search fandoms or pairings
+1pgwwij	Search books
+cg54kl	Search series or entry titles
+1k1hc1f	Search authors or titles
+a7ma74	Search by name
+1949owr	Search by title or author
+1ocmkj4	Search the library
+1cywh6j	Personality, role, why you like them...
+1xfz9ur	Counted separately, not added to Watched
+orrgdn	Based on finished reads; reads with only a year count in that year.
+c0kgpw	Calculated from reads (output only)
+qf3mcb	Relative to the vault root. Media always syncs one way from the app, split into TV Series, Movies, Animation, YouTube, Short Dramas folders when splitting by category is on. Leave empty to not sync media.
+acxqc5	Top authors
+1f9ep5e	Up to 3 books, only books finished this month. Fewer than 3 books can still go into the bracket.
+1assx02	Maximum per shelf
+1ivu1o9	Total
+14b17zr	Total {0}
+yz8r1o	Total seasons
+d4liwi	Total episodes
+1txdo9s	Total time
+atzz09	Total:
+m8jhbx	Up to {0}
+a9mnsd	Pages
+g26pdp	Status
+1fx0433	Dropped status with a finish year
+183f874	Watched status
+1t3pmmz	Current status:
+1i4t2a1	Status matching {0}
+8d8bvt	On Goodreads: My Books → Import and export → Export Library, then download the CSV file.
+17ptdpw	Quote
+pfg50m	{0} player
+n96ndj	In Notion: open the book database → ⋯ → Export → Markdown & CSV, unzip and choose the .csv file.
+1xwpeos	in the storage folder; delete that folder yourself once you are sure you no longer need it.
+afnlu	Averages appear only when a group has at least 5 rated books; below that only counts are shown. Ratings come from reads, falling back to the book's rating.
+1jamjn8	Average per day
+1ofmi6e	Duplicate row
+qj0ae3	Duplicate of
+dqtiar	Comics
+1bylz35	Custom field (your own)
+6ognvu	Template custom fields
+rhk94e	1 star and up
+1qgx4j7	2 stars and up
+1sj7u0k	3 stars and up
+1n2r0g1	4 stars and up
+tav5y8	Quarterfinal
+gwqmhg	From the second read on
+g0264m	Candidates are monthly favorites and favorited books finished this year
+etfxrs	The vault matches the app; nothing changed
+1fub35o	A vault is the folder on your computer that Obsidian opens. All your notes live in it, along with a hidden folder named
+1bq8le0	Obsidian vault
+4hzj9m	Obsidian vaults on this computer
+y3kled	Import anyway
+p0pqa	Import items with errors anyway
+78ha2z	import anyway, kept separate
+y8n8jp	import anyway, kept separate
+dr5jgc	Back to media list
+htch69	Back to bookshelf
+1rhwa73	Example
+m9ftvi	E.g. 9-1-1. Use the same name to group seasons
+1qztgkx	E.g. Café au lait
+ufmvft	E.g. French
+1viz0j9	To do
+vdjtgj	Write reviews, thoughts, quotes... Supports markdown and Obsidian-style [[links]]. Paste images with Ctrl+V.
+16pvh84	Comics
+arob5h	Round of 16
+19j0x58	Moodboard area, paste images with Ctrl+V
+1pjtcud	Medium
+a3n4ok	ahead
+xe6oh9	Ahead of schedule
+1jjxlu	Wishlist
+19laot9	Shuffle pairs
+1vfasq8	Last watched
+1sxw77a	View {0} large
+ftd4l8	Show {0} more
+j26oav	Show {0} more items in “Other”
+ygczlu	Watch trailer
+c3uodp	Preview
+tn111v	Preview {0}
+1aftimu	Preview .md file
+9eqbfa	Preview what will happen. No file changes until you click Run sync.
+l96h2f	Preview notes
+9q6m7l	Finished watching
+11sr59t	Rearrange decorations
+1gpio8r	Delete
+159osd5	Delete "
+11t69et	Delete {0}
+1rqh88g	Delete image
+8ostgn	Remove the READING_TRACKER_STORAGE variable from the .env file to change it from the app.
+1g2x4u0	Clear filters
+rd3xlf	Delete this bracket?
+kdjfmm	Delete challenge “{0}”? Books are not deleted.
+1h8thg	Delete this book?
+o01dbi	Delete prompt
+12b1vl4	Delete fandom {0}
+1fubxoh	Delete log of {0}
+1xerdrj	Delete read #
+1q4gawj	Delete this entry
+6bi1l0	Removing a language from the list does not change books that use it.
+1cyi766	Delete goal
+1mwrafo	Delete character
+kjlcny	Delete property {0}
+1dg70la	Delete book
+18sy34m	Delete theme
+w90dsa	Delete this theme? If it is in use, the app returns to the Moss palette.
+1iza00n	Delete all
+pajz7	Delete all data
+fa7ym7	Done
+lofnqs	Published
+qtr9rd	Favorite
+17h401w	Favorite {0} {1}
+1kn2jep	Monthly favorite
+16z63eg	Markdown, same as in Obsidian. This becomes the body of the media .md file on sync.
+15ci6u1	Markdown, same as in Obsidian. This becomes the body of the .md file on sync.
+cav9wr	Years read
+x2cs2l	Topics (nonfiction)
+xthc0u	Yes/No
+123hjs4	Current page/chapter
+1f1peyo	Format / platform
+5z0s2v	Spice level (books tagged smut)
+1iybmkf	Progress unit
+895ln	Read history
+k6pp5g	Read history (re-reads)
+15t700	Moodboard (images)
+1dn2dum	Start date (latest read)
+1aqne5	Last read date
+1qd1fx5	Finish date (latest read)
+10gyfus	Chilis 🌶️
+t8kmf6	Playlist (links)
+1bk41fm	Stars ⭐
+1sd5bbd	Number
+146m2zf	Number of reads
+1x3llqv	Number of reads finished in the year by finish_date (re-reads included, short fanfics excluded).
+146j2uw	Progress %
+1kr4imt	Total minutes in the year's reading log divided by 60.
+1bnill6	Total pages of finished reads; books without a page count (units other than pages) are not added and are counted separately as "missing page count".
+ca5w31	Total pages/chapters
+1e09f95	Warnings (content warnings)
+vaophq	episodes
+zb87d9	pages
+d08jnz	volumes
+jkoh5x	Fandoms ({0} fics)
+19gjdi5	{0} titles
+5fmsty	Genres
+mriixi	×
+239ul	App icon
+1jtd0ny	Current icon
+1cab10j	PNG files only
+1i8who	Choose icon file
+19kq4hi	Choose PNG file
+p6hcx4	There is no "Ke sach" shortcut on the Desktop yet. Click "Create Desktop shortcut" to create it.
+9kuoc9	Use default icon
+4sh4d8	Use a PNG file (ideally square with a transparent background). The icon appears in the top-left corner, on the browser tab and on the Windows Desktop shortcut.
+lpelgx	Updated the icon of the "Ke sach" Desktop shortcut.
+bgetxs	Created the "Ke sach" shortcut on the Desktop.
+3dydco	Change icon
+1riviib	Could not update the Desktop shortcut. Run tao-shortcut-desktop.bat again to recreate it.
+rf9xn9	Could not process the image
+1tem93j	This computer is not running Windows, so the Desktop shortcut cannot be changed.
+1uewui	Create Desktop shortcut
+i0ugfm	Pick an existing series or type a new name and press Enter. Books in the same series are grouped on the Series page.
+1pib3mf	Leave empty if the book has no warnings
+k3bv52	No warnings
+17fu9b0	Or paste an image link
+bxrwdv	https://... (e.g. a poster link from IMDb, MyDramaList)

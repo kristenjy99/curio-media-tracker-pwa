@@ -1,0 +1,112 @@
+# Kịch bản nghiệm thu Phase 1. Mở file này trong VS Code (cài extension "REST Client" của Huachao Mao),
+# bấm "Send Request" phía trên từng request theo thứ tự từ trên xuống.
+# Yêu cầu: server đang chạy bằng "npm run dev" và đã chạy "npm run db:seed".
+
+@base = http://127.0.0.1:4317/api
+
+### 1. Server sống, DB truy vấn được -> 200, "status": "ok"
+GET {{base}}/health
+
+### 2. Thông tin hệ thống -> schema_version = 1, journal_mode = "delete", đường dẫn storage đúng
+GET {{base}}/system/info
+
+### 3. Danh sách item từ seed -> total = 6
+GET {{base}}/items?sort=title&order=asc
+
+### 4. Lọc nhiều category -> chỉ còn Fanfiction và Nonfiction (3 item)
+GET {{base}}/items?main_category=Fanfiction,Nonfiction
+
+### 5. Lọc theo năm đọc 2026 + tag
+GET {{base}}/items?read_year=2026&tag=sci-fi
+
+### 6. Tạo item mới: tag trùng/rỗng bị loại -> tags = ["Slow-Burn", "angst"], status = "TBR"
+# @name created
+POST {{base}}/items
+Content-Type: application/json
+
+{
+  "title": "Fic nghiệm thu",
+  "creator_author": "tester",
+  "media_type": "Fanfic",
+  "main_category": "Fanfiction",
+  "unit_type": "chapters",
+  "total_units": 20,
+  "word_count": 95000,
+  "tags": ["Slow-Burn", "slow-burn", "  angst ", ""],
+  "fandoms": ["Fandom X"],
+  "pairings": ["A/B"],
+  "tropes": ["found family"]
+}
+
+### 7. Dữ liệu sai -> 400, details báo title bắt buộc và main_category không hợp lệ
+POST {{base}}/items
+Content-Type: application/json
+
+{ "main_category": "Poetry" }
+
+### 8. Thêm lượt đọc #1 (chưa xong) -> read_number = 1; item chuyển "Reading"
+# @name card1
+POST {{base}}/items/{{created.response.body.id}}/library-cards
+Content-Type: application/json
+
+{ "start_date": "2026-10-01" }
+
+### 9. Ghi log đọc, cộng tiến độ -> item.current_unit = 8, progress_percent = 40
+POST {{base}}/reading-logs
+Content-Type: application/json
+
+{
+  "item_id": {{created.response.body.id}},
+  "date": "2026-11-03",
+  "units_read": 8,
+  "minutes_spent": 45,
+  "advance_progress": true
+}
+
+### 10. Hoàn thành lượt #1 -> sau đó GET item: status "Finished", progress_percent = 100
+PATCH {{base}}/library-cards/{{card1.response.body.id}}
+Content-Type: application/json
+
+{ "finish_date": "2026-11-03", "rating": 4.5, "review_summary": "Đọc lần đầu" }
+
+### 11. Re-read #2 -> read_number = 2; item quay về "Reading", current_unit = 0, reread_count = 1
+POST {{base}}/items/{{created.response.body.id}}/library-cards
+Content-Type: application/json
+
+{ "start_date": "2026-11-04" }
+
+### 12. Xem chi tiết item kèm library_cards
+GET {{base}}/items/{{created.response.body.id}}
+
+### 13. Ngày kết thúc trước ngày bắt đầu -> 400
+PATCH {{base}}/library-cards/{{card1.response.body.id}}
+Content-Type: application/json
+
+{ "finish_date": "2026-09-01" }
+
+### 14. Ghi note markdown + playlist
+PUT {{base}}/items/{{created.response.body.id}}/note
+Content-Type: application/json
+
+{
+  "content_markdown": "# Cảm nhận\n\nChương 5 rất hay.",
+  "playlist_links": [{ "url": "https://open.spotify.com/playlist/abc", "platform": "spotify" }]
+}
+
+### 15. Cập nhật note chỉ gửi moodboard -> content_markdown và playlist vẫn giữ nguyên
+PUT {{base}}/items/{{created.response.body.id}}/note
+Content-Type: application/json
+
+{ "moodboard_images": [{ "src": "uploads/demo/mood-1.jpg", "caption": "mưa" }] }
+
+### 16. Bật sync khi chưa có vault -> 400
+PATCH {{base}}/sync-config
+Content-Type: application/json
+
+{ "sync_enabled": true }
+
+### 17. Danh sách tag kèm số lần dùng
+GET {{base}}/tags
+
+### 18. Xoá item -> 204; gọi lại request 12 sẽ ra 404
+DELETE {{base}}/items/{{created.response.body.id}}
