@@ -232,7 +232,7 @@ export function createMediaItemService({ db, storagePaths, fileStore }) {
 
     async setCover(id, buffer) {
       const item = await require(id);
-      if (!uploadsDir || !fileStore) throw new ValidationError('Server chưa có thư mục lưu trữ để lưu ảnh', []);
+      if (!fileStore) throw new ValidationError('Chưa có nơi lưu ảnh', []);
       const ext = detectImageType(buffer);
       if (!ext) throw new ValidationError('File không phải ảnh JPG, PNG, WebP, GIF hoặc AVIF', [{ path: ['file'], message: 'Sai định dạng' }]);
       const fileName = `cover-${Date.now()}.${ext}`;

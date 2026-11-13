@@ -72,3 +72,20 @@ test('cùng một chuỗi thao tác cho kết quả giống nodeFileStore', asyn
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+// Sửa sau Phiên 4: trên điện thoại không có storagePaths (không có thư mục đĩa) nhưng vẫn có
+// FileStore; ảnh bìa media trước đây bị chặn với lỗi "Server chưa có thư mục lưu trữ".
+test('media: đặt ảnh bìa chỉ cần FileStore, không cần storagePaths (bản PWA)', async () => {
+  const { openMediaDatabase } = await import('../media/db/connection.js');
+  const { createMediaItemService } = await import('../media/mediaItemService.js');
+  const { db } = openMediaDatabase(':memory:');
+  const files = store();
+  const items = createMediaItemService({ db, storagePaths: null, fileStore: files });
+  const created = await items.create({ title: 'Phim thử', category: 'movie' });
+  const png = Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d4944415478da63f8ffff3f0005fe02fea7d6a4b90000000049454e44ae426082', 'hex');
+  const updated = await items.setCover(created.id, png);
+  assert.match(updated.cover_image, /^\/api\/media\/files\/items\/.+\/cover-\d+\.png$/);
+  const key = updated.cover_image.slice('/api/media/files/'.length);
+  assert.deepEqual([...(await files.read(key))], [...png]);
+  await db.close();
+});

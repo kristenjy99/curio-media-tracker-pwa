@@ -223,7 +223,7 @@ export function createMediaDetailService({ db, storagePaths, items, fileStore })
     /** Tải file cho note media, trả { src, name, mime_type, size_bytes }; client tự ghi vào note. */
     async uploadFile(mediaId, kind, buffer, { name } = {}) {
       const item = await requireItem(mediaId);
-      if (!uploadsDir || !fileStore) throw new ValidationError('Server chưa có thư mục lưu trữ để lưu file', []);
+      if (!fileStore) throw new ValidationError('Chưa có nơi lưu file', []);
       if (!Buffer.isBuffer(buffer) || buffer.length === 0) throw new ValidationError('File rỗng', [{ path: ['file'], message: 'Rỗng' }]);
       const stamp = `${Date.now()}${Math.random().toString(36).slice(2, 6)}`;
       if (kind !== 'attachment') {
