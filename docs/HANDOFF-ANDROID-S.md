@@ -1,6 +1,6 @@
 # HANDOFF — Media tracker trên Android (PWA) + Windows
 
-Cập nhật: cuối PHIÊN 4.
+Cập nhật: cuối PHIÊN 5.
 
 ## Mục tiêu chung
 
@@ -36,7 +36,7 @@ Route phục vụ file ảnh (`/media/...` của sách, `/api/media/files/...` c
 | 2 | DB Medias async + bảng route khai báo + Express adapter + migration v15 (`sync_uid`, `updated_at`, `tombstone`, sao lưu trước khi migrate) | **Xong** |
 | 3 | PWA cục bộ (SQLite WASM + FileStore trình duyệt + Service Worker + Manifest + Vite base path) | **Xong** |
 | 4 | GitHub Pages & hướng dẫn triển khai + OAuth Client Google Cloud | **Xong phần mã nguồn**; tạo repo, OAuth Client và kiểm trên điện thoại do người dùng làm theo `docs/TRIEN-KHAI-GITHUB-PAGES.md` |
-| 5 | Đồng bộ Google Drive (auto/manual resolution, gộp theo `sync_uid`, `updated_at`, `tombstone`) | Chưa làm |
+| 5 | Đồng bộ Google Drive bằng nút bấm tay, quy tắc A (cả quyển), gộp ba chiều theo `sync_uid` / hash / `updated_at` / `sync_deletions`, bản chụp trước đồng bộ, khôi phục, ghi đè Drive | **Xong phần mã nguồn**; đăng nhập Google thật và chạy trên điện thoại do người dùng kiểm theo `DOC-PATCH-PHIEN-5.md` |
 | 6 | Màn hình xử lý xung đột + tombstone xoá + hash file ảnh + hoàn thiện | Chưa làm |
 
 ## Schema v15: định danh cho đồng bộ
@@ -161,6 +161,105 @@ Quyết định cho Phiên 5 rút ra từ cấu hình này: scope `drive.file` (
 
 **Mới:** `.github/workflows/pages.yml`, `trien-khai-pages.bat`, `server/scripts/deployPages.js`, `client/src/lib/googleConfig.js`, `docs/TRIEN-KHAI-GITHUB-PAGES.md`, `DOC-PATCH-PHIEN-4.md`. **Sửa:** `client/src/main.jsx` (`basename`), `server/platform/browserConnection.js` (thử lại khi khoá OPFS bận), `server/media/mediaItemService.js` và `server/media/mediaDetailService.js` (bỏ điều kiện `uploadsDir`), `client/src/components/bookshelf/BookSpine.jsx` (ấn giữ để xem bìa), `server/tests/phase3-filestore.test.js` (+1 test), `server/scripts/buildPwa.js` (`404.html`, `.nojekyll`), `vite.config.js` (`envDir`), `.env.example` (`VITE_GOOGLE_CLIENT_ID`), `docs/HANDOFF-ANDROID-S.md`.
 
+## Phiên 5: Đồng bộ Google Drive
+
+**Kết quả kiểm trên Android trước Phiên 5:** người dùng chưa gửi kết quả 7 mục (bản gửi đầu phiên để trống). Vẫn coi là chưa kiểm, gồm cả hai bản sửa 4.3 (khoá OPFS) và 4.4 (ảnh bìa media, ấn giữ gáy sách).
+
+**Kiến trúc.** Mọi việc với Google (đăng nhập, gọi Drive API) nằm ở trình duyệt, ở cả hai bản (bản Windows cũng là trang web ở cổng 4317): `client/src/lib/googleAuth.js`, `driveApi.js`, `driveSync.js`. Access token không bao giờ xuống server Node. Phần dữ liệu (xuất đơn vị, băm, gộp, áp vào DB, sao lưu, khôi phục) là service dùng chung `server/services/driveSync/` trên lõi Db async, gọi qua bảng route như mọi tính năng khác, nên chạy y hệt trên Express và trong worker của PWA, và có test bằng `node --test`. Các route `/drive-sync/status`, `/apply`, `/commit`, `/restore`, `/file` (GET/PUT) **không** có cờ `nodeOnly`.
+
+**Đăng nhập.** Token model của Google Identity Services, dạng popup, `prompt: ''`. Đã xác nhận đây là hướng đúng cho giới hạn một tab: chuyển hướng cả trang hay mở tab mới đều có thể làm tab app mất khoá `opfs-sahpool`. Trình duyệt chỉ cho mở popup ngay trong sự kiện bấm, nên script GIS được nạp khi mở hộp thoại, còn `requestDriveToken()` gọi popup đồng bộ trong `onClick`, không `await` gì trước đó. Token giữ trong bộ nhớ trang, dùng lại khi còn hạn trên 2 phút; hết hạn (hoặc Drive trả 401) thì lần bấm sau mở lại popup. Client ID có giá trị mặc định trong `googleConfig.js` (là thông tin công khai), `VITE_GOOGLE_CLIENT_ID` vẫn ghi đè được, nên bản Windows không cần `.env`. Bản Windows cần thêm origin `http://localhost:4317` **và** `http://127.0.0.1:4317` vào OAuth Client, vì `mo-app.bat` mở bằng `127.0.0.1`. Không cần redirect URI cho luồng popup.
+
+**Định dạng trên Drive.** Thư mục `Media Tracker Sync` ở gốc My Drive gồm hai thứ. Thứ nhất là `snapshot.json` (`format_version: 1`, `schema` {books, media}, `written_at`, `device`, `units`, `deletions`, `files`). Thứ hai là thư mục con `files/`: mỗi ảnh hoặc file đính kèm là một file Drive, tên là khoá store (`books/items/<uid>/cover-<mốc>.png`, `books/app/...`, `media/items/...`). Tên file trong store luôn có mốc thời gian (đã kiểm `imageService`, `mediaItemService`, `mediaDetailService`, `settingsService`), nên một khoá không bao giờ đổi nội dung: chỉ đẩy khoá Drive chưa có, chỉ tải khoá máy đang thiếu, không cần băm byte ảnh. File cần đồng bộ được suy ra từ chuỗi `/media/...` và `/api/media/files/...` trong dữ liệu đơn vị (gồm cả ảnh chèn trong markdown và đường dẫn đã `encodeURIComponent`). Ở Phiên 5, sync không xoá file ảnh nào, kể cả khi xoá sách: file mồ côi để Phiên 6 dọn, và nhờ vậy bản chụp trước đồng bộ luôn còn ảnh.
+
+**Đơn vị gộp (quy tắc A).** Mỗi loại dữ liệu được gộp như sau:
+
+- **Sách:** `items` cùng `library_cards`, `reading_logs` và `reading_notes`.
+- **Media:** `media_items` cùng `media_watch_cards` và `media_notes`.
+- **Challenge:** challenge kèm các slot của nó.
+- **Bracket:** mỗi bracket là một đơn vị.
+- **Ba khối:** `goals`, `monthly_favorites`, `series_positions`, mỗi bảng một khối vì có khoá tự nhiên UNIQUE.
+- **Cài đặt:** mỗi key của `app_settings` là một đơn vị.
+
+Dữ liệu đơn vị không có id tự tăng: `challenge_slots.item_id`, `monthly_favorites.item_id`, `brackets.entries` và `picks`, `series_positions.item_id` (của sách hoặc media theo `source`) được đổi sang `item_uid` khi xuất và đổi lại id cục bộ khi áp. Tham chiếu tới sách/media không còn ở máy nhận thì thành `null` (slot, bracket) hoặc bị bỏ (yêu thích, thứ tự series).
+
+Có những thứ không đồng bộ. Các cột riêng của từng máy `obsidian_path`, `obsidian_media_dir`, `sync_db_hash`, `sync_file_hash` bị bỏ khỏi dữ liệu đơn vị. `general.app_icon_ico` (file .ico lối tắt Desktop) không đi theo, và khi áp thì máy nhận giữ giá trị của mình. Cũng không đồng bộ key `drive_sync_state`, `obsidian_sync_config` và `obsidian_templates`; Obsidian chỉ có trên Windows, đây là quyết định đã duyệt.
+
+**Gộp ba chiều.** Mỗi máy lưu `base` (hash từng đơn vị ở lần đồng bộ thành công gần nhất) trong `app_settings` key `drive_sync_state`, cùng `last_sync_at` và danh sách bản chụp. Không đổi schema. `planMerge` (`server/services/driveSync/merge.js`, hàm thuần) quyết định cho từng đơn vị:
+
+- **Hash hai bên bằng nhau:** bỏ qua.
+- **Chỉ một bên khác `base`:** lấy bên đó.
+- **Cả hai bên khác `base`:** là xung đột. Bản có `updated_at` mới hơn thắng nguyên khối; hoà thì bản cục bộ thắng.
+- **Một bên có dấu xoá, bên kia không sửa kể từ `base`:** xoá theo.
+- **Một bên có dấu xoá, bên kia đã sửa:** so `updated_at` với `deleted_at`.
+
+Dấu xoá chỉ được xét cho khoá không còn đơn vị ở chính bên đó, nên một đơn vị đã "sống lại" hợp lệ (sửa sau khi bị xoá) không bị xoá lại. `updated_at` của đơn vị là mốc lớn nhất của `updated_at` và `created_at` trên mọi dòng. Khi so xung đột, bên cục bộ còn tính thêm `deleted_at` của những dòng con mà máy này đã xoá nhưng bản trên Drive vẫn còn (`children` lưu sync_uid của dòng con), vì xoá một log không đổi `updated_at` của sách. Dấu xoá trên Drive là hợp của dấu đã có và dấu cục bộ (`sync_deletions` và `media_sync_deletions`), giữ vĩnh viễn ở Phiên 5. Dọn dấu cũ là việc Phiên 6.
+
+**Ba điều chặn việc hai máy đẩy qua đẩy lại.** Thứ nhất, hash không tính `updated_at` (ở mọi tầng). Thứ hai, khi áp, dòng con và bảng có trigger "touch" của migration 015 được xoá rồi **chèn lại** với nguyên giá trị từ Drive (trigger `AFTER UPDATE` không chạy với INSERT), còn `items`/`media_items` thì UPDATE tại chỗ để giữ id. Thứ ba, dấu `sync_deletions` sinh ra trong lúc áp (do xoá rồi chèn) bị xoá ngay trong cùng transaction. Có test chốt: sau khi hai máy khớp nhau, đồng bộ thêm nhiều lần đều trả 0 lấy về, 0 đẩy lên. Cột được ghi chỉ là cột bảng cục bộ có (`PRAGMA table_info`), nên tên cột không đi thẳng từ file vào SQL và dữ liệu từ schema thấp hơn vẫn áp được. Snapshot do schema **cao hơn** ghi thì bị từ chối (409 `SYNC_SCHEMA_NEWER`) trước khi đụng dữ liệu. Media áp trước sách, vì `series_positions` của DB sách tham chiếu id media. Hai DB là hai transaction riêng: nếu phần sách lỗi sau khi phần media đã ghi thì còn bản chụp để lùi, và lần đồng bộ sau gộp lại đúng.
+
+**Luồng một lần bấm** (`client/src/lib/driveSync.js`):
+
+1. Lấy token.
+2. Tìm hoặc tạo thư mục, tải `snapshot.json` và nhớ `modifiedTime`.
+3. `POST /drive-sync/apply`: server chụp lại, gộp, áp và trả snapshot mới (xuất lại từ DB **sau khi áp**, nên snapshot luôn đúng bằng trạng thái máy này), danh sách file cần tải về và cần đẩy lên, số liệu và danh sách xung đột.
+4. Tải file thiếu qua `PUT /drive-sync/file`, đẩy file mới lên `files/`.
+5. Kiểm lại `modifiedTime` của snapshot. Nếu máy khác vừa ghi xen vào thì dừng với lỗi `concurrent` và báo bấm lại.
+6. Ghi `snapshot.json`.
+7. `POST /drive-sync/commit` để lưu `base`.
+
+Hỏng ở bất kỳ bước nào trước bước 7 thì lần bấm sau làm lại, không mất gì. File ảnh còn thiếu được tải bù ở mọi lần đồng bộ.
+
+**Đường lùi.** Trước mỗi lần áp có lấy về hoặc xoá, app chụp lại dữ liệu cục bộ:
+
+- **Bản chụp JSON (cả hai bản):** toàn bộ đơn vị kèm `base` cũ, giữ 5 bản. Bản Windows lưu ở `<storage>/backups/dong-bo-json/` (ngoài `uploads`, nên không bị phục vụ qua `/media`). Bản PWA lưu ở `syncBackupStore`, cùng IndexedDB với ảnh, tiền tố `sync-backups/`.
+- **Bản sao SQLite bằng `db.backup()` (chỉ bản Windows):** cả hai DB, ở `<storage>/backups/truoc-khi-dong-bo-<mốc>/`, giữ 10 thư mục gần nhất. Chỉ thư mục có tiền tố này bị dọn, các bản sao lưu khác giữ nguyên quy tắc không tự xoá.
+
+"Khôi phục" (`POST /drive-sync/restore`) đặt dữ liệu máy này về một bản chụp và trả `base` về giá trị lúc đó. Trước khi khôi phục, app chụp trạng thái hiện tại nên khôi phục cũng hoàn tác được. Dấu xoá sinh ra lúc khôi phục bị dọn, vì vậy khôi phục **chỉ** đổi máy này và không biến thành lệnh xoá trên máy kia. Muốn Drive và máy kia theo, bấm thêm "Ghi đè Drive" (`mode: 'push'`): không lấy gì về, mọi đơn vị cục bộ thành bản trên Drive, đơn vị chỉ có trên Drive bị gắn dấu xoá với mốc hiện tại. Máy kia xoá theo, trừ mục nó sửa sau mốc đó.
+
+**Giao diện.** Nút "Đồng bộ" (biểu tượng đám mây) nằm trên thanh trên ở mọi tab, cả hai bản, và mở `client/src/components/sync/DriveSyncDialog.jsx`. Hộp thoại có các phần sau:
+
+- Thời điểm đồng bộ gần nhất.
+- Nút "Đồng bộ ngay" kèm dòng tiến trình theo bước.
+- Kết quả: số mục lấy về, đẩy lên, xoá ở máy này, xoá trên Drive, số ảnh tải về và đẩy lên, cùng danh sách xung đột và bên thắng.
+- Mục "Khôi phục và ghi đè": danh sách bản chụp và nút Ghi đè Drive. Hai thao tác này phải bấm hai lần để xác nhận, không dùng `confirm()` của trình duyệt.
+
+Lỗi được đổi sang câu dễ hiểu (`DriveSyncError` trong `driveErrors.js`): không tải được GIS, popup bị chặn, popup đóng, từ chối quyền hoặc chưa ở Test users, thiếu quyền scope, token hết hạn, Drive API chưa bật, giới hạn tần suất, hết dung lượng, mất mạng, snapshot hỏng, schema mới hơn, máy khác ghi xen. Sau khi đồng bộ hoặc khôi phục, toàn bộ cache React Query bị làm mới. So với kế hoạch: các thao tác khôi phục và ghi đè nằm trong chính hộp thoại đồng bộ chứ không ở một tab riêng trong Cài đặt, vì đó là chỗ người dùng đang đứng khi cần.
+
+**Những gì đã kiểm và chưa kiểm.** Đã kiểm bằng test tự động:
+
+- Hai chiều sách và media có ảnh.
+- Xoá không sống lại.
+- Xung đột thì bản mới hơn thắng nguyên khối.
+- Không đẩy qua đẩy lại.
+- Đổi tham chiếu id.
+- Bản chụp, khôi phục, ghi đè, key riêng của máy.
+- Từ chối schema mới hơn và khoá file có `..`.
+- Bản WASM nhận dữ liệu từ bản Node với hash khớp từng đơn vị.
+- Lớp `driveApi` với fetch giả lập.
+
+Đã kiểm thêm bằng Chrome headless thật trên **cả hai bản build**: Windows chạy `server/index.js`, PWA chạy `servePwa.js` trên localhost với OPFS và Service Worker thật. GIS được thay bằng đối tượng giả và Drive bằng server giả lập Drive v3 (có CORS). Kịch bản như sau: Windows đẩy sách có ảnh bìa và một phim; điện thoại lấy về, ảnh bìa phục vụ qua Service Worker trả 200; thêm sách trên điện thoại bằng form thật rồi đồng bộ; Windows lấy về; đồng bộ lại hai bên đều báo "Hai bên đã khớp".
+
+Chưa kiểm được trong môi trường phát triển và phải kiểm trên máy thật:
+
+- Popup GIS thật trên Windows (`127.0.0.1` và `localhost`).
+- Popup GIS trên Android khi app chạy toàn màn hình sau khi cài.
+- Việc file do máy này tạo bằng scope `drive.file` thấy được từ máy kia (suy luận: cùng một OAuth Client nên được).
+- Định dạng multipart trước Drive thật (đã kiểm với server giả lập theo đặc tả).
+
+**Giới hạn đã biết.**
+
+- Cùng một quyển tạo riêng ở hai máy (khác `sync_uid`) sẽ thành hai bản trùng. Lần đầu đồng bộ điện thoại có dữ liệu thử thì nên xoá dữ liệu thử trước.
+- "Xoá toàn bộ dữ liệu" ghi dấu xoá cho mọi sách, nên đồng bộ sau đó sẽ xoá trên mọi máy. Đó là đúng nghĩa của thao tác, nhưng phải biết trước khi dùng để "làm sạch" một máy.
+- Snapshot là một file JSON chứa cả ghi chú, nên tải lại toàn bộ mỗi lần đồng bộ. Ổn với thư viện cá nhân; nếu lớn tới hàng chục MB thì cân nhắc gzip hoặc tách file ở Phiên 6.
+- Giới hạn body JSON của Express là 25 MB, áp cho cả `/drive-sync/apply`.
+
+### Kết quả kiểm tra cuối Phiên 5
+
+`npm test`: **193 pass, 0 fail** (184 + 9 test trong `phase5-drive-sync.test.js`). `npm run verify`: PASS cả 5 hạng mục, acceptance **68/68**. `npm run build` (Windows): `client/dist/` không chứa `sqlite3` hay `apiWorker`. `BASE_PATH=/media-tracker/ npm run build:pwa`: chạy được, service đồng bộ nằm trong `apiWorker`, bundle không kéo `better-sqlite3`. Schema không đổi (sách v15, media v8).
+
+### File đã đổi trong Phiên 5
+
+**Mới:** `server/services/driveSync/index.js`, `server/services/driveSync/units.js`, `server/services/driveSync/merge.js`, `server/services/driveSync/apply.js`, `client/src/lib/driveErrors.js`, `client/src/lib/googleAuth.js`, `client/src/lib/driveApi.js`, `client/src/lib/driveSync.js`, `client/src/components/sync/DriveSyncDialog.jsx`, `server/tests/phase5-drive-sync.test.js`, `DOC-PATCH-PHIEN-5.md`. **Sửa:** `server/services/index.js` (đăng ký `driveSync`), `server/routes/routeTable.js` (route `/drive-sync/*`), `server/app.js` và `server/platform/browserContext.js` (`syncBackupStore`), `client/src/lib/googleConfig.js` (Client ID mặc định), `client/src/components/layout/AppShell.jsx` (nút Đồng bộ), `server/scripts/deployPages.js` (in thêm origin localhost), `docs/TRIEN-KHAI-GITHUB-PAGES.md` (origin bản Windows), `docs/HANDOFF-ANDROID-S.md`.
+
 ## Kết quả kiểm tra cuối Phiên 3
 
 `npm test`: 183 test, **183 pass, 0 fail** (168 của Phiên 2 + 15 test mới).
@@ -261,7 +360,7 @@ Giới hạn còn lại của bản PWA, đã biết và đã có cảnh báo ch
 
 Chưa kiểm trên thiết bị thật: cài app từ manifest, hành vi offline thật, và Safari/iOS (OPFS có từ Safari 16.4 nhưng chưa thử).
 
-Quy tắc gộp dữ liệu khi đồng bộ Drive vẫn chưa chốt (xem mục schema v15). Hai hướng: gộp cả quyển sách như một đơn vị (đơn giản, ít xung đột, nhưng sửa cùng một sách ở hai máy thì mất một bên), hoặc gộp từng dòng (giữ được cả log đọc thêm ở điện thoại và note sửa ở máy tính, nhưng màn hình xử lý xung đột ở Phiên 6 phức tạp hơn nhiều). Schema hiện tại đỡ được cả hai, nên quyết định để đầu Phiên 5.
+Quy tắc gộp đã chốt là A (cả quyển) và đã làm ở Phiên 5, xem mục Phiên 5.
 
 ## Danh sách file đã đổi trong Phiên 2
 
@@ -279,8 +378,15 @@ Quy tắc gộp dữ liệu khi đồng bộ Drive vẫn chưa chốt (xem mục
 
 Toàn bộ `client/**` **không đổi**.
 
-## Phạm vi phiên kế tiếp (PHIÊN 5)
+## Phạm vi phiên kế tiếp (PHIÊN 6)
 
-Đồng bộ Google Drive bằng nút "Đồng bộ", quy tắc gộp **A (cả quyển)** đã chốt. Việc đầu phiên: ghi kết quả kiểm trên điện thoại (mục 6 của `docs/TRIEN-KHAI-GITHUB-PAGES.md`) vào handoff. Địa chỉ Pages: `https://kristenjy99.github.io/media-tracker/`. Sau đó: đăng nhập bằng Google Identity Services với `GOOGLE_CLIENT_ID` và `GOOGLE_DRIVE_SCOPE` từ `client/src/lib/googleConfig.js`, định dạng file đồng bộ trên Drive, gộp theo `sync_uid` / `updated_at` / `sync_deletions`, và phía Windows (cùng định dạng, cùng PBKDF2 cho `app_settings`).
+Việc đầu phiên: ghi kết quả kiểm đồng bộ thật (mục "Các bước test" trong `DOC-PATCH-PHIEN-5.md`) và 7 mục kiểm trên điện thoại vào handoff. Phạm vi dự kiến:
 
-Cần từ phía người dùng ở đầu Phiên 5: địa chỉ Pages đang chạy, Client ID đã đặt vào repository variable, kết quả kiểm trên điện thoại.
+- Màn hình xử lý xung đột chọn tay. Phiên 5 tự giải theo quy tắc A và chỉ liệt kê.
+- Dọn dấu xoá cũ trên Drive.
+- Dọn file ảnh mồ côi trên Drive và trên máy.
+- Cân nhắc nén hoặc tách `snapshot.json` nếu file lớn.
+- Bỏ `openUrl(appUrl)` trong `deployPages.js` nếu người dùng muốn.
+- Đổi tên cache `sw.js` theo phiên bản.
+
+Các patch của Phiên 5: 5 (đồng bộ Google Drive).

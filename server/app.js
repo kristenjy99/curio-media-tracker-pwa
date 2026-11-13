@@ -55,6 +55,8 @@ export function createApp({
     const mediaFileStore = paths?.mediaUploadsDir ? createNodeFileStore(paths.mediaUploadsDir) : null;
     // desktop: phần biểu tượng .ico và lối tắt Desktop, chỉ có trên Windows (bản PWA truyền null).
     const context = { db: contextDb, models, storagePaths: paths, fileStore, mediaFileStore, desktop: createDesktopAdapter(), startedAt };
+    // Bản chụp JSON trước mỗi lần đồng bộ Drive (để khôi phục trong app), nằm ngoài uploads nên không bị phục vụ qua /media.
+    context.syncBackupStore = paths?.root ? createNodeFileStore(path.join(paths.root, 'backups', 'dong-bo-json')) : null;
     context.services = createServices(context);
     context.services.obsidianSync = createObsidianSyncService(context);
     context.services.storage = createStorageService({

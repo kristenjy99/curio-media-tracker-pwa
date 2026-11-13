@@ -35,6 +35,8 @@ export async function createBrowserContext() {
     storagePaths: null,
     fileStore,
     mediaFileStore,
+    // Bản chụp JSON trước mỗi lần đồng bộ Drive, chung IndexedDB với ảnh nhưng tách tiền tố.
+    syncBackupStore: createBrowserFileStore({ backend, prefix: 'sync-backups' }),
     desktop: null,
     startedAt: Date.now(),
     platform: 'pwa',

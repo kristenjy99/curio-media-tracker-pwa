@@ -1,5 +1,5 @@
 import { setUiLanguage } from '../../i18n/translator.js';
-import { Moon, RefreshCw, Settings, Sun, Upload, Plus } from 'lucide-react';
+import { CloudUpload, Moon, RefreshCw, Settings, Sun, Upload, Plus } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useSettings } from '../../hooks/queries.js';
@@ -10,6 +10,7 @@ import { CatMark } from '../bookshelf/Cat.jsx';
 import { BookFormDialog } from '../books/BookFormDialog.jsx';
 import { ImportDialog } from '../import/ImportDialog.jsx';
 import { SyncDialog } from '../sync/SyncDialog.jsx';
+import { DriveSyncDialog } from '../sync/DriveSyncDialog.jsx';
 import { Button } from '../ui/Button.jsx';
 import { LibraryActionsContext } from './LibraryActions.jsx';
 import { IS_PWA, resolveFileUrl } from '../../lib/api.js';
@@ -87,6 +88,7 @@ export function AppShell() {
   const [bookDialog, setBookDialog] = useState(null);
   const [importOpen, setImportOpen] = useState(false);
   const [syncOpen, setSyncOpen] = useState(false);
+  const [driveOpen, setDriveOpen] = useState(false);
 
   const actions = useMemo(
     () => ({
@@ -137,6 +139,10 @@ export function AppShell() {
                   </Button>
                 </>
               )}
+              {/* Đồng bộ Google Drive: có ở cả bản Windows và bản điện thoại, mọi tab. */}
+              <Button variant="ghost" size="md" onClick={() => setDriveOpen(true)} title="Đồng bộ với Google Drive">
+                <CloudUpload size={16} /> <span className="hidden sm:inline">Đồng bộ</span>
+              </Button>
               <NavLink to="/settings" className={({ isActive }) => cn('rounded-lg p-2.5 hover:bg-surface-2 hover:text-ink', isActive ? 'bg-surface-2 text-ink' : 'text-ink-muted')} aria-label="Cài đặt" title="Cài đặt">
                 <Settings size={18} />
               </NavLink>
@@ -165,6 +171,7 @@ export function AppShell() {
       {bookDialog && <BookFormDialog key={bookDialog.id ?? 'new'} {...bookDialog} onClose={() => setBookDialog(null)} />}
       <ImportDialog open={importOpen} onOpenChange={setImportOpen} />
       {!IS_PWA && <SyncDialog open={syncOpen} onOpenChange={setSyncOpen} />}
+      <DriveSyncDialog open={driveOpen} onOpenChange={setDriveOpen} />
     </LibraryActionsContext.Provider>
   );
 }

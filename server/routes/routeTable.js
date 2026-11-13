@@ -12,6 +12,7 @@ import { createTemplateController } from '../controllers/templateController.js';
 import { createSystemController } from '../controllers/systemController.js';
 import { seriesOrderSchema } from '../services/seriesService.js';
 import { exportSchema, passwordSchema, wipeSchema } from '../services/dataService.js';
+import { applySchema, commitSchema, fileQuerySchema, restoreSchema } from '../services/driveSync/index.js';
 import { idParam, itemIdParam } from '../validators/common.js';
 import { analyzeImportSchema, convertImportSchema } from '../validators/importValidators.js';
 import { imageParams, markdownImportSchema } from '../validators/markdownImportValidators.js';
@@ -56,7 +57,7 @@ export function createApiRouteTable(context) {
   const settings = createSettingsController(context);
   const dashboard = createDashboardController(context);
   const f = createFeaturesController(context);
-  const { data, items: itemService, series } = context.services;
+  const { data, items: itemService, series, driveSync } = context.services;
 
   return [
     { method: 'GET', path: '/health', handler: system.health },
@@ -106,6 +107,30 @@ export function createApiRouteTable(context) {
         res.set('Content-Disposition', `attachment; filename="${filename}"`);
         res.send(Buffer.isBuffer(bytes) ? bytes : Buffer.from(bytes));
       },
+    },
+
+    // Đồng bộ Google Drive (Phiên 5). Chạy được trên cả hai bản: phần gọi Google nằm ở trình duyệt,
+    // ở đây chỉ có dữ liệu cục bộ (gộp, áp, sao lưu) và chuyển byte ảnh giữa FileStore và client.
+    { method: 'GET', path: '/drive-sync/status', handler: async (req, res) => res.json(await driveSync.status()) },
+    { method: 'POST', path: '/drive-sync/apply', validate: { body: applySchema }, handler: async (req, res) => res.json(await driveSync.apply(req.valid.body)) },
+    { method: 'POST', path: '/drive-sync/commit', validate: { body: commitSchema }, handler: async (req, res) => res.json(await driveSync.commit(req.valid.body)) },
+    { method: 'POST', path: '/drive-sync/restore', validate: { body: restoreSchema }, handler: async (req, res) => res.json(await driveSync.restore(req.valid.body)) },
+    {
+      method: 'GET',
+      path: '/drive-sync/file',
+      validate: { query: fileQuerySchema },
+      handler: async (req, res) => {
+        const bytes = await driveSync.readFile(req.valid.query.key);
+        res.type('application/octet-stream');
+        res.send(Buffer.isBuffer(bytes) ? bytes : Buffer.from(bytes));
+      },
+    },
+    {
+      method: 'PUT',
+      path: '/drive-sync/file',
+      rawBody: '100mb',
+      validate: { query: fileQuerySchema },
+      handler: async (req, res) => res.json(await driveSync.writeFile(req.valid.query.key, Buffer.isBuffer(req.body) ? req.body : Buffer.from(req.body ?? []))),
     },
 
     { method: 'GET', path: '/items/fandom-pairings', handler: async (req, res) => res.json({ data: await itemService.fandomPairings() }) },

@@ -12,6 +12,7 @@ import { createTemplateService } from './obsidian/templates/templateService.js';
 import { createReadingsService } from './readingsService.js';
 import { createSeriesService } from './seriesService.js';
 import { createDataService } from './dataService.js';
+import { createDriveSyncService } from './driveSync/index.js';
 import { createSettingsService } from './settingsService.js';
 import { createStatsService } from './statsService.js';
 import { createSyncConfigService } from './syncConfigService.js';
@@ -35,5 +36,6 @@ export function createServices(context) {
     fun: createFunService(context),
     series: createSeriesService(context),
     data: createDataService(context),
+    driveSync: createDriveSyncService(context),
   };
 }

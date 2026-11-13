@@ -219,7 +219,7 @@ Nhấn Enter để mở trang của từng bước. Muốn bỏ qua cả phần 
     ['Audience → Test users → Add users → nhập Gmail của bạn → Save. Giữ trạng thái Testing.', 'https://console.cloud.google.com/auth/audience'],
     ['Data access → Add or remove scopes → tick .../auth/drive.file → Update → Save.', 'https://console.cloud.google.com/auth/scopes'],
     [
-      `Create client → Application type: Web application.\n    Authorized JavaScript origins:  ${host}\n    Authorized redirect URIs:       ${appUrl}\n    → Create. Bỏ qua client secret nếu có hiện.`,
+      `Create client → Application type: Web application.\n    Authorized JavaScript origins:  ${host}\n                                    http://localhost:4317\n                                    http://127.0.0.1:4317   (bản Windows, cho đồng bộ Drive)\n    Authorized redirect URIs:       ${appUrl}\n    → Create. Bỏ qua client secret nếu có hiện.`,
       'https://console.cloud.google.com/auth/clients/create',
     ],
   ];
