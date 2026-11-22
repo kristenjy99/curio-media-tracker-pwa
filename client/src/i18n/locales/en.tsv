@@ -1177,3 +1177,11 @@ u6lduz	This title is already in your library:
 fdshc3	Could not check whether this title is a duplicate:
 di4pgf	. If you just updated the app, close every mo-app.bat window and open it again.
 fa4ke9	Could not check whether this title is a duplicate ({0}). Click save again if you still want to save.
+1dphy4o	Updated the Desktop shortcut icon.
+1vnp7zv	Renamed the Desktop shortcut to the app name and updated its icon.
+1kikwv5	The Desktop shortcut already has the right name and icon.
+dshq8t	Created a Desktop shortcut named after the app.
+mbtjz	There is no Desktop shortcut for the app yet. Click "Create Desktop shortcut" to make one.
+6jlwlf	Another file on the Desktop already has the app name. Rename or delete it, then click "Create Desktop shortcut".
+1c2w29g	Could not update the Desktop shortcut. Run tao-shortcut-desktop.bat and take a screenshot of the message in that window.
+1pkz5ag	Shown in the top-left corner and on the browser tab, and used as the Desktop shortcut name (the shortcut is renamed automatically).

@@ -71,11 +71,23 @@ export function createSettingsService({ db, fileStore, desktop = null }) {
     if (relative && fileStore) await fileStore.remove(relative);
   }
 
-  /** Đường dẫn đĩa của file .ico, để truyền cho lối tắt Desktop. Trên trình duyệt luôn null. */
-  async function iconLocalPath(url) {
-    const relative = toStorePath(url);
-    if (!relative || !fileStore) return null;
-    return fileStore.resolve(relative);
+  /**
+   * Đồng bộ lối tắt Desktop (Windows) với tên app và biểu tượng hiện tại: đổi tên file lối tắt theo tên app,
+   * gán biểu tượng dựng từ ảnh PNG đã lưu. create = false thì không tạo khi chưa có lối tắt.
+   */
+  async function syncShortcut({ create = false } = {}) {
+    if (!desktop) return null;
+    const general = await read('general');
+    const relative = toStorePath(general.app_icon);
+    let iconPng = null;
+    if (relative && fileStore) {
+      try {
+        iconPng = await fileStore.read(relative);
+      } catch {
+        iconPng = null; // file ảnh mất thì dùng biểu tượng mặc định
+      }
+    }
+    return desktop.syncShortcut({ appName: general.app_name, iconPng, create });
   }
 
   return {
@@ -98,7 +110,20 @@ export function createSettingsService({ db, fileStore, desktop = null }) {
       };
     },
 
-    update(patch) {
+    async update(patch) {
+      const previousName = patch.general?.app_name !== undefined ? (await read('general')).app_name : undefined;
+      const result = await this.applyUpdate(patch);
+      // Đổi tên app thì đổi tên lối tắt Desktop theo. Chạy nền để ô tên không phải chờ PowerShell.
+      if (desktop && previousName !== undefined && result.general.app_name !== previousName) {
+        syncShortcut().then(
+          (shortcut) => shortcut?.status === 'error' && console.warn(`[reading-tracker] Không đổi được lối tắt Desktop: ${shortcut.message}`),
+          (error) => console.warn(`[reading-tracker] Không đổi được lối tắt Desktop: ${error.message}`),
+        );
+      }
+      return result;
+    },
+
+    applyUpdate(patch) {
       return db.transaction(async () => {
         if (patch.languages) await write('languages', patch.languages);
         if (patch.status_aliases) await write('status_aliases', patch.status_aliases);
@@ -183,7 +208,7 @@ export function createSettingsService({ db, fileStore, desktop = null }) {
       await removeLocal(general.app_icon);
       await removeLocal(general.app_icon_ico);
       await write('general', { ...general, app_icon: `${MEDIA_PREFIX}app/${pngName}`, app_icon_ico: icoUrl });
-      const shortcut = desktop ? await desktop.updateShortcut(await iconLocalPath(icoUrl)) : null;
+      const shortcut = await syncShortcut();
       return { ...(await this.get()), shortcut };
     },
 
@@ -193,16 +218,18 @@ export function createSettingsService({ db, fileStore, desktop = null }) {
       await removeLocal(general.app_icon_ico);
       await desktop?.saveIconCopy(null);
       await write('general', { ...general, app_icon: null, app_icon_ico: null });
-      const shortcut = desktop ? await desktop.updateShortcut(null) : null;
+      const shortcut = await syncShortcut();
       return { ...(await this.get()), shortcut };
     },
 
-    /** Tạo (nếu chưa có) hoặc cập nhật lối tắt Desktop với biểu tượng hiện tại. Chỉ có trên Windows. */
+    /** Tạo (nếu chưa có) hoặc cập nhật lối tắt Desktop với tên app và biểu tượng hiện tại. Chỉ có trên Windows. */
     async desktopShortcut() {
       if (!desktop) throw new ConflictError('Lối tắt Desktop chỉ có trên bản Windows');
-      const ico = (await read('general')).app_icon_ico;
-      return { shortcut: await desktop.updateShortcut(await iconLocalPath(ico), { create: true }) };
+      return { shortcut: await syncShortcut({ create: true }) };
     },
+
+    /** Gọi khi server khởi động: sửa tên/biểu tượng lối tắt đã có (ví dụ tên app vừa đổi ở máy khác qua đồng bộ Drive). */
+    syncDesktopShortcut: () => syncShortcut(),
 
     /** Thêm một đồ trang trí từ file PNG/SVG (hoặc ảnh thường khác). */
     async uploadOrnament(buffer, name) {

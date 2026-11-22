@@ -1265,5 +1265,13 @@
  "Tên sách này đã có trong thư viện:",
  "Không kiểm tra được tên sách có bị trùng hay không:",
  ". Nếu vừa cập nhật app, đóng mọi cửa sổ mo-app.bat rồi mở lại.",
- "Không kiểm tra được tên sách có bị trùng hay không ({0}). Bấm lưu lần nữa nếu vẫn muốn lưu."
+ "Không kiểm tra được tên sách có bị trùng hay không ({0}). Bấm lưu lần nữa nếu vẫn muốn lưu.",
+ "Đã đổi biểu tượng của lối tắt trên Desktop.",
+ "Đã đổi tên lối tắt trên Desktop theo tên app và cập nhật biểu tượng.",
+ "Lối tắt trên Desktop đã đúng tên và biểu tượng.",
+ "Đã tạo lối tắt trên Desktop, tên lối tắt là tên app.",
+ "Chưa có lối tắt của app trên Desktop. Bấm \"Tạo lối tắt Desktop\" để tạo.",
+ "Trên Desktop đã có một file khác trùng tên app. Đổi tên hoặc xoá file đó rồi bấm \"Tạo lối tắt Desktop\".",
+ "Không cập nhật được lối tắt Desktop. Chạy file tao-shortcut-desktop.bat và chụp lại thông báo trong cửa sổ đó.",
+ "Hiện ở góc trên bên trái, trên tab trình duyệt và là tên lối tắt trên Desktop (lối tắt tự đổi tên theo)."
 ]

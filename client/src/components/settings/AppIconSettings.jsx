@@ -26,11 +26,14 @@ async function squarePng(file) {
 }
 
 const SHORTCUT_MESSAGES = {
-  updated: 'Đã đổi biểu tượng của lối tắt "Ke sach" trên Desktop.',
-  created: 'Đã tạo lối tắt "Ke sach" trên Desktop.',
-  missing: 'Chưa có lối tắt "Ke sach" trên Desktop. Bấm "Tạo lối tắt Desktop" để tạo.',
+  updated: 'Đã đổi biểu tượng của lối tắt trên Desktop.',
+  renamed: 'Đã đổi tên lối tắt trên Desktop theo tên app và cập nhật biểu tượng.',
+  unchanged: 'Lối tắt trên Desktop đã đúng tên và biểu tượng.',
+  created: 'Đã tạo lối tắt trên Desktop, tên lối tắt là tên app.',
+  missing: 'Chưa có lối tắt của app trên Desktop. Bấm "Tạo lối tắt Desktop" để tạo.',
+  conflict: 'Trên Desktop đã có một file khác trùng tên app. Đổi tên hoặc xoá file đó rồi bấm "Tạo lối tắt Desktop".',
   unsupported: 'Máy này không phải Windows nên không đổi được lối tắt Desktop.',
-  error: 'Không cập nhật được lối tắt Desktop. Chạy lại file tao-shortcut-desktop.bat để tạo lại lối tắt.',
+  error: 'Không cập nhật được lối tắt Desktop. Chạy file tao-shortcut-desktop.bat và chụp lại thông báo trong cửa sổ đó.',
 };
 
 export function AppIconSettings() {
@@ -49,7 +52,7 @@ export function AppIconSettings() {
     try {
       const data = await task();
       if (data.general) queryClient.setQueryData(['settings'], (old) => ({ ...old, ...data, shortcut: undefined }));
-      if (data.shortcut) setNotice(SHORTCUT_MESSAGES[data.shortcut.status] ?? SHORTCUT_MESSAGES.error);
+      if (data.shortcut) setNotice([SHORTCUT_MESSAGES[data.shortcut.status] ?? SHORTCUT_MESSAGES.error, data.shortcut.status === 'error' ? data.shortcut.message : null].filter(Boolean).join(' '));
     } catch (caught) {
       setError(caught);
     } finally {

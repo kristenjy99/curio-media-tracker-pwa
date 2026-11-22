@@ -17,6 +17,16 @@ const server = runtime.app.listen(env.port, env.host, () => {
     console.log(`[reading-tracker] Migrations applied: ${migration.applied.join(', ')}`);
   }
   if (process.env.OPEN_BROWSER === '1') openBrowser(`http://${env.host}:${env.port}/`);
+  // Windows: đưa lối tắt Desktop (nếu có) về đúng tên app và biểu tượng hiện tại, chạy nền.
+  if (process.platform === 'win32') {
+    runtime.context.services.settings
+      .syncDesktopShortcut()
+      .then((shortcut) => {
+        if (shortcut?.status === 'renamed' || shortcut?.status === 'updated') console.log(`[reading-tracker] Lối tắt Desktop: ${shortcut.path}`);
+        if (shortcut?.status === 'error') console.warn(`[reading-tracker] Không cập nhật được lối tắt Desktop: ${shortcut.message}`);
+      })
+      .catch((error) => console.warn(`[reading-tracker] Không cập nhật được lối tắt Desktop: ${error.message}`));
+  }
 });
 
 /** Mở trình duyệt mặc định sau khi server đã nghe cổng (dùng bởi mo-app.bat). */

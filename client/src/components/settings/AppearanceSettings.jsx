@@ -6,7 +6,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { Check, ImagePlus, Pencil, Plus, RotateCcw, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useSettings } from '../../hooks/queries.js';
-import { api, resolveFileUrl, sendBinary } from '../../lib/api.js';
+import { api, IS_PWA, resolveFileUrl, sendBinary } from '../../lib/api.js';
 import { applyAppearance, BODY_FONTS, DEFAULT_APPEARANCE, DISPLAY_FONTS, isCustomTheme, PRESETS, resolvePalette } from '../../lib/appearance.js';
 import { prepareImage } from '../../lib/images.js';
 import { cn } from '../../lib/utils.js';
@@ -165,7 +165,10 @@ export function AppearanceSettings() {
       </div>
       <ErrorNote error={error} />
 
-      <Section title="Tên app" description="Hiện ở góc trên bên trái và trên tab trình duyệt.">
+      <Section
+        title="Tên app"
+        description={IS_PWA ? 'Hiện ở góc trên bên trái và trên tab trình duyệt.' : 'Hiện ở góc trên bên trái, trên tab trình duyệt và là tên lối tắt trên Desktop (lối tắt tự đổi tên theo).'}
+      >
         <div className="flex flex-col gap-1.5">
           <Input value={appName ?? ''} onChange={(event) => changeName(event.target.value)} maxLength={40} className="sm:w-80" aria-label="Tên app" aria-invalid={nameError ? true : undefined} />
           {nameError && <p className="text-xs text-danger">{nameError}</p>}
