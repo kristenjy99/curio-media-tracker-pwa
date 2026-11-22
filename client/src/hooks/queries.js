@@ -66,8 +66,17 @@ export function useInvalidateLibrary() {
     client.invalidateQueries({ queryKey: ['readings'] });
     client.invalidateQueries({ queryKey: ['goals'] });
     client.invalidateQueries({ queryKey: ['fun'] });
+    // Quotes hiện tên sách/tác giả và bị xoá theo sách.
+    client.invalidateQueries({ queryKey: ['quotes'] });
   };
 }
+
+/** Quotes & highlights kèm sách nguồn; params: { q, kind, item_id }. */
+export const useQuotes = (params = {}) =>
+  useQuery({ queryKey: ['quotes', params], queryFn: () => api.get(`/quotes${toQuery(params)}`), placeholderData: (previous) => previous });
+
+/** Sách đã có tên trùng với `title` (bỏ qua sách excludeId). */
+export const fetchTitleMatches = (title, excludeId) => api.get(`/items/title-check${toQuery({ title, exclude_id: excludeId })}`).then((result) => result.data ?? []);
 
 export function useSaveTemplate() {
   const client = useQueryClient();

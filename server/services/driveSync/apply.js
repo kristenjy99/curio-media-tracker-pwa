@@ -68,7 +68,7 @@ export function createApplier({ db, mediaDb }) {
     let id = await bookId(uid);
     if (id) {
       await updateRow(db, 'items', id, data.item, cache, ITEM_LOCAL_COLUMNS);
-      for (const table of ['library_cards', 'reading_logs', 'reading_notes']) await db.run(`DELETE FROM ${table} WHERE item_id = ?`, [id]);
+      for (const table of ['library_cards', 'reading_logs', 'reading_notes', 'quotes']) await db.run(`DELETE FROM ${table} WHERE item_id = ?`, [id]);
     } else {
       const row = { ...data.item };
       for (const key of ITEM_LOCAL_COLUMNS) delete row[key];
@@ -77,6 +77,7 @@ export function createApplier({ db, mediaDb }) {
     for (const card of data.cards ?? []) await insertRow(db, 'library_cards', { ...card, item_id: id }, cache);
     for (const log of data.logs ?? []) await insertRow(db, 'reading_logs', { ...log, item_id: id }, cache);
     if (data.note) await insertRow(db, 'reading_notes', { ...data.note, item_id: id }, cache);
+    for (const quote of data.quotes ?? []) await insertRow(db, 'quotes', { ...quote, item_id: id }, cache);
   }
 
   async function pullChallenge({ data }) {

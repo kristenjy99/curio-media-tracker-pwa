@@ -28,6 +28,7 @@ const BOOK_TABS = [
   { to: '/', label: 'Kệ sách', end: true },
   { to: '/calendar', label: 'Lịch đọc' },
   { to: '/goals', label: 'Mục tiêu' },
+  { to: '/quotes', label: 'Quotes' },
   { to: '/dashboard', label: 'Thống kê' },
 ];
 const MEDIA_TABS = [

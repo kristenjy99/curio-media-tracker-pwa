@@ -1,6 +1,6 @@
-import { Trash2 } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { pairingOptions, useFacets, useFandomPairings, useInvalidateLibrary, useItem, usePairings, useSettings, useTags, useTemplates } from '../../hooks/queries.js';
+import { AlertTriangle, Trash2 } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { fetchTitleMatches, pairingOptions, useFacets, useFandomPairings, useInvalidateLibrary, useItem, usePairings, useSettings, useTags, useTemplates } from '../../hooks/queries.js';
 import { api, ApiError } from '../../lib/api.js';
 import { isLocalImage, uploadImage } from '../../lib/images.js';
 import {
@@ -31,6 +31,68 @@ import { Switch } from '../ui/Switch.jsx';
 import { useToast } from '../ui/Toast.jsx';
 
 const LIST_FIELDS = ['tags', 'fandoms', 'pairings', 'tropes', 'topics', 'warnings'];
+
+const TONE_MARKS = /[\u0300\u0301\u0303\u0309\u0323]/g;
+
+/** Cùng quy tắc với titleKey ở server (itemService.js): bỏ hoa thường, dấu câu, ký hiệu, khoảng trắng thừa, vị trí dấu thanh (hoà = hòa). */
+function titleKey(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .toLocaleLowerCase('vi')
+    .replace(/[\p{P}\p{S}]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .map((word) => word.replace(TONE_MARKS, '') + (word.match(TONE_MARKS) ?? []).sort().join(''))
+    .join(' ')
+    .normalize('NFC');
+}
+
+/** Tác giả · thể loại · trạng thái; mỗi phần là một node chữ riêng để bộ dịch giao diện dịch được thể loại và trạng thái. */
+function BookMeta({ book }) {
+  return (
+    <>
+      {book.creator_author ? <span translate="no">{book.creator_author}</span> : <span>Chưa có tác giả</span>}
+      <span> · </span>
+      <span>{CATEGORY_LABELS[book.main_category] ?? book.main_category}</span>
+      <span> · </span>
+      <span>{STATUS_LABELS[book.status] ?? book.status}</span>
+    </>
+  );
+}
+
+/** Hỏi lại khi tên sách trùng với sách đã có: "Không" thì dừng, "Có, nhập tiếp" thì nhập bình thường. */
+function DuplicateTitleDialog({ matches, isEdit, onContinue, onStop, onDismiss }) {
+  return (
+    <Dialog
+      open
+      onOpenChange={(open) => !open && onDismiss()}
+      size="sm"
+      title="Tên sách bị trùng"
+      description={`Thư viện đã có ${matches.length} sách cùng tên:`}
+      footer={
+        <>
+          <Button onClick={onStop}>{isEdit ? 'Không, giữ tên cũ' : 'Không, huỷ thêm sách'}</Button>
+          <Button variant="primary" onClick={onContinue} autoFocus>
+            Có, nhập tiếp
+          </Button>
+        </>
+      }
+    >
+      <ul className="flex flex-col gap-2">
+        {matches.map((book) => (
+          <li key={book.id} className="rounded-lg border border-danger/40 bg-danger/5 px-3 py-2 text-sm">
+            <p className="font-medium" translate="no">{book.title}</p>
+            <p className="text-xs text-ink-muted">
+              <BookMeta book={book} />
+            </p>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-sm">Bạn có muốn nhập tiếp không?</p>
+    </Dialog>
+  );
+}
 function uniqueCaseless(values) {
   const seen = new Set();
   return values.filter((value) => {
@@ -196,6 +258,60 @@ export function BookFormDialog({ mode, id, category, onClose, onDeleted }) {
   const settings = useSettings();
   const languages = settings.data?.languages ?? [];
 
+  // Cảnh báo trùng tên: kiểm tra sau khi ngừng gõ, hỏi lại khi rời ô tên sang ô khác hoặc khi bấm lưu.
+  // Sửa sách mà không đổi tên thì không kiểm. Tên đã bấm "Có, nhập tiếp" thì không hỏi lại.
+  const formRef = useRef(null);
+  const titleCache = useRef(new Map());
+  const ackKey = useRef(null);
+  const [duplicates, setDuplicates] = useState({ key: '', matches: [] });
+  const [dupPrompt, setDupPrompt] = useState(null);
+  const currentKey = titleKey(form.title);
+  const unchangedTitle = isEdit && existing.data && currentKey === titleKey(existing.data.title);
+
+  async function checkTitle(title) {
+    const key = titleKey(title);
+    if (!key || (isEdit && existing.data && key === titleKey(existing.data.title))) return { key, matches: [] };
+    if (!titleCache.current.has(key)) titleCache.current.set(key, await fetchTitleMatches(title.trim(), isEdit ? id : undefined));
+    return { key, matches: titleCache.current.get(key) };
+  }
+
+  useEffect(() => {
+    let active = true;
+    const timer = setTimeout(() => {
+      checkTitle(form.title)
+        .then((result) => active && setDuplicates(result))
+        .catch((error) => active && setDuplicates({ key: titleKey(form.title), matches: [], error }));
+    }, 400);
+    return () => {
+      active = false;
+      clearTimeout(timer);
+    };
+  }, [form.title, existing.data]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function onTitleBlur(event) {
+    // Chỉ hỏi khi chuyển sang ô khác trong form; bấm Huỷ/đóng hộp thoại thì không hỏi.
+    if (!formRef.current?.contains(event.relatedTarget)) return;
+    try {
+      const result = await checkTitle(event.target.value);
+      if (result.matches.length && ackKey.current !== result.key) setDupPrompt({ ...result, fromSubmit: false });
+    } catch {
+      // Lỗi đã hiện dưới ô tên (effect kiểm tra ở trên); lúc lưu sẽ kiểm lại.
+    }
+  }
+
+  function continueDuplicate() {
+    ackKey.current = dupPrompt.key;
+    const resubmit = dupPrompt.fromSubmit;
+    setDupPrompt(null);
+    if (resubmit) setTimeout(() => formRef.current?.requestSubmit(), 0);
+  }
+
+  function stopDuplicate() {
+    setDupPrompt(null);
+    if (isEdit) setForm((current) => ({ ...current, title: existing.data?.title ?? current.title }));
+    else onClose();
+  }
+
   useEffect(() => {
     if (existing.data) setForm(fromItem(existing.data));
   }, [existing.data]);
@@ -226,6 +342,24 @@ export function BookFormDialog({ mode, id, category, onClose, onDeleted }) {
     }
     setSaving(true);
     try {
+      let duplicate;
+      try {
+        duplicate = await checkTitle(form.title);
+      } catch (error) {
+        // Không kiểm được thì không lưu im lặng: báo lỗi, bấm lưu lần nữa mới lưu.
+        const key = titleKey(form.title);
+        if (ackKey.current !== key) {
+          ackKey.current = key;
+          setDuplicates({ key, matches: [], error });
+          setFormError(new Error(`Không kiểm tra được tên sách có bị trùng hay không (${error.message}). Bấm lưu lần nữa nếu vẫn muốn lưu.`));
+          return;
+        }
+        duplicate = { key, matches: [] };
+      }
+      if (duplicate.matches.length && ackKey.current !== duplicate.key) {
+        setDupPrompt({ ...duplicate, fromSubmit: true });
+        return;
+      }
       const payload = toPayload(form, images);
       let itemId = id;
       if (isEdit) {
@@ -331,13 +465,51 @@ export function BookFormDialog({ mode, id, category, onClose, onDeleted }) {
             <Spinner /> Đang mở sách
           </div>
         ) : (
-          <form id="book-form" onSubmit={submit} className="grid gap-x-8 gap-y-5 lg:grid-cols-2" noValidate>
+          <form id="book-form" ref={formRef} onSubmit={submit} className="grid gap-x-8 gap-y-5 lg:grid-cols-2" noValidate>
             {formError && !Object.keys(errors).length && <ErrorNote error={formError} className="lg:col-span-2" />}
 
             <div className="flex flex-col gap-4">
-              <Field label="Tên sách" required error={errors.title}>
-                {(props) => <Input {...props} value={form.title} onChange={setInput('title')} autoFocus />}
-              </Field>
+              <div className="flex flex-col gap-2">
+                <Field label="Tên sách" required error={errors.title}>
+                  {(props) => (
+                    <Input
+                      {...props}
+                      value={form.title}
+                      onChange={setInput('title')}
+                      onBlur={onTitleBlur}
+                      autoFocus
+                      aria-invalid={props['aria-invalid'] || (!unchangedTitle && duplicates.key === currentKey && duplicates.matches.length > 0) || undefined}
+                    />
+                  )}
+                </Field>
+                {!unchangedTitle && duplicates.key === currentKey && duplicates.error && (
+                  <p role="alert" className="flex gap-2 rounded-lg border border-honey/60 bg-honey/10 px-3 py-2 text-xs">
+                    <AlertTriangle size={14} className="mt-0.5 shrink-0" aria-hidden />
+                    <span>
+                      Không kiểm tra được tên sách có bị trùng hay không: {duplicates.error.message}. Nếu vừa cập nhật app, đóng mọi cửa sổ mo-app.bat rồi mở lại.
+                    </span>
+                  </p>
+                )}
+                {!unchangedTitle && duplicates.key === currentKey && duplicates.matches.length > 0 && (
+                  <div role="alert" className="flex gap-2 rounded-lg border border-danger/40 bg-danger/5 px-3 py-2 text-xs text-danger">
+                    <AlertTriangle size={14} className="mt-0.5 shrink-0" aria-hidden />
+                    <div className="min-w-0">
+                      <p className="font-medium">Tên sách này đã có trong thư viện:</p>
+                      <ul className="mt-1 flex flex-col gap-0.5">
+                        {duplicates.matches.map((book) => (
+                          <li key={book.id}>
+                            <span translate="no">{book.title}</span>
+                            <span className="text-ink-muted">
+                              {' · '}
+                              <BookMeta book={book} />
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
               <Field label="Tác giả" hint="Nhiều tác giả thì cách nhau bằng dấu phẩy" error={errors.creator_author}>
                 {(props) => <Input {...props} value={form.creator_author} onChange={setInput('creator_author')} />}
               </Field>
@@ -530,6 +702,7 @@ export function BookFormDialog({ mode, id, category, onClose, onDeleted }) {
         )}
       </Dialog>
       {confirmDelete && <DeleteConfirm item={form} busy={saving} onCancel={() => setConfirmDelete(false)} onConfirm={remove} />}
+      {dupPrompt && <DuplicateTitleDialog matches={dupPrompt.matches} isEdit={isEdit} onContinue={continueDuplicate} onStop={stopDuplicate} onDismiss={() => setDupPrompt(null)} />}
     </>
   );
 }

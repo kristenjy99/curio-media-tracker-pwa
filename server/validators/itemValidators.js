@@ -88,6 +88,11 @@ export const listItemsQuerySchema = z.object({
   fandom: queryList(z.string().max(200)),
   pairing: queryList(z.string().max(200)),
   topic: queryList(z.string().max(200)),
+  // Tác giả: không tách theo dấu phẩy như queryList, vì tên tác giả có thể chứa dấu phẩy. Nhiều giá trị = OR.
+  author: z.preprocess(
+    (value) => (value === undefined || value === '' ? undefined : (Array.isArray(value) ? value : [value]).map((entry) => String(entry).trim()).filter(Boolean)),
+    z.array(z.string().max(500)).max(50).optional(),
+  ),
   rating_min: z.coerce.number().min(0).max(5).optional(),
   unrated: queryBoolean,
   release_year: queryInt(-3000, 3000),
@@ -100,4 +105,9 @@ export const listItemsQuerySchema = z.object({
   order: z.enum(['asc', 'desc']).optional(),
   limit: queryInt(1, 5000),
   offset: queryInt(0, Number.MAX_SAFE_INTEGER),
+});
+
+export const titleCheckQuerySchema = z.object({
+  title: z.string().trim().min(1).max(500),
+  exclude_id: queryInt(1, Number.MAX_SAFE_INTEGER),
 });

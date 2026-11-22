@@ -44,7 +44,7 @@ describe('migration 007: gộp moodboard/playlist/file đính kèm vào note', (
     const { db: handle } = openDatabase(':memory:');
     const db = handle.raw;
     db.pragma('user_version = 0');
-    for (const table of ['series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
+    for (const table of ['quotes', 'series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
       db.exec(`DROP TABLE IF EXISTS ${table}`);
     }
     db.exec('DROP TRIGGER IF EXISTS trg_items_tombstone');

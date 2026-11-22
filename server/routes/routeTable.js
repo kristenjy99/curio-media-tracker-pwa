@@ -18,7 +18,8 @@ import { analyzeImportSchema, convertImportSchema } from '../validators/importVa
 import { imageParams, markdownImportSchema } from '../validators/markdownImportValidators.js';
 import { dashboardQuerySchema } from '../validators/dashboardValidators.js';
 import * as fv from '../validators/featuresValidators.js';
-import { createItemSchema, listItemsQuerySchema, updateItemSchema } from '../validators/itemValidators.js';
+import { createItemSchema, listItemsQuerySchema, titleCheckQuerySchema, updateItemSchema } from '../validators/itemValidators.js';
+import { createQuoteSchema, listQuotesQuerySchema, updateQuoteSchema } from '../validators/quoteValidators.js';
 import { createLibraryCardSchema, updateLibraryCardSchema } from '../validators/libraryCardValidators.js';
 import {
   createReadingLogSchema,
@@ -57,7 +58,7 @@ export function createApiRouteTable(context) {
   const settings = createSettingsController(context);
   const dashboard = createDashboardController(context);
   const f = createFeaturesController(context);
-  const { data, items: itemService, series, driveSync } = context.services;
+  const { data, items: itemService, series, driveSync, quotes } = context.services;
 
   return [
     { method: 'GET', path: '/health', handler: system.health },
@@ -172,6 +173,13 @@ export function createApiRouteTable(context) {
 
     { method: 'GET', path: '/items', validate: { query: listItemsQuerySchema }, handler: items.list },
     { method: 'GET', path: '/items/facets', handler: items.facets },
+    // Sách đã có tên trùng (không phân biệt hoa thường, dấu câu, khoảng trắng thừa); exclude_id bỏ qua sách đang sửa.
+    {
+      method: 'GET',
+      path: '/items/title-check',
+      validate: { query: titleCheckQuerySchema },
+      handler: async (req, res) => res.json({ data: await itemService.titleMatches(req.valid.query.title, req.valid.query.exclude_id) }),
+    },
     { method: 'GET', path: '/items/pairings', handler: items.pairings },
     { method: 'POST', path: '/items', validate: { body: createItemSchema }, handler: items.create },
     { method: 'GET', path: '/items/:id', validate: { params: idParam }, handler: items.get },
@@ -190,6 +198,19 @@ export function createApiRouteTable(context) {
     { method: 'PUT', path: '/items/:itemId/note', validate: { params: itemIdParam, body: upsertReadingNoteSchema }, handler: notes.upsert },
     // Tải ảnh moodboard/nhân vật/ảnh chèn trong note hoặc file đính kèm (tối đa 50MB), body là file nhị phân.
     { method: 'POST', path: '/items/:id/files', rawBody: '51mb', validate: { params: noteFileParams, query: noteFileQuery }, handler: notes.uploadFile },
+
+    { method: 'GET', path: '/quotes', validate: { query: listQuotesQuerySchema }, handler: async (req, res) => res.json(await quotes.list(req.valid.query)) },
+    { method: 'POST', path: '/quotes', validate: { body: createQuoteSchema }, handler: async (req, res) => res.status(201).json(await quotes.create(req.valid.body)) },
+    { method: 'PATCH', path: '/quotes/:id', validate: { params: idParam, body: updateQuoteSchema }, handler: async (req, res) => res.json(await quotes.update(req.valid.params.id, req.valid.body)) },
+    {
+      method: 'DELETE',
+      path: '/quotes/:id',
+      validate: { params: idParam },
+      handler: async (req, res) => {
+        await quotes.delete(req.valid.params.id);
+        res.status(204).end();
+      },
+    },
 
     { method: 'GET', path: '/reading-logs', validate: { query: listReadingLogsQuerySchema }, handler: logs.list },
     { method: 'POST', path: '/reading-logs', validate: { body: createReadingLogSchema }, handler: logs.create },

@@ -27,13 +27,13 @@ function openWasm({ list = migrations } = {}) {
   return { db, raw, migration };
 }
 
-test('migration của DB sách chạy trên SQLite WASM, schema lên v15', () => {
+test('migration của DB sách chạy trên SQLite WASM, schema lên v16', () => {
   const { raw, migration } = openWasm();
   assert.equal(migration.from, 0);
-  assert.equal(migration.to, 15);
-  assert.equal(raw.pragma('user_version', { simple: true }), 15);
+  assert.equal(migration.to, 16);
+  assert.equal(raw.pragma('user_version', { simple: true }), 16);
   const tables = raw.prepare("SELECT name FROM sqlite_master WHERE type='table'").all().map((row) => row.name);
-  for (const table of ['items', 'library_cards', 'reading_logs', 'reading_notes', 'app_settings', 'sync_deletions']) {
+  for (const table of ['items', 'library_cards', 'reading_logs', 'reading_notes', 'app_settings', 'sync_deletions', 'quotes']) {
     assert.ok(tables.includes(table), `thiếu bảng ${table}`);
   }
   raw.close();
@@ -129,7 +129,7 @@ test('xuất file DB từ WASM đọc lại được như một DB SQLite', asyn
   );
   assert.equal(code, 0);
   const handle = createWasmHandle(restored, sqlite3);
-  assert.equal(handle.pragma('user_version', { simple: true }), 15);
+  assert.equal(handle.pragma('user_version', { simple: true }), 16);
   assert.equal(handle.prepare('SELECT title FROM items').pluck().get(), 'Xuất');
   handle.close();
   raw.close();

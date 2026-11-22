@@ -1,7 +1,7 @@
 /**
  * Xuất dữ liệu cục bộ thành các "đơn vị đồng bộ" cho Google Drive (Phiên 5).
  *
- * Quy tắc gộp A: mỗi quyển sách (dòng items cùng library_cards, reading_logs, reading_notes) là một
+ * Quy tắc gộp A: mỗi quyển sách (dòng items cùng library_cards, reading_logs, reading_notes, quotes) là một
  * đơn vị; media tương tự (media_items cùng media_watch_cards, media_notes). Các bảng còn lại:
  *  - challenge (kèm slot) và bracket: mỗi bản ghi một đơn vị.
  *  - goals, monthly_favorites, series_positions: mỗi bảng một khối, vì có khoá tự nhiên UNIQUE
@@ -23,7 +23,7 @@ const ITEM_LOCAL_COLUMNS = ['id', 'obsidian_path', 'sync_db_hash', 'sync_file_ha
 
 /** Bảng con -> khoá đơn vị cha, dùng để tính mốc sửa khi dòng con bị xoá. */
 export const CHILD_TABLES = {
-  books: ['library_cards', 'reading_logs', 'reading_notes', 'challenge_slots'],
+  books: ['library_cards', 'reading_logs', 'reading_notes', 'quotes', 'challenge_slots'],
   media: ['media_watch_cards', 'media_notes'],
 };
 
@@ -142,6 +142,9 @@ export async function exportUnits({ db, mediaDb }) {
   const cards = groupBy(await db.all('SELECT * FROM library_cards'), 'item_id');
   const logs = groupBy(await db.all('SELECT * FROM reading_logs'), 'item_id');
   const notes = groupBy(await db.all('SELECT * FROM reading_notes'), 'item_id');
+  // Bảng quotes có từ schema v16; DB cũ hơn (chưa migrate) thì coi như không có quotes.
+  const hasQuotes = Boolean(await db.get("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'quotes'", undefined, { pluck: true }));
+  const quotes = groupBy(hasQuotes ? await db.all('SELECT * FROM quotes') : [], 'item_id');
   for (const item of items) {
     bookUid.set(item.id, item.sync_uid);
     const strip = (rows) => (rows ?? []).map((row) => omit(row, ['id', 'item_id'])).sort(byUid);
@@ -152,7 +155,11 @@ export async function exportUnits({ db, mediaDb }) {
       logs: strip(logs.get(item.id)),
       note: note ? omit(note, ['id', 'item_id']) : null,
     };
-    const children = [...data.cards, ...data.logs, ...(data.note ? [data.note] : [])].map((row) => row.sync_uid);
+    // Chỉ thêm khoá `quotes` khi sách có quote: sách không có quote giữ nguyên hash như trước patch 6,
+    // nên lần đồng bộ đầu sau khi cập nhật không phải đẩy lại toàn bộ thư viện.
+    const quoteRows = strip(quotes.get(item.id));
+    if (quoteRows.length) data.quotes = quoteRows;
+    const children = [...data.cards, ...data.logs, ...(data.note ? [data.note] : []), ...quoteRows].map((row) => row.sync_uid);
     add(`book:${item.sync_uid}`, 'book', item.title, data, children);
   }
   const uidOf = (id) => (id == null ? null : bookUid.get(id) ?? null);

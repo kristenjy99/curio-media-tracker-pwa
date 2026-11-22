@@ -1,11 +1,12 @@
 import { useQueryClient } from '@tanstack/react-query';
-import { AlertTriangle, ArrowLeft, NotebookPen, Stamp, SquarePen } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, NotebookPen, Quote, Stamp, SquarePen } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { BookHeader } from '../components/detail/BookHeader.jsx';
 import { LibraryCardTab } from '../components/detail/LibraryCardTab.jsx';
 import { NoteTab } from '../components/detail/NoteTab.jsx';
 import { ReadingLogTab } from '../components/detail/ReadingLogTab.jsx';
+import { QuoteList } from '../components/quotes/QuoteList.jsx';
 import { useLibraryActions } from '../components/layout/LibraryActions.jsx';
 import { Button } from '../components/ui/Button.jsx';
 import { ErrorNote } from '../components/ui/ErrorNote.jsx';
@@ -15,7 +16,7 @@ import { useToast } from '../components/ui/Toast.jsx';
 import { useInvalidateLibrary, useItem } from '../hooks/queries.js';
 import { api } from '../lib/api.js';
 
-const TABS = ['note', 'card', 'log'];
+const TABS = ['note', 'card', 'log', 'quotes'];
 
 export function BookDetailPage() {
   const { id: rawId } = useParams();
@@ -135,6 +136,7 @@ export function BookDetailPage() {
           { value: 'note', label: 'Note & Review', icon: <SquarePen size={16} aria-hidden /> },
           { value: 'card', label: 'Thẻ thư viện', icon: <Stamp size={16} aria-hidden />, badge: book.library_cards.length },
           { value: 'log', label: 'Nhật ký đọc', icon: <NotebookPen size={16} aria-hidden /> },
+          { value: 'quotes', label: 'Quotes', icon: <Quote size={16} aria-hidden /> },
         ]}
       >
         <TabPanel value="note">
@@ -145,6 +147,9 @@ export function BookDetailPage() {
         </TabPanel>
         <TabPanel value="log">
           <ReadingLogTab item={book} onChanged={refresh} />
+        </TabPanel>
+        <TabPanel value="quotes">
+          <QuoteList itemId={book.id} />
         </TabPanel>
       </Tabs>
     </div>

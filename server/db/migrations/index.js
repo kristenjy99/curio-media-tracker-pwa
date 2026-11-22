@@ -13,6 +13,7 @@ import seriesPositions from './012_series_positions.js';
 import mediaSyncFolder from './013_media_sync_folder.js';
 import spiceRating from './014_spice_rating.js';
 import syncIdentity from './015_sync_identity.js';
+import quotes from './016_quotes.js';
 
 // Thêm migration mới vào cuối mảng, version tăng dần, không sửa migration đã chạy.
-export const migrations = [initialSchema, obsidianSync, obsidianTemplates, imagesYearReads, reviewDateSettings, categoryFolders, noteMediaLogs, warnings, goalsReadingsFun, importIssues, newsPaperMedia, seriesPositions, mediaSyncFolder, spiceRating, syncIdentity];
+export const migrations = [initialSchema, obsidianSync, obsidianTemplates, imagesYearReads, reviewDateSettings, categoryFolders, noteMediaLogs, warnings, goalsReadingsFun, importIssues, newsPaperMedia, seriesPositions, mediaSyncFolder, spiceRating, syncIdentity, quotes];

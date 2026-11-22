@@ -1,5 +1,5 @@
 import * as Popover from '@radix-ui/react-popover';
-import { Check, Heart, AlertTriangle, HeartHandshake, Lightbulb, LayoutList, Library, Search, Sparkles, Tag, X } from 'lucide-react';
+import { Check, Heart, AlertTriangle, HeartHandshake, Lightbulb, LayoutList, Library, PenLine, Search, Sparkles, Tag, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { CATEGORIES, CATEGORY_LABELS, SORT_OPTIONS, STATUSES, STATUS_LABELS } from '../../lib/labels.js';
 import { cn } from '../../lib/utils.js';
@@ -8,8 +8,8 @@ import { Button } from '../ui/Button.jsx';
 import { Input, Select } from '../ui/Input.jsx';
 import { Segmented } from '../ui/Segmented.jsx';
 
-/** Chọn nhiều giá trị (tag, fandom, pairing); sách phải có đủ các giá trị đã chọn. */
-function ListFilter({ entries, selected, onChange, label, noun, icon: Icon = Tag, hint }) {
+/** Chọn nhiều giá trị (tag, fandom, pairing); sách phải có đủ các giá trị đã chọn. `description` thay câu giải thích mặc định. */
+function ListFilter({ entries, selected, onChange, label, noun, icon: Icon = Tag, hint, description }) {
   const [query, setQuery] = useState('');
   const visible = entries.filter((entry) => entry.tag.toLowerCase().includes(query.toLowerCase())).slice(0, 200);
   return (
@@ -23,7 +23,7 @@ function ListFilter({ entries, selected, onChange, label, noun, icon: Icon = Tag
       <Popover.Portal>
         <Popover.Content align="start" sideOffset={6} className="z-50 w-72 rounded-xl border border-line bg-surface p-3 shadow-xl">
           <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Tìm ${noun}`} aria-label={`Tìm ${noun}`} className="h-9" />
-          <p className="mt-2 text-xs text-ink-muted">Chọn nhiều {noun}: sách phải có đủ các {noun} đã chọn.{hint ? ` ${hint}` : ''}</p>
+          <p className="mt-2 text-xs text-ink-muted">{description ?? <>Chọn nhiều {noun}: sách phải có đủ các {noun} đã chọn.{hint ? ` ${hint}` : ''}</>}</p>
           <ul className="mt-2 max-h-64 overflow-y-auto">
             {visible.length === 0 && <li className="px-2 py-3 text-sm text-ink-muted">Chưa có {noun} nào khớp.</li>}
             {visible.map(({ tag, count }) => {
@@ -75,14 +75,22 @@ export function FilterBar({ filters, setFilters, facets }) {
     ],
     [facets],
   );
-  const years = filters.year_mode === 'release' ? facets?.release_year_list ?? [] : facets?.read_years ?? [];
-  const activeCount = [filters.q, filters.status?.length, filters.tag?.length, filters.fandom?.length, filters.pairing?.length, filters.topic?.length, filters.year, filters.rating, filters.fav, filters.review].filter(Boolean).length;
+  const years = facets?.read_years ?? [];
+  const activeCount = [filters.q, filters.status?.length, filters.tag?.length, filters.fandom?.length, filters.pairing?.length, filters.topic?.length, filters.author?.length, filters.year, filters.rating, filters.fav, filters.review].filter(Boolean).length;
   const asEntries = (list) => (list ?? []).map((entry) => ({ tag: entry.value, count: entry.count }));
   // Đã chọn fandom thì danh sách pairing chỉ còn pairing của các fic thuộc (đủ) các fandom đó, số đếm cũng theo đó.
   // Tags chỉ gồm tag của sách thuộc thể loại đang xem.
   const tags = useTags(filters.cat);
   const isFanfic = filters.cat === 'Fanfiction';
   const pairings = usePairings(isFanfic ? filters.fandom ?? [] : []);
+  // Tác giả: số sách theo thể loại đang xem; tác giả đang chọn mà không còn trong danh sách vẫn hiện để bỏ chọn được.
+  const authorEntries = useMemo(() => {
+    const entries = (facets?.authors ?? [])
+      .map((entry) => ({ tag: entry.value, count: filters.cat ? entry.categories?.[filters.cat] ?? 0 : entry.count }))
+      .filter((entry) => entry.count > 0);
+    const missing = (filters.author ?? []).filter((value) => !entries.some((entry) => entry.tag.toLowerCase() === value.toLowerCase()));
+    return [...entries, ...missing.map((value) => ({ tag: value, count: 0 }))];
+  }, [facets, filters.cat, filters.author]);
   const pairingEntries = useMemo(() => {
     const entries = asEntries(pairings.data?.data);
     // Pairing đang chọn mà không còn trong danh sách vẫn hiện để bỏ chọn được.
@@ -122,13 +130,18 @@ export function FilterBar({ filters, setFilters, facets }) {
             );
           })}
         </div>
+        <ListFilter
+          entries={authorEntries}
+          selected={filters.author ?? []}
+          onChange={(author) => setFilters({ author })}
+          label="Tác giả"
+          noun="tác giả"
+          icon={PenLine}
+          description="Chọn nhiều tác giả: hiện sách của bất kỳ tác giả nào đã chọn."
+        />
         <div className="flex items-center gap-1">
-          <Select value={filters.year_mode ?? 'read'} onChange={(event) => setFilters({ year_mode: event.target.value, year: undefined })} aria-label="Lọc theo loại năm" className="w-auto">
-            <option value="read">Năm đọc</option>
-            <option value="release">Năm phát hành</option>
-          </Select>
-          <Select value={filters.year ?? ''} onChange={(event) => setFilters({ year: event.target.value || undefined })} aria-label="Chọn năm" className="w-auto">
-            <option value="">Mọi năm</option>
+          <Select value={filters.year ?? ''} onChange={(event) => setFilters({ year: event.target.value || undefined, year_mode: undefined })} aria-label="Chọn năm đọc" className="w-auto">
+            <option value="">Mọi năm đọc</option>
             {years.map((year) => (
               <option key={year} value={year}>
                 {year}
@@ -173,7 +186,7 @@ export function FilterBar({ filters, setFilters, facets }) {
           <ListFilter entries={asEntries(facets?.topics)} selected={filters.topic ?? []} onChange={(topic) => setFilters({ topic })} label="Chủ đề" noun="chủ đề" icon={Lightbulb} />
         )}
         {activeCount > 0 && (
-          <Button variant="ghost" onClick={() => setFilters({ q: undefined, status: [], tag: [], fandom: [], pairing: [], topic: [], year: undefined, rating: undefined, fav: undefined, review: undefined })}>
+          <Button variant="ghost" onClick={() => setFilters({ q: undefined, status: [], tag: [], fandom: [], pairing: [], topic: [], author: [], year: undefined, rating: undefined, fav: undefined, review: undefined })}>
             <X size={15} /> Xoá bộ lọc
           </Button>
         )}

@@ -28,13 +28,14 @@ test('migration tạo đủ bảng và đặt user_version', () => {
     'monthly_favorites',
     'obsidian_sync_config',
     'obsidian_templates',
+    'quotes',
     'reading_logs',
     'reading_notes',
     'series_positions',
     'sync_deletions',
     'sync_tombstones',
   ]);
-  assert.equal(migration.to, 15);
+  assert.equal(migration.to, 16);
   assert.equal(db.pragma('foreign_keys', { simple: true }), 1);
   db.close();
 });
@@ -81,7 +82,7 @@ test('xoá item cascade xuống library_cards, notes, logs', () => {
   db.prepare('INSERT INTO reading_notes (item_id) VALUES (?)').run(itemId);
   db.prepare("INSERT INTO reading_logs (item_id, date, units_read) VALUES (?, '2026-01-01', 10)").run(itemId);
   db.prepare('DELETE FROM items WHERE id = ?').run(itemId);
-  for (const table of ['series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'library_cards', 'reading_notes', 'reading_logs']) {
+  for (const table of ['quotes', 'series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'library_cards', 'reading_notes', 'reading_logs']) {
     assert.equal(db.prepare(`SELECT COUNT(*) FROM ${table}`).pluck().get(), 0, table);
   }
   db.close();
@@ -91,7 +92,7 @@ test('migration 002 cấp sync_uid cho item có sẵn từ schema v1', () => {
   const { db: handle } = openDatabase(':memory:');
   const db = handle.raw;
   db.pragma('user_version = 0');
-  for (const table of ['series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
+  for (const table of ['quotes', 'series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
     db.exec(`DROP TABLE IF EXISTS ${table}`);
   }
   db.exec('DROP TRIGGER IF EXISTS trg_items_tombstone');
@@ -119,7 +120,7 @@ test('migration 005 chuyển custom_fields.review_date sang cột review_date v�
   const { db: handle } = openDatabase(':memory:');
   const db = handle.raw;
   db.pragma('user_version = 0');
-  for (const table of ['series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
+  for (const table of ['quotes', 'series_positions', 'brackets', 'challenge_slots', 'challenges', 'monthly_favorites', 'goals', 'app_settings', 'obsidian_templates', 'sync_tombstones', 'sync_deletions', 'reading_logs', 'reading_notes', 'library_cards', 'items', 'obsidian_sync_config']) {
     db.exec(`DROP TABLE IF EXISTS ${table}`);
   }
   db.exec('DROP TRIGGER IF EXISTS trg_items_tombstone');
@@ -140,16 +141,16 @@ test('mở lại DB cũ đã ở schema mới nhất: không migrate thêm, đ�
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'rt-v14-'));
   const dbFile = path.join(dir, 'reading-tracker.sqlite');
   try {
-    // Lần mở thứ nhất: tạo file DB và migrate lên schema mới nhất (v14).
+    // Lần mở thứ nhất: tạo file DB và migrate lên schema mới nhất (v16).
     const first = openDatabase(dbFile);
-    assert.equal(first.migration.to, 15);
+    assert.equal(first.migration.to, 16);
     await first.db.run("INSERT INTO items (title, main_category, status) VALUES ('Sách cũ', 'Fiction', 'Finished')");
     first.db.close();
 
-    // Lần mở thứ hai: DB đã ở v14 nên không có migration nào được áp dụng.
+    // Lần mở thứ hai: DB đã ở v16 nên không có migration nào được áp dụng.
     const second = openDatabase(dbFile);
-    assert.deepEqual(second.migration, { from: 15, to: 15, applied: [], backup_path: null });
-    assert.equal(await second.db.pragma('user_version', { simple: true }), 15);
+    assert.deepEqual(second.migration, { from: 16, to: 16, applied: [], backup_path: null });
+    assert.equal(await second.db.pragma('user_version', { simple: true }), 16);
     const titles = await second.db.all('SELECT title FROM items ORDER BY id', undefined, { pluck: true });
     assert.deepEqual(titles, ['Sách cũ']);
     const row = await second.db.get('SELECT title, status FROM items WHERE id = ?', [1]);

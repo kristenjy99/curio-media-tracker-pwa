@@ -1,4 +1,26 @@
+import { splitAuthors } from '../models/itemModel.js';
 import { NotFoundError, ValidationError } from '../utils/errors.js';
+
+// Dấu thanh tiếng Việt (huyền, sắc, ngã, hỏi, nặng) dạng combining sau khi tách NFD.
+const TONE_MARKS = /[\u0300\u0301\u0303\u0309\u0323]/g;
+
+/**
+ * Khoá so trùng tên sách: không phân biệt hoa thường, dấu câu, ký hiệu, khoảng trắng thừa và vị trí đặt
+ * dấu thanh (kiểu cũ "hoà", "thuỷ" và kiểu mới "hòa", "thủy" là một). Vẫn phân biệt có dấu và không dấu.
+ * Cách làm: tách NFD, gỡ dấu thanh khỏi từng chữ rồi gắn lại ở cuối chữ theo thứ tự cố định.
+ */
+export function titleKey(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .toLocaleLowerCase('vi')
+    .replace(/[\p{P}\p{S}]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .map((word) => word.replace(TONE_MARKS, '') + (word.match(TONE_MARKS) ?? []).sort().join(''))
+    .join(' ')
+    .normalize('NFC');
+}
 
 function assertProgressWithinTotal(item) {
   if (item.total_units !== null && item.total_units !== undefined && item.current_unit > item.total_units) {
@@ -80,6 +102,31 @@ export function createItemService(context) {
       return items.listTags();
     },
 
+    /** Sách có tên trùng với `title` (theo titleKey), bỏ qua sách `excludeId` (đang sửa). */
+    async titleMatches(title, excludeId) {
+      const key = titleKey(title);
+      if (!key) return [];
+      const rows = await db.all('SELECT id, title, creator_author, main_category, status, release_year FROM items ORDER BY id');
+      return rows.filter((row) => row.id !== excludeId && titleKey(row.title) === key);
+    },
+
+    /** Tác giả kèm số sách, tổng và theo từng thể loại; tên đã tách theo dấu phẩy/chấm phẩy. */
+    async authorFacet() {
+      const collator = new Intl.Collator('vi', { sensitivity: 'base' });
+      const groups = new Map();
+      const rows = await db.all("SELECT creator_author, main_category FROM items WHERE creator_author IS NOT NULL AND trim(creator_author) <> ''");
+      for (const row of rows) {
+        for (const name of new Set(splitAuthors(row.creator_author))) {
+          const key = name.toLowerCase();
+          if (!groups.has(key)) groups.set(key, { value: name, count: 0, categories: {} });
+          const group = groups.get(key);
+          group.count += 1;
+          group.categories[row.main_category] = (group.categories[row.main_category] ?? 0) + 1;
+        }
+      }
+      return [...groups.values()].sort((a, b) => b.count - a.count || collator.compare(a.value, b.value));
+    },
+
     /** Tag kèm số sách, chỉ trong một thể loại chính (không truyền thì toàn thư viện). */
     tagsForCategory(category) {
       const value = typeof category === 'string' && category ? category : null;
@@ -157,6 +204,7 @@ export function createItemService(context) {
         ),
         custom_values: await this.customValues(),
         pairings: await items.listValues('pairings'),
+        authors: await this.authorFacet(),
         needs_review: await db.get('SELECT COUNT(*) FROM items WHERE import_issues IS NOT NULL', undefined, { pluck: true }),
         favorites: await db.get('SELECT COUNT(*) FROM items WHERE is_favorite = 1', undefined, { pluck: true }),
       };

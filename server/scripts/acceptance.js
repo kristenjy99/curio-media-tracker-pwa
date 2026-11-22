@@ -104,10 +104,10 @@ async function main() {
     expectEqual(res.status, 200, 'HTTP status');
     expectEqual(res.body.status, 'ok', 'status');
   });
-  await step('GET /system/info: schema v15, journal_mode delete', async () => {
+  await step('GET /system/info: schema v16, journal_mode delete', async () => {
     const res = await api('GET', '/system/info');
     expectEqual(res.status, 200, 'HTTP status');
-    expectEqual(res.body.schema_version, 15, 'schema_version');
+    expectEqual(res.body.schema_version, 16, 'schema_version');
     expect(typeof res.body.journal_mode === 'string', 'thiếu journal_mode');
     const notes = [`storage: ${res.body.storage?.root}`];
     if (res.body.journal_mode !== 'delete') {

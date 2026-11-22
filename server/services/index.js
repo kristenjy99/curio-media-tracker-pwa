@@ -8,6 +8,7 @@ import { createItemService } from './itemService.js';
 import { createLibraryCardService } from './libraryCardService.js';
 import { createReadingLogService } from './readingLogService.js';
 import { createReadingNoteService } from './readingNoteService.js';
+import { createQuoteService } from './quoteService.js';
 import { createTemplateService } from './obsidian/templates/templateService.js';
 import { createReadingsService } from './readingsService.js';
 import { createSeriesService } from './seriesService.js';
@@ -23,6 +24,7 @@ export function createServices(context) {
     libraryCards: createLibraryCardService(context),
     readingNotes: createReadingNoteService(context),
     readingLogs: createReadingLogService(context),
+    quotes: createQuoteService(context),
     syncConfig: createSyncConfigService(context),
     templates: createTemplateService(context),
     importer: createImportService(context),

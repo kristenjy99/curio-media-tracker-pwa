@@ -10,6 +10,7 @@ import { MediaDetailPage } from './media/MediaDetailPage.jsx';
 import { MediaListPage } from './media/MediaListPage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage.jsx';
 import { SeriesPage } from './pages/SeriesPage.jsx';
+import { QuotesPage } from './pages/QuotesPage.jsx';
 import { SettingsPage } from './pages/SettingsPage.jsx';
 
 // Trang thống kê kéo theo thư viện biểu đồ nên chỉ tải khi mở.
@@ -30,6 +31,7 @@ export function App() {
         </Route>
         <Route path="series" element={<SeriesPage />} />
         <Route path="calendar" element={<CalendarPage />} />
+        <Route path="quotes" element={<QuotesPage />} />
         <Route path="goals/:tab?" element={<GoalsPage />} />
         <Route path="books/:id" element={<BookDetailPage />} />
         <Route path="settings/:tab?" element={<SettingsPage />} />

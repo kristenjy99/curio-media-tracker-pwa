@@ -13,7 +13,7 @@ import { useFacets, useItems, useSettings } from '../hooks/queries.js';
 import { nextOrnamentSeed, placeOrnaments, readOrnamentSeed } from '../lib/ornaments.js';
 import { CATEGORIES, CATEGORY_LABELS, STATUSES, STATUS_LABELS } from '../lib/labels.js';
 
-const LIST_KEYS = ['status', 'tag', 'fandom', 'pairing', 'topic'];
+const LIST_KEYS = ['status', 'tag', 'fandom', 'pairing', 'topic', 'author'];
 
 function useFilters() {
   const [params, setParams] = useSearchParams();
@@ -92,8 +92,9 @@ export function BookshelfPage() {
     unrated: filters.rating === 'none' ? 'true' : undefined,
     is_favorite: filters.fav ? 'true' : undefined,
     needs_review: filters.review ? 'true' : undefined,
+    author: filters.author,
+    // Bộ lọc năm phát hành đã bỏ (patch 6); link cũ có year_mode=release thì bỏ qua năm.
     read_year: filters.year_mode !== 'release' ? filters.year : undefined,
-    release_year: filters.year_mode === 'release' ? filters.year : undefined,
     sort: filters.sort ?? 'updated_at',
     order: (filters.sort ?? 'updated_at') === 'title' ? 'asc' : 'desc',
   };
@@ -137,7 +138,7 @@ export function BookshelfPage() {
       {!items.isLoading && list.length === 0 && !items.error && (
         <div className="rounded-xl border border-dashed border-line px-6 py-14 text-center">
           <p className="font-display text-2xl">Không có cuốn nào khớp bộ lọc</p>
-          <p className="mt-2 text-sm text-ink-muted">Thử bỏ bớt trạng thái, năm hoặc tag đang chọn.</p>
+          <p className="mt-2 text-sm text-ink-muted">Thử bỏ bớt trạng thái, tác giả, năm hoặc tag đang chọn.</p>
         </div>
       )}
       {list.length > 0 &&

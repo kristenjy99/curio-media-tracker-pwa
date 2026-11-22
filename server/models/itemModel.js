@@ -114,6 +114,14 @@ function hydrate(row, { includeInternal = false } = {}) {
   return item;
 }
 
+/** Tách ô tác giả thành từng tên, cùng quy tắc với splitList ở readingsService (dấu phẩy hoặc chấm phẩy). */
+export function splitAuthors(value) {
+  return String(value ?? '')
+    .split(/[,;]/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
 function asList(value) {
   if (value === undefined || value === null) return [];
   return Array.isArray(value) ? value : [value];
@@ -180,6 +188,12 @@ function buildWhere(filters) {
     params.read_year = filters.read_year;
   }
 
+  // Lọc theo tác giả: id sách đã tính sẵn ở list() (tên tác giả phải tách theo dấu phẩy/chấm phẩy nên không làm bằng SQL).
+  if (filters.author_ids) {
+    where.push('i.id IN (SELECT value FROM json_each(@author_ids))');
+    params.author_ids = JSON.stringify(filters.author_ids);
+  }
+
   if (filters.needs_review) where.push('i.import_issues IS NOT NULL');
 
   if (filters.is_favorite !== undefined) {
@@ -230,6 +244,12 @@ export function createItemModel(db) {
     },
 
     async list(filters = {}) {
+      const authors = asList(filters.author).map((name) => name.trim().toLowerCase()).filter(Boolean);
+      if (authors.length) {
+        const wanted = new Set(authors);
+        const rows = await db.all("SELECT id, creator_author FROM items WHERE creator_author IS NOT NULL AND trim(creator_author) <> ''");
+        filters = { ...filters, author_ids: rows.filter((row) => splitAuthors(row.creator_author).some((name) => wanted.has(name.toLowerCase()))).map((row) => row.id) };
+      }
       const { clause, params } = buildWhere(filters);
       const sortColumn = SORT_COLUMNS[filters.sort] ?? SORT_COLUMNS.updated_at;
       const direction = filters.order === 'asc' ? 'ASC' : 'DESC';

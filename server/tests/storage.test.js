@@ -47,7 +47,7 @@ describe('custom storage directory', () => {
 
     const info = await ctx.api('GET', '/system/info');
     assert.equal(info.body.storage.root, target);
-    assert.equal(info.body.schema_version, 15);
+    assert.equal(info.body.schema_version, 16);
     const items = await ctx.api('GET', '/items');
     assert.equal(items.body.total, 1);
     assert.equal(items.body.data[0].title, 'Đi theo storage');
@@ -70,7 +70,7 @@ describe('custom storage directory', () => {
   test('open DB có sẵn: quay lại thư mục A', async () => {
     const inspect = await ctx.api('POST', '/storage/inspect', { path: path.join(sandbox, 'A') });
     assert.equal(inspect.body.has_database, true);
-    assert.equal(inspect.body.database_schema_version, 15);
+    assert.equal(inspect.body.database_schema_version, 16);
     const res = await ctx.api('PUT', '/storage', { path: path.join(sandbox, 'A'), mode: 'open' });
     assert.equal(res.status, 200);
     assert.equal((await ctx.api('GET', '/system/info')).body.storage.root, path.join(sandbox, 'A'));

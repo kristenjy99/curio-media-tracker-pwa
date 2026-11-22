@@ -12,6 +12,7 @@ const BOOK_TABLES = [
   'brackets',
   'monthly_favorites',
   'goals',
+  'quotes',
   'reading_logs',
   'reading_notes',
   'library_cards',
