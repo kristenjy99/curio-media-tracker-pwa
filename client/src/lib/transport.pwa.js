@@ -1,5 +1,7 @@
 import { ApiError, filenameFrom, splitPath } from './apiError.js';
-import { dispatchRequest, workerInfo } from './workerTransport.js';
+import { dispatchRequest, onSuperseded, workerInfo } from './workerTransport.js';
+
+export { onSuperseded };
 
 /**
  * Lớp vận chuyển của bản PWA: không có server, request đi thẳng vào bảng route trong Web Worker

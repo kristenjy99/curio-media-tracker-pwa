@@ -1273,5 +1273,10 @@
  "Chưa có lối tắt của app trên Desktop. Bấm \"Tạo lối tắt Desktop\" để tạo.",
  "Trên Desktop đã có một file khác trùng tên app. Đổi tên hoặc xoá file đó rồi bấm \"Tạo lối tắt Desktop\".",
  "Không cập nhật được lối tắt Desktop. Chạy file tao-shortcut-desktop.bat và chụp lại thông báo trong cửa sổ đó.",
- "Hiện ở góc trên bên trái, trên tab trình duyệt và là tên lối tắt trên Desktop (lối tắt tự đổi tên theo)."
+ "Hiện ở góc trên bên trái, trên tab trình duyệt và là tên lối tắt trên Desktop (lối tắt tự đổi tên theo).",
+ "App đang được mở ở cửa sổ khác",
+ "Mỗi lần chỉ một cửa sổ được dùng dữ liệu. Cửa sổ này đã dừng để không ghi đè dữ liệu. Những gì đã lưu trước đó vẫn còn nguyên.",
+ "Dùng app ở cửa sổ này",
+ "Thử lại",
+ "App đang được mở ở một cửa sổ hoặc tab khác, nên cửa sổ này không mở được dữ liệu và đang chạy tạm trong bộ nhớ: đừng nhập gì ở đây. Đóng các cửa sổ app và tab Chrome khác rồi bấm Thử lại. Dữ liệu đã lưu vẫn còn nguyên."
 ]

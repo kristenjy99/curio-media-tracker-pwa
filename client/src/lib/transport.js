@@ -49,3 +49,8 @@ export async function requestDownload(method, path, body) {
 export async function storageInfo() {
   return { persistent: true, storageReason: null };
 }
+
+/** Bản Windows chỉ có một server giữ database, không có chuyện cửa sổ khác giành quyền. */
+export function onSuperseded() {
+  return () => {};
+}

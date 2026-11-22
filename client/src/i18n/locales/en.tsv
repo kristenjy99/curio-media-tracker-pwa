@@ -1185,3 +1185,8 @@ mbtjz	There is no Desktop shortcut for the app yet. Click "Create Desktop shortc
 6jlwlf	Another file on the Desktop already has the app name. Rename or delete it, then click "Create Desktop shortcut".
 1c2w29g	Could not update the Desktop shortcut. Run tao-shortcut-desktop.bat and take a screenshot of the message in that window.
 1pkz5ag	Shown in the top-left corner and on the browser tab, and used as the Desktop shortcut name (the shortcut is renamed automatically).
+qv94q5	The app is open in another window
+s2ch8d	Only one window can use the data at a time. This window has stopped so nothing gets overwritten. Everything saved before is still there.
+gr4sc9	Use the app in this window
+geyv9a	Try again
+sdhlaa	The app is open in another window or tab, so this window cannot open the data and is running temporarily in memory: do not enter anything here. Close the other app windows and Chrome tabs, then tap Try again. Saved data is still intact.

@@ -452,3 +452,6 @@ mbtjz	Chưa có lối tắt của ứng dụng ngoài màn hình chính. Bấm "
 6jlwlf	Ngoài màn hình chính đã có một file khác trùng tên ứng dụng. Đổi tên hoặc xoá file đó rồi bấm "Tạo lối tắt ngoài màn hình chính".
 1c2w29g	Không cập nhật được lối tắt ngoài màn hình chính. Chạy file tao-shortcut-desktop.bat và chụp lại thông báo trong cửa sổ đó.
 1pkz5ag	Hiện ở góc trên bên trái, trên thẻ trình duyệt và là tên lối tắt ngoài màn hình chính (lối tắt tự đổi tên theo).
+qv94q5	Ứng dụng đang được mở ở cửa sổ khác
+gr4sc9	Dùng ứng dụng ở cửa sổ này
+sdhlaa	Ứng dụng đang được mở ở một cửa sổ hoặc thẻ khác, nên cửa sổ này không mở được dữ liệu và đang chạy tạm trong bộ nhớ: đừng nhập gì ở đây. Đóng các cửa sổ ứng dụng và thẻ Chrome khác rồi bấm Thử lại. Dữ liệu đã lưu vẫn còn nguyên.

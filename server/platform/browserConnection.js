@@ -24,7 +24,31 @@ const BOOK_DB_FILE = '/reading-tracker.sqlite';
 const MEDIA_DB_FILE = '/media-tracker.sqlite';
 const POOL_NAME = 'media-tracker';
 
+// Lỗi do cửa sổ/tab khác đang giữ file DB (opfs-sahpool chỉ cho một nơi giữ).
+const LOCKED = /access handle|NoModificationAllowed|modification is not allowed/i;
+const LOCK_RETRY_DELAYS = [150, 250, 400, 600, 800, 1000, 1200, 1500, 1500, 2000];
+
 let runtime = null;
+
+/**
+ * Cài VFS opfs-sahpool, thử lại khi file DB đang bị chiếm: cửa sổ cũ cần chút thời gian để nhả file sau
+ * khi nhận yêu cầu nhường (xem client/src/lib/workerTransport.js), và khi tải lại trang worker cũ cũng
+ * chưa kịp đóng. Tổng thời gian chờ khoảng 9 giây.
+ *
+ * preserveOnInitFailure: mặc định thư viện gọi removeVfs() khi cài lỗi, tức là XOÁ ĐỆ QUY thư mục pool
+ * (chứa chính file DB). Thường việc xoá thất bại vì file đang bị khoá, nhưng nếu cửa sổ kia nhả file đúng
+ * lúc đó thì dữ liệu bị xoá. Luôn giữ nguyên thư mục khi lỗi.
+ */
+async function installPool(sqlite3) {
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      return await sqlite3.installOpfsSAHPoolVfs({ name: POOL_NAME, initialCapacity: 16, preserveOnInitFailure: true, forceReinitIfPreviouslyFailed: true });
+    } catch (error) {
+      if (!LOCKED.test(`${error?.name ?? ''} ${error?.message ?? error}`) || attempt >= LOCK_RETRY_DELAYS.length) throw error;
+      await new Promise((resolve) => setTimeout(resolve, LOCK_RETRY_DELAYS[attempt]));
+    }
+  }
+}
 
 async function loadRuntime() {
   if (runtime) return runtime;
@@ -34,7 +58,7 @@ async function loadRuntime() {
   if (typeof sqlite3.installOpfsSAHPoolVfs === 'function') {
     try {
       // Pool giữ sẵn một số file: hai DB cộng journal và file tạm của SQLite, nên để dư.
-      pool = await sqlite3.installOpfsSAHPoolVfs({ name: POOL_NAME, initialCapacity: 16 });
+      pool = await installPool(sqlite3);
     } catch (error) {
       reason = error;
     }
