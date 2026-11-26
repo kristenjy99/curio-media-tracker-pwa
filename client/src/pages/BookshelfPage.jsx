@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { FilterBar } from '../components/bookshelf/FilterBar.jsx';
 import { ListView } from '../components/bookshelf/ListView.jsx';
+import { GridView } from '../components/bookshelf/GridView.jsx';
 import { Shelf } from '../components/bookshelf/Shelf.jsx';
 import { ShelfCat } from '../components/bookshelf/Cat.jsx';
 import { useLibraryActions } from '../components/layout/LibraryActions.jsx';
@@ -144,6 +145,18 @@ export function BookshelfPage() {
       {list.length > 0 &&
         (filters.view === 'list' ? (
           <ListView items={list} onOpen={open} />
+        ) : filters.view === 'grid' ? (
+          <GridView
+            onOpen={open}
+            shelves={shelves.map((shelf) => ({
+              ...shelf,
+              action: (
+                <Button variant="ghost" size="sm" onClick={() => openNewBook(shelf.category)} aria-label={`Thêm sách vào kệ ${shelf.title}`}>
+                  <Plus size={15} /> <span className="hidden sm:inline">Thêm vào kệ này</span>
+                </Button>
+              ),
+            }))}
+          />
         ) : (
           <div className="flex flex-col gap-10">
             {hasOrnaments && (

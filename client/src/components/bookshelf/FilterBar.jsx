@@ -1,5 +1,5 @@
 import * as Popover from '@radix-ui/react-popover';
-import { Check, Heart, AlertTriangle, HeartHandshake, Lightbulb, LayoutList, Library, PenLine, Search, Sparkles, Tag, X } from 'lucide-react';
+import { Check, Heart, AlertTriangle, HeartHandshake, LayoutGrid, Lightbulb, LayoutList, Library, PenLine, Search, Sparkles, Tag, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { CATEGORIES, CATEGORY_LABELS, SORT_OPTIONS, STATUSES, STATUS_LABELS } from '../../lib/labels.js';
 import { cn } from '../../lib/utils.js';
@@ -201,6 +201,7 @@ export function FilterBar({ filters, setFilters, facets }) {
           <div role="radiogroup" aria-label="Kiểu hiển thị" className="flex rounded-lg border border-line bg-surface p-0.5">
             {[
               { value: 'shelf', label: 'Kệ sách', icon: Library },
+              { value: 'grid', label: 'Lưới bìa', icon: LayoutGrid },
               { value: 'list', label: 'Danh sách', icon: LayoutList },
             ].map(({ value, label, icon: Icon }) => (
               <button
